@@ -6,10 +6,28 @@
 
 package dev.kalenchukov.notationconverter.resources;
 
+/**
+ * Перечисление возможных разделителей нотаций.
+ */
 public enum Separator
 {
+	/**
+	 * Нет разделителя.
+	 */
 	NONE,
+
+	/**
+	 * Символ дефиса.
+	 */
 	HYPHEN,
+
+	/**
+	 * Символ нижнего подчёркивания.
+	 */
 	UNDERSCORE,
+
+	/**
+	 * Прописная буква.
+	 */
 	UPPERCASE;
 }
