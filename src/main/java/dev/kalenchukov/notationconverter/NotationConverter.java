@@ -26,7 +26,8 @@ public final class NotationConverter
 	 * @param value Строка, нотацию которой необходимо изменить.
 	 * @return Строку в нотации Upper Case.
 	 */
-	public static @NotNull String toUpperCase(@NotNull final String value)
+	@NotNull
+	public static String toUpperCase(@NotNull final String value)
 	{
 		return NotationConverter.fromAbstract(value, Separator.UNDERSCORE).toUpperCase();
 	}
@@ -38,7 +39,8 @@ public final class NotationConverter
 	 * @param value Строка, нотацию которой необходимо изменить.
 	 * @return Строку в нотации Kebab Case.
 	 */
-	public static @NotNull String toKebabCase(@NotNull final String value)
+	@NotNull
+	public static String toKebabCase(@NotNull final String value)
 	{
 		return NotationConverter.fromAbstract(value, Separator.HYPHEN);
 	}
@@ -50,7 +52,8 @@ public final class NotationConverter
 	 * @param value Строка, нотацию которой необходимо изменить.
 	 * @return Строку в нотации Snake Case.
 	 */
-	public static @NotNull String toSnakeCase(@NotNull final String value)
+	@NotNull
+	public static String toSnakeCase(@NotNull final String value)
 	{
 		return NotationConverter.fromAbstract(value, Separator.UNDERSCORE);
 	}
@@ -63,7 +66,8 @@ public final class NotationConverter
 	 * @param value Строка, нотацию которой необходимо изменить.
 	 * @return Строку в нотации Camel Case.
 	 */
-	public static @NotNull String toCamelCase(@NotNull final String value)
+	@NotNull
+	public static String toCamelCase(@NotNull final String value)
 	{
 		return NotationConverter.fromAbstract(value, Separator.UPPERCASE);
 	}
@@ -75,7 +79,8 @@ public final class NotationConverter
 	 * @param value Строка, нотацию которой необходимо изменить.
 	 * @return Строку в нотации Pascal Case.
 	 */
-	public static @NotNull String toPascalCase(@NotNull final String value)
+	@NotNull
+	public static String toPascalCase(@NotNull final String value)
 	{
 		return NotationConverter.firstCharToUpperCase(
 			NotationConverter.fromAbstract(value, Separator.UPPERCASE)
@@ -89,7 +94,8 @@ public final class NotationConverter
 	 * @param separator Необходимый разделитель для выбранной нотации.
 	 * @return Строку в которой абстрактная нотация преобразована в соответствии с разделителем.
 	 */
-	private static @NotNull String fromAbstract(@NotNull final String value, @NotNull final Separator separator)
+	@NotNull
+	private static String fromAbstract(@NotNull final String value, @NotNull final Separator separator)
 	{
 		String abstractValue = NotationConverter.toAbstract(value);
 
@@ -119,7 +125,8 @@ public final class NotationConverter
 	 * @param value Строка, которую необходимо конвертировать в абстрактную нотацию.
 	 * @return Строку в абстрактной нотации.
 	 */
-	private static @NotNull String toAbstract(@NotNull final String value)
+	@NotNull
+	private static String toAbstract(@NotNull final String value)
 	{
 		String separator = "+";
 		String abstractValue = value.replaceAll("(?<=[a-zA-Z])[_-](?=[a-z0-9A-Z])", separator);
@@ -145,7 +152,8 @@ public final class NotationConverter
 	 * @param value Строка в которой необходимо сделать первую букву прописной.
 	 * @return Возвращает строку в которой первая буква будет прописной.
 	 */
-	private static @NotNull String firstCharToUpperCase(@NotNull String value)
+	@NotNull
+	private static String firstCharToUpperCase(@NotNull String value)
 	{
 		Matcher matcher = Pattern.compile("[a-z]", Pattern.UNICODE_CASE + Pattern.CASE_INSENSITIVE)
 								 .matcher(value);
