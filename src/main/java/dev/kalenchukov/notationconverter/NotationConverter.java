@@ -13,7 +13,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * Статический класс содержит методы конвертирования нотации составных слов.
+ * Класс содержит статические методы конвертирования нотации составных слов.
  */
 public final class NotationConverter
 {
