@@ -6,7 +6,7 @@
 
 package dev.kalenchukov.notationconverter;
 
-import dev.kalenchukov.notationconverter.resourses.Separator;
+import dev.kalenchukov.notationconverter.resources.Separator;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.regex.Matcher;

@@ -1,4 +1,4 @@
-package dev.kalenchukov.notationconverter.resourses;
+package dev.kalenchukov.notationconverter.resources;
 
 public enum Separator
 {
