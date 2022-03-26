@@ -30,7 +30,7 @@ NotationConverter.toUpperCase("HelloWorld");
 
 ### Конвертирование в нотацию Snake Case:
 ```java
-NotationConverter.toSnakeCase("hello_world");
+NotationConverter.toSnakeCase("hello-world");
 
 /*
 Результат выполнения: hello_world
