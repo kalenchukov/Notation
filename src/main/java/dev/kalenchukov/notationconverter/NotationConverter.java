@@ -9,6 +9,7 @@ package dev.kalenchukov.notationconverter;
 import dev.kalenchukov.notationconverter.resources.Separator;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -29,6 +30,8 @@ public final class NotationConverter
 	@NotNull
 	public static String toUpperCase(@NotNull final String value)
 	{
+		Objects.requireNonNull(value);
+
 		return NotationConverter.fromAbstract(value, Separator.UNDERSCORE).toUpperCase();
 	}
 
@@ -42,6 +45,8 @@ public final class NotationConverter
 	@NotNull
 	public static String toKebabCase(@NotNull final String value)
 	{
+		Objects.requireNonNull(value);
+
 		return NotationConverter.fromAbstract(value, Separator.HYPHEN);
 	}
 
@@ -55,6 +60,8 @@ public final class NotationConverter
 	@NotNull
 	public static String toSnakeCase(@NotNull final String value)
 	{
+		Objects.requireNonNull(value);
+
 		return NotationConverter.fromAbstract(value, Separator.UNDERSCORE);
 	}
 
@@ -69,6 +76,8 @@ public final class NotationConverter
 	@NotNull
 	public static String toCamelCase(@NotNull final String value)
 	{
+		Objects.requireNonNull(value);
+
 		return NotationConverter.fromAbstract(value, Separator.UPPERCASE);
 	}
 
@@ -82,6 +91,8 @@ public final class NotationConverter
 	@NotNull
 	public static String toPascalCase(@NotNull final String value)
 	{
+		Objects.requireNonNull(value);
+
 		return NotationConverter.firstCharToUpperCase(
 			NotationConverter.fromAbstract(value, Separator.UPPERCASE)
 		);
@@ -97,6 +108,9 @@ public final class NotationConverter
 	@NotNull
 	private static String fromAbstract(@NotNull final String value, @NotNull final Separator separator)
 	{
+		Objects.requireNonNull(value);
+		Objects.requireNonNull(separator);
+
 		String abstractValue = NotationConverter.toAbstract(value);
 
 		Matcher matcher = Pattern.compile("\\+(?<target>[a-z0-9])", Pattern.UNICODE_CASE)
@@ -128,6 +142,8 @@ public final class NotationConverter
 	@NotNull
 	private static String toAbstract(@NotNull final String value)
 	{
+		Objects.requireNonNull(value);
+
 		String separator = "+";
 		String abstractValue = value.replaceAll("(?<=[a-zA-Z])[_-](?=[a-z0-9A-Z])", separator);
 
@@ -155,6 +171,8 @@ public final class NotationConverter
 	@NotNull
 	private static String firstCharToUpperCase(@NotNull final String value)
 	{
+		Objects.requireNonNull(value);
+
 		StringBuilder string = new StringBuilder();
 
 		Matcher matcher = Pattern.compile("[a-z]", Pattern.UNICODE_CASE + Pattern.CASE_INSENSITIVE)
