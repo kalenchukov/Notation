@@ -37,11 +37,11 @@ public class NotationConverterTest
 	{
 		for (int i = 0; i < UPPER_CASE.length; i++)
 		{
-			assertEquals(NotationConverter.toUpperCase(UPPER_CASE[i]), UPPER_CASE[i]);
-			assertEquals(NotationConverter.toUpperCase(CAMEL_CASE[i]), UPPER_CASE[i]);
-			assertEquals(NotationConverter.toUpperCase(KEBAB_CASE[i]), UPPER_CASE[i]);
-			assertEquals(NotationConverter.toUpperCase(SNAKE_CASE[i]), UPPER_CASE[i]);
-			assertEquals(NotationConverter.toUpperCase(PASCAL_CASE[i]), UPPER_CASE[i]);
+			assertEquals(UPPER_CASE[i], NotationConverter.toUpperCase(UPPER_CASE[i]));
+			assertEquals(UPPER_CASE[i], NotationConverter.toUpperCase(CAMEL_CASE[i]));
+			assertEquals(UPPER_CASE[i], NotationConverter.toUpperCase(KEBAB_CASE[i]));
+			assertEquals(UPPER_CASE[i], NotationConverter.toUpperCase(SNAKE_CASE[i]));
+			assertEquals(UPPER_CASE[i], NotationConverter.toUpperCase(PASCAL_CASE[i]));
 		}
 	}
 
@@ -50,11 +50,11 @@ public class NotationConverterTest
 	{
 		for (int i = 0; i < UPPER_CASE.length; i++)
 		{
-			assertEquals(NotationConverter.toKebabCase(UPPER_CASE[i]), KEBAB_CASE[i]);
-			assertEquals(NotationConverter.toKebabCase(CAMEL_CASE[i]), KEBAB_CASE[i]);
-			assertEquals(NotationConverter.toKebabCase(KEBAB_CASE[i]), KEBAB_CASE[i]);
-			assertEquals(NotationConverter.toKebabCase(SNAKE_CASE[i]), KEBAB_CASE[i]);
-			assertEquals(NotationConverter.toKebabCase(PASCAL_CASE[i]), KEBAB_CASE[i]);
+			assertEquals(KEBAB_CASE[i], NotationConverter.toKebabCase(UPPER_CASE[i]));
+			assertEquals(KEBAB_CASE[i], NotationConverter.toKebabCase(CAMEL_CASE[i]));
+			assertEquals(KEBAB_CASE[i], NotationConverter.toKebabCase(KEBAB_CASE[i]));
+			assertEquals(KEBAB_CASE[i], NotationConverter.toKebabCase(SNAKE_CASE[i]));
+			assertEquals(KEBAB_CASE[i], NotationConverter.toKebabCase(PASCAL_CASE[i]));
 		}
 	}
 
@@ -63,11 +63,11 @@ public class NotationConverterTest
 	{
 		for (int i = 0; i < UPPER_CASE.length; i++)
 		{
-			assertEquals(NotationConverter.toSnakeCase(UPPER_CASE[i]), SNAKE_CASE[i]);
-			assertEquals(NotationConverter.toSnakeCase(CAMEL_CASE[i]), SNAKE_CASE[i]);
-			assertEquals(NotationConverter.toSnakeCase(KEBAB_CASE[i]), SNAKE_CASE[i]);
-			assertEquals(NotationConverter.toSnakeCase(SNAKE_CASE[i]), SNAKE_CASE[i]);
-			assertEquals(NotationConverter.toSnakeCase(PASCAL_CASE[i]), SNAKE_CASE[i]);
+			assertEquals(SNAKE_CASE[i], NotationConverter.toSnakeCase(UPPER_CASE[i]));
+			assertEquals(SNAKE_CASE[i], NotationConverter.toSnakeCase(CAMEL_CASE[i]));
+			assertEquals(SNAKE_CASE[i], NotationConverter.toSnakeCase(KEBAB_CASE[i]));
+			assertEquals(SNAKE_CASE[i], NotationConverter.toSnakeCase(SNAKE_CASE[i]));
+			assertEquals(SNAKE_CASE[i], NotationConverter.toSnakeCase(PASCAL_CASE[i]));
 		}
 	}
 
@@ -76,11 +76,11 @@ public class NotationConverterTest
 	{
 		for (int i = 0; i < UPPER_CASE.length; i++)
 		{
-			assertEquals(NotationConverter.toCamelCase(UPPER_CASE[i]), CAMEL_CASE[i]);
-			assertEquals(NotationConverter.toCamelCase(CAMEL_CASE[i]), CAMEL_CASE[i]);
-			assertEquals(NotationConverter.toCamelCase(KEBAB_CASE[i]), CAMEL_CASE[i]);
-			assertEquals(NotationConverter.toCamelCase(SNAKE_CASE[i]), CAMEL_CASE[i]);
-			assertEquals(NotationConverter.toCamelCase(PASCAL_CASE[i]), CAMEL_CASE[i]);
+			assertEquals(CAMEL_CASE[i], NotationConverter.toCamelCase(UPPER_CASE[i]));
+			assertEquals(CAMEL_CASE[i], NotationConverter.toCamelCase(CAMEL_CASE[i]));
+			assertEquals(CAMEL_CASE[i], NotationConverter.toCamelCase(KEBAB_CASE[i]));
+			assertEquals(CAMEL_CASE[i], NotationConverter.toCamelCase(SNAKE_CASE[i]));
+			assertEquals(CAMEL_CASE[i], NotationConverter.toCamelCase(PASCAL_CASE[i]));
 		}
 	}
 
@@ -89,11 +89,11 @@ public class NotationConverterTest
 	{
 		for (int i = 0; i < UPPER_CASE.length; i++)
 		{
-			assertEquals(NotationConverter.toPascalCase(UPPER_CASE[i]), PASCAL_CASE[i]);
-			assertEquals(NotationConverter.toPascalCase(CAMEL_CASE[i]), PASCAL_CASE[i]);
-			assertEquals(NotationConverter.toPascalCase(KEBAB_CASE[i]), PASCAL_CASE[i]);
-			assertEquals(NotationConverter.toPascalCase(SNAKE_CASE[i]), PASCAL_CASE[i]);
-			assertEquals(NotationConverter.toPascalCase(PASCAL_CASE[i]), PASCAL_CASE[i]);
+			assertEquals(PASCAL_CASE[i], NotationConverter.toPascalCase(UPPER_CASE[i]));
+			assertEquals(PASCAL_CASE[i], NotationConverter.toPascalCase(CAMEL_CASE[i]));
+			assertEquals(PASCAL_CASE[i], NotationConverter.toPascalCase(KEBAB_CASE[i]));
+			assertEquals(PASCAL_CASE[i], NotationConverter.toPascalCase(SNAKE_CASE[i]));
+			assertEquals(PASCAL_CASE[i], NotationConverter.toPascalCase(PASCAL_CASE[i]));
 		}
 	}
 }
