@@ -120,7 +120,7 @@ public final class NotationConverter
 
 	/**
 	 * Возвращает строку в абстрактной нотации.
-	 * Абстрактная нотация - это стиль в котором разделение слов обозначается символом "*", а все буквы прописные.
+	 * Абстрактная нотация - это стиль в котором разделение слов обозначается символом "+", а все буквы прописные.
 	 *
 	 * @param value Строка, которую необходимо конвертировать в абстрактную нотацию.
 	 * @return Строку в абстрактной нотации.
@@ -153,17 +153,23 @@ public final class NotationConverter
 	 * @return Возвращает строку в которой первая буква будет прописной.
 	 */
 	@NotNull
-	private static String firstCharToUpperCase(@NotNull String value)
+	private static String firstCharToUpperCase(@NotNull final String value)
 	{
+		StringBuilder string = new StringBuilder();
+
 		Matcher matcher = Pattern.compile("[a-z]", Pattern.UNICODE_CASE + Pattern.CASE_INSENSITIVE)
 								 .matcher(value);
 
-		if (matcher.find()) {
-			value = value.substring(0, matcher.start()) +
-					value.substring(matcher.start(), matcher.end()).toUpperCase() +
-					value.substring(matcher.end());
+		if (matcher.find())
+		{
+			string.append(value.substring(0, matcher.start()));
+			string.append(value.substring(matcher.start(), matcher.end()).toUpperCase());
+			string.append(value.substring(matcher.end()));
+		}
+		else {
+			string.append(value);
 		}
 
-		return value;
+		return string.toString();
 	}
 }
