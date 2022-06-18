@@ -3,4 +3,4 @@
  * GitHub: https://github.com/kalenchukov
  * E-mail: mailto:aleksey.kalenchukov@yandex.ru
  */
-package dev.kalenchukov.notationconverter;
+package dev.kalenchukov.notation.converting;

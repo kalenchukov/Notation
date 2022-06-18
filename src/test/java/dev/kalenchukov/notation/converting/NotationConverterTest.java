@@ -4,7 +4,7 @@
  * E-mail: mailto:aleksey.kalenchukov@yandex.ru
  */
 
-package dev.kalenchukov.notationconverter;
+package dev.kalenchukov.notation.converting;
 
 import org.junit.Test;
 

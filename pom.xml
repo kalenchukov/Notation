@@ -11,12 +11,12 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>dev.kalenchukov</groupId>
-	<artifactId>notation-converter</artifactId>
-	<version>1.1.0</version>
+	<artifactId>notation-converting</artifactId>
+	<version>1.2.0</version>
 
-	<name>NotationConverter</name>
+	<name>NotationConverting</name>
 	<description>Конвертер нотации составных слов</description>
-	<url>https://github.com/kalenchukov/NotationConverter</url>
+	<url>https://github.com/kalenchukov/NotationConverting</url>
 
 	<licenses>
 		<license>

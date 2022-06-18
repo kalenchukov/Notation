@@ -4,9 +4,9 @@
  * E-mail: mailto:aleksey.kalenchukov@yandex.ru
  */
 
-package dev.kalenchukov.notationconverter;
+package dev.kalenchukov.notation.converting;
 
-import dev.kalenchukov.notationconverter.resources.Separator;
+import dev.kalenchukov.notation.converting.resources.Separator;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Objects;

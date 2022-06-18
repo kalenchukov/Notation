@@ -1,4 +1,4 @@
-# NotationConverter
+# NotationConverting
 Конвертер нотации составных слов.
 
 ### Конвертирование в нотацию Camel Case:

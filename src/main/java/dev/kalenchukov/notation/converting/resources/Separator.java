@@ -4,7 +4,7 @@
  * E-mail: mailto:aleksey.kalenchukov@yandex.ru
  */
 
-package dev.kalenchukov.notationconverter.resources;
+package dev.kalenchukov.notation.converting.resources;
 
 /**
  * Перечисление возможных разделителей нотаций.

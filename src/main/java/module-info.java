@@ -1,6 +1,6 @@
-module dev.kalenchukov.notationconverter
+module dev.kalenchukov.notation.converting
 {
 	requires org.jetbrains.annotations;
 
-	exports dev.kalenchukov.notationconverter;
+	exports dev.kalenchukov.notation.converting;
 }
