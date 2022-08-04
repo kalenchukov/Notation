@@ -1,47 +1,82 @@
 # NotationConverting
+
 Конвертер нотации составных слов.
 
-### Конвертирование в нотацию Camel Case:
+## Поддерживаемые нотации
+
+#### Верблюжья (Camel Case)
+
+Все слова пишутся слитно, начинается со строчной буквы, а первая буква каждого последующего слова должна быть прописной.
+
+#### Шашлычная (Kebab Case)
+
+Все буквы строчные, а слова разделяются символом дефиса.
+
+#### Верхняя (Upper Case)
+
+Все буквы прописные, а слова разделяются символом подчёркивания.
+
+#### Змеиная (Snake Case)
+
+Все буквы строчные, а слова разделяются символом подчёркивания.
+
+#### Паскаля (Pascal Case)
+
+Все слова пишутся слитно и первая буква каждого слова должна быть прописной.
+
+## Использование
+
+#### Конвертирование в нотацию Camel Case
+
 ```java
 NotationConverter.toCamelCase("hello-world");
-
-/*
-Результат выполнения: helloWorld
-*/
+// Результат выполнения: helloWorld
 ```
 
-### Конвертирование в нотацию Kebab Case:
+#### Конвертирование в нотацию Kebab Case
+
 ```java
 NotationConverter.toKebabCase("helloWorld");
-
-/*
-Результат выполнения: hello-world
-*/
-
+// Результат выполнения: hello-world
 ```
-### Конвертирование в нотацию Upper Case:
+
+#### Конвертирование в нотацию Upper Case
+
 ```java
 NotationConverter.toUpperCase("HelloWorld");
-
-/*
-Результат выполнения: HELLO_WORLD
-*/
+// Результат выполнения: HELLO_WORLD
 ```
 
-### Конвертирование в нотацию Snake Case:
+#### Конвертирование в нотацию Snake Case
+
 ```java
 NotationConverter.toSnakeCase("hello-world");
-
-/*
-Результат выполнения: hello_world
-*/
+// Результат выполнения: hello_world
 ```
 
-### Конвертирование в нотацию Pascal Case:
+#### Конвертирование в нотацию Pascal Case
+
 ```java
 NotationConverter.toPascalCase("hello_world");
-
-/*
-Результат выполнения: HelloWorld
-*/
+// Результат выполнения: HelloWorld
 ```
+
+## Установка
+
+Для установки этого проекта, введите в терминале:
+
+```bash
+git clone https://github.com/kalenchukov/NotationConverting.git
+```
+
+## Версии
+
+Доступные [версии](https://github.com/kalenchukov/NotationConverting/releases).
+
+## Авторы
+
+[Алексей Каленчуков](https://github.com/kalenchukov)
+
+## Лицензия
+
+[MIT](https://opensource.org/licenses/MIT)
