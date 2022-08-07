@@ -7,6 +7,7 @@
 package dev.kalenchukov.notation.converting;
 
 import dev.kalenchukov.notation.converting.resources.Separator;
+import dev.kalenchukov.stringi.Stringi;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Objects;
@@ -96,7 +97,7 @@ public final class NotationConverter
 	{
 		Objects.requireNonNull(value);
 
-		return NotationConverter.firstCharToUpperCase(
+		return Stringi.firstLetterToUpperCase(
 			NotationConverter.fromAbstract(value, Separator.UPPERCASE)
 		);
 	}
@@ -162,35 +163,5 @@ public final class NotationConverter
 		}
 
 		return abstractValue.toLowerCase();
-	}
-
-	/**
-	 * Делает первую найденную букву прописной.
-	 * Внимание! Преобразовывается не первый символ строки, а именно первая буква латинского алфавита.
-	 *
-	 * @param value Строка в которой необходимо сделать первую букву прописной.
-	 * @return Возвращает строку в которой первая буква будет прописной.
-	 */
-	@NotNull
-	private static String firstCharToUpperCase(@NotNull final String value)
-	{
-		Objects.requireNonNull(value);
-
-		StringBuilder string = new StringBuilder();
-
-		Matcher matcher = Pattern.compile("[a-z]", Pattern.UNICODE_CASE + Pattern.CASE_INSENSITIVE)
-								 .matcher(value);
-
-		if (matcher.find())
-		{
-			string.append(value.substring(0, matcher.start()));
-			string.append(value.substring(matcher.start(), matcher.end()).toUpperCase());
-			string.append(value.substring(matcher.end()));
-		}
-		else {
-			string.append(value);
-		}
-
-		return string.toString();
 	}
 }
