@@ -25,15 +25,10 @@
 package dev.kalenchukov.notation.converting.resources;
 
 /**
- * Перечисление возможных разделителей нотаций.
+ * Перечисление возможных типов разделителей нотаций.
  */
-public enum Separator
+public enum SeparatorType
 {
-	/**
-	 * Нет разделителя.
-	 */
-	NONE,
-
 	/**
 	 * Символ дефиса.
 	 */

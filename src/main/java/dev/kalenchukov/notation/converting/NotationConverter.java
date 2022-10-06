@@ -24,7 +24,7 @@
 
 package dev.kalenchukov.notation.converting;
 
-import dev.kalenchukov.notation.converting.resources.Separator;
+import dev.kalenchukov.notation.converting.resources.SeparatorType;
 import dev.kalenchukov.stringi.Stringi;
 import org.jetbrains.annotations.NotNull;
 
@@ -54,7 +54,7 @@ public final class NotationConverter
 	{
 		Objects.requireNonNull(value);
 
-		return NotationConverter.fromAbstract(value, Separator.UNDERSCORE).toUpperCase();
+		return NotationConverter.fromAbstract(value, SeparatorType.UNDERSCORE).toUpperCase();
 	}
 
 	/**
@@ -69,7 +69,7 @@ public final class NotationConverter
 	{
 		Objects.requireNonNull(value);
 
-		return NotationConverter.fromAbstract(value, Separator.HYPHEN);
+		return NotationConverter.fromAbstract(value, SeparatorType.HYPHEN);
 	}
 
 	/**
@@ -84,7 +84,7 @@ public final class NotationConverter
 	{
 		Objects.requireNonNull(value);
 
-		return NotationConverter.fromAbstract(value, Separator.UNDERSCORE);
+		return NotationConverter.fromAbstract(value, SeparatorType.UNDERSCORE);
 	}
 
 	/**
@@ -100,7 +100,7 @@ public final class NotationConverter
 	{
 		Objects.requireNonNull(value);
 
-		return NotationConverter.fromAbstract(value, Separator.UPPERCASE);
+		return NotationConverter.fromAbstract(value, SeparatorType.UPPERCASE);
 	}
 
 	/**
@@ -116,7 +116,7 @@ public final class NotationConverter
 		Objects.requireNonNull(value);
 
 		return Stringi.firstLetterToUpperCase(
-			NotationConverter.fromAbstract(value, Separator.UPPERCASE)
+			NotationConverter.fromAbstract(value, SeparatorType.UPPERCASE)
 		);
 	}
 
@@ -124,14 +124,14 @@ public final class NotationConverter
 	 * Возвращает строку в которой абстрактная нотация преобразована в соответствии с разделителем.
 	 *
 	 * @param value Строка в абстрактной нотации.
-	 * @param separator Необходимый разделитель для выбранной нотации.
+	 * @param separatorType Необходимый разделитель для выбранной нотации.
 	 * @return Строку в которой абстрактная нотация преобразована в соответствии с разделителем.
 	 */
 	@NotNull
-	private static String fromAbstract(@NotNull final String value, @NotNull final Separator separator)
+	private static String fromAbstract(@NotNull final String value, @NotNull final SeparatorType separatorType)
 	{
 		Objects.requireNonNull(value);
-		Objects.requireNonNull(separator);
+		Objects.requireNonNull(separatorType);
 
 		String abstractValue = NotationConverter.toAbstract(value);
 
@@ -140,12 +140,11 @@ public final class NotationConverter
 
 		while (matcher.find())
 		{
-			String replacement = switch (separator)
+			String replacement = switch (separatorType)
 				{
 					case HYPHEN -> "-" + matcher.group("target");
 					case UNDERSCORE -> "_" + matcher.group("target");
 					case UPPERCASE -> matcher.group("target").toUpperCase();
-					case NONE -> matcher.group("target");
 				};
 
 			abstractValue = abstractValue.replaceAll("\\+" + matcher.group("target"), replacement);
