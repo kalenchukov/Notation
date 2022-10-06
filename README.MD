@@ -26,6 +26,13 @@
 
 ## Использование
 
+#### Конвертирование в указанную нотацию
+
+```java
+NotationConverter.to("HelloWorld", NotationType.UPPER_CASE);
+// Результат выполнения: HELLO_WORLD
+```
+
 #### Конвертирование в нотацию Camel Case
 
 ```java

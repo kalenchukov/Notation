@@ -44,6 +44,29 @@ public final class NotationConverter
 	private NotationConverter() {}
 
 	/**
+	 * Возвращает строку в указанной нотации.
+	 *
+	 * @param value Строка, нотацию которой необходимо изменить.
+	 * @param notationType Тип нотации.
+	 * @return Строку в указанной нотации.
+	 */
+	@NotNull
+	public static String to(@NotNull final String value, @NotNull final NotationType notationType)
+	{
+		Objects.requireNonNull(value);
+		Objects.requireNonNull(notationType);
+
+		return switch (notationType)
+			{
+				case CAMEL_CASE -> NotationConverter.toCamelCase(value);
+				case KEBAB_CASE -> NotationConverter.toKebabCase(value);
+				case UPPER_CASE -> NotationConverter.toUpperCase(value);
+				case SNAKE_CASE -> NotationConverter.toSnakeCase(value);
+				case PASCAL_CASE -> NotationConverter.toPascalCase(value);
+			};
+	}
+
+	/**
 	 * Возвращает строку в нотации Upper Case.
 	 *
 	 * @see NotationType#UPPER_CASE

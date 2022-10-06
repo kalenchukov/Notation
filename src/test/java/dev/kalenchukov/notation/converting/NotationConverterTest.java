@@ -24,6 +24,7 @@
 
 package dev.kalenchukov.notation.converting;
 
+import dev.kalenchukov.notation.converting.resources.NotationType;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -49,6 +50,71 @@ public class NotationConverterTest
 	private static final String[] PASCAL_CASE = {
 		"Hello", "HelloWorld", "HelloWorldMatrix", "HelloWorld1", "__HelloWorldMatrix", "_Hello_"
 	};
+
+	@Test
+	public void testToNotationTypeUpperCase()
+	{
+		for (int i = 0; i < UPPER_CASE.length; i++)
+		{
+			assertEquals(UPPER_CASE[i], NotationConverter.to(UPPER_CASE[i], NotationType.UPPER_CASE));
+			assertEquals(UPPER_CASE[i], NotationConverter.to(CAMEL_CASE[i], NotationType.UPPER_CASE));
+			assertEquals(UPPER_CASE[i], NotationConverter.to(KEBAB_CASE[i], NotationType.UPPER_CASE));
+			assertEquals(UPPER_CASE[i], NotationConverter.to(SNAKE_CASE[i], NotationType.UPPER_CASE));
+			assertEquals(UPPER_CASE[i], NotationConverter.to(PASCAL_CASE[i], NotationType.UPPER_CASE));
+		}
+	}
+
+	@Test
+	public void testToNotationTypeKebabCase()
+	{
+		for (int i = 0; i < KEBAB_CASE.length; i++)
+		{
+			assertEquals(KEBAB_CASE[i], NotationConverter.to(UPPER_CASE[i], NotationType.KEBAB_CASE));
+			assertEquals(KEBAB_CASE[i], NotationConverter.to(CAMEL_CASE[i], NotationType.KEBAB_CASE));
+			assertEquals(KEBAB_CASE[i], NotationConverter.to(KEBAB_CASE[i], NotationType.KEBAB_CASE));
+			assertEquals(KEBAB_CASE[i], NotationConverter.to(SNAKE_CASE[i], NotationType.KEBAB_CASE));
+			assertEquals(KEBAB_CASE[i], NotationConverter.to(PASCAL_CASE[i], NotationType.KEBAB_CASE));
+		}
+	}
+
+	@Test
+	public void testToNotationTypeSnakeCase()
+	{
+		for (int i = 0; i < SNAKE_CASE.length; i++)
+		{
+			assertEquals(SNAKE_CASE[i], NotationConverter.to(UPPER_CASE[i], NotationType.SNAKE_CASE));
+			assertEquals(SNAKE_CASE[i], NotationConverter.to(CAMEL_CASE[i], NotationType.SNAKE_CASE));
+			assertEquals(SNAKE_CASE[i], NotationConverter.to(KEBAB_CASE[i], NotationType.SNAKE_CASE));
+			assertEquals(SNAKE_CASE[i], NotationConverter.to(SNAKE_CASE[i], NotationType.SNAKE_CASE));
+			assertEquals(SNAKE_CASE[i], NotationConverter.to(PASCAL_CASE[i], NotationType.SNAKE_CASE));
+		}
+	}
+
+	@Test
+	public void testToNotationTypeCamelCase()
+	{
+		for (int i = 0; i < UPPER_CASE.length; i++)
+		{
+			assertEquals(CAMEL_CASE[i], NotationConverter.to(UPPER_CASE[i], NotationType.CAMEL_CASE));
+			assertEquals(CAMEL_CASE[i], NotationConverter.to(CAMEL_CASE[i], NotationType.CAMEL_CASE));
+			assertEquals(CAMEL_CASE[i], NotationConverter.to(KEBAB_CASE[i], NotationType.CAMEL_CASE));
+			assertEquals(CAMEL_CASE[i], NotationConverter.to(SNAKE_CASE[i], NotationType.CAMEL_CASE));
+			assertEquals(CAMEL_CASE[i], NotationConverter.to(PASCAL_CASE[i], NotationType.CAMEL_CASE));
+		}
+	}
+
+	@Test
+	public void testToNotationTypePascalCase()
+	{
+		for (int i = 0; i < UPPER_CASE.length; i++)
+		{
+			assertEquals(PASCAL_CASE[i], NotationConverter.to(UPPER_CASE[i], NotationType.PASCAL_CASE));
+			assertEquals(PASCAL_CASE[i], NotationConverter.to(CAMEL_CASE[i], NotationType.PASCAL_CASE));
+			assertEquals(PASCAL_CASE[i], NotationConverter.to(KEBAB_CASE[i], NotationType.PASCAL_CASE));
+			assertEquals(PASCAL_CASE[i], NotationConverter.to(SNAKE_CASE[i], NotationType.PASCAL_CASE));
+			assertEquals(PASCAL_CASE[i], NotationConverter.to(PASCAL_CASE[i], NotationType.PASCAL_CASE));
+		}
+	}
 
 	@Test
 	public void testToUpperCase()
