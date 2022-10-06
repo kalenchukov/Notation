@@ -25,6 +25,7 @@
 package dev.kalenchukov.notation.converting;
 
 import dev.kalenchukov.notation.converting.resources.SeparatorType;
+import dev.kalenchukov.notation.converting.resources.NotationType;
 import dev.kalenchukov.stringi.Stringi;
 import org.jetbrains.annotations.NotNull;
 
@@ -44,8 +45,8 @@ public final class NotationConverter
 
 	/**
 	 * Возвращает строку в нотации Upper Case.
-	 * Upper Case - все слова пишутся прописными буквами, а в качестве разделителя слов символ нижнего подчёркивания.
 	 *
+	 * @see NotationType#UPPER_CASE
 	 * @param value Строка, нотацию которой необходимо изменить.
 	 * @return Строку в нотации Upper Case.
 	 */
@@ -59,8 +60,8 @@ public final class NotationConverter
 
 	/**
 	 * Возвращает строку в нотации Kebab Case.
-	 * Kebab Case - все слова пишутся строчными буквами, а в качестве разделителя слов символ дефиса.
 	 *
+	 * @see NotationType#KEBAB_CASE
 	 * @param value Строка, нотацию которой необходимо изменить.
 	 * @return Строку в нотации Kebab Case.
 	 */
@@ -74,8 +75,8 @@ public final class NotationConverter
 
 	/**
 	 * Возвращает строку в нотации Snake Case.
-	 * Snake Case - все слова пишутся строчными буквами, а в качестве разделителя слов символ нижнего подчёркивания.
 	 *
+	 * @see NotationType#SNAKE_CASE
 	 * @param value Строка, нотацию которой необходимо изменить.
 	 * @return Строку в нотации Snake Case.
 	 */
@@ -89,9 +90,8 @@ public final class NotationConverter
 
 	/**
 	 * Возвращает строку в нотации Camel Case.
-	 * Camel Case - должен начинаться со строчной буквы, а первая буква каждого последующего слова
-	 * должна быть прописной. Все слова при этом пишутся слитно между собой.
 	 *
+	 * @see NotationType#CAMEL_CASE
 	 * @param value Строка, нотацию которой необходимо изменить.
 	 * @return Строку в нотации Camel Case.
 	 */
@@ -105,8 +105,8 @@ public final class NotationConverter
 
 	/**
 	 * Возвращает строку в нотации Pascal Case.
-	 * Pascal Case - первая буква каждого слова должна быть прописной. Все слова при этом пишутся слитно между собой.
 	 *
+	 * @see NotationType#PASCAL_CASE
 	 * @param value Строка, нотацию которой необходимо изменить.
 	 * @return Строку в нотации Pascal Case.
 	 */

@@ -4,4 +4,5 @@ module dev.kalenchukov.notation.converting
 	requires dev.kalenchukov.stringi;
 
 	exports dev.kalenchukov.notation.converting;
+	exports dev.kalenchukov.notation.converting.resources;
 }
