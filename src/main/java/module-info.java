@@ -1,3 +1,6 @@
+/**
+ * Определяет API для конвертирования нотации составных слов.
+ */
 module dev.kalenchukov.notation.converting
 {
 	requires org.jetbrains.annotations;
