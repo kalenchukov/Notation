@@ -39,7 +39,7 @@ import java.util.regex.Pattern;
 public final class NotationConverter
 {
 	/**
-	 * Конструктор для {@code NotationConverter} запрещающий создавать объект класса.
+	 * Конструктор для {@code NotationConverter}.
 	 */
 	private NotationConverter() {}
 
