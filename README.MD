@@ -67,11 +67,3 @@ NotationConverter.toSnakeCase("hello-world");
 NotationConverter.toPascalCase("hello_world");
 // Результат выполнения: HelloWorld
 ```
-
-## Версии
-
-Доступные [версии](https://github.com/kalenchukov/NotationConverting/releases).
-
-## Лицензия
-
-[MIT](https://opensource.org/licenses/MIT)
