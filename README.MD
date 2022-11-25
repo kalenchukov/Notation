@@ -68,14 +68,6 @@ NotationConverter.toPascalCase("hello_world");
 // Результат выполнения: HelloWorld
 ```
 
-## Установка
-
-Для установки этого проекта, введите в терминале:
-
-```bash
-git clone https://github.com/kalenchukov/NotationConverting.git
-```
-
 ## Версии
 
 Доступные [версии](https://github.com/kalenchukov/NotationConverting/releases).
