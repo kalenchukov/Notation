@@ -46,9 +46,9 @@ public final class NotationConverter
 	/**
 	 * Возвращает строку в указанной нотации.
 	 *
-	 * @param value Строка, нотацию которой необходимо изменить.
-	 * @param notationType Тип нотации.
-	 * @return Строку в указанной нотации.
+	 * @param value строка, нотацию которой необходимо изменить.
+	 * @param notationType тип нотации.
+	 * @return строку в указанной нотации.
 	 */
 	@NotNull
 	public static String to(@NotNull final String value, @NotNull final NotationType notationType)
@@ -70,8 +70,8 @@ public final class NotationConverter
 	 * Возвращает строку в нотации Upper Case.
 	 *
 	 * @see NotationType#UPPER_CASE
-	 * @param value Строка, нотацию которой необходимо изменить.
-	 * @return Строку в нотации Upper Case.
+	 * @param value строка, нотацию которой необходимо изменить.
+	 * @return строку в нотации Upper Case.
 	 */
 	@NotNull
 	public static String toUpperCase(@NotNull final String value)
@@ -85,8 +85,8 @@ public final class NotationConverter
 	 * Возвращает строку в нотации Kebab Case.
 	 *
 	 * @see NotationType#KEBAB_CASE
-	 * @param value Строка, нотацию которой необходимо изменить.
-	 * @return Строку в нотации Kebab Case.
+	 * @param value строка, нотацию которой необходимо изменить.
+	 * @return строку в нотации Kebab Case.
 	 */
 	@NotNull
 	public static String toKebabCase(@NotNull final String value)
@@ -100,8 +100,8 @@ public final class NotationConverter
 	 * Возвращает строку в нотации Snake Case.
 	 *
 	 * @see NotationType#SNAKE_CASE
-	 * @param value Строка, нотацию которой необходимо изменить.
-	 * @return Строку в нотации Snake Case.
+	 * @param value строка, нотацию которой необходимо изменить.
+	 * @return строку в нотации Snake Case.
 	 */
 	@NotNull
 	public static String toSnakeCase(@NotNull final String value)
@@ -115,8 +115,8 @@ public final class NotationConverter
 	 * Возвращает строку в нотации Camel Case.
 	 *
 	 * @see NotationType#CAMEL_CASE
-	 * @param value Строка, нотацию которой необходимо изменить.
-	 * @return Строку в нотации Camel Case.
+	 * @param value строка, нотацию которой необходимо изменить.
+	 * @return строку в нотации Camel Case.
 	 */
 	@NotNull
 	public static String toCamelCase(@NotNull final String value)
@@ -130,8 +130,8 @@ public final class NotationConverter
 	 * Возвращает строку в нотации Pascal Case.
 	 *
 	 * @see NotationType#PASCAL_CASE
-	 * @param value Строка, нотацию которой необходимо изменить.
-	 * @return Строку в нотации Pascal Case.
+	 * @param value строка, нотацию которой необходимо изменить.
+	 * @return строку в нотации Pascal Case.
 	 */
 	@NotNull
 	public static String toPascalCase(@NotNull final String value)
@@ -144,11 +144,11 @@ public final class NotationConverter
 	}
 
 	/**
-	 * Возвращает строку в которой абстрактная нотация преобразована в соответствии с разделителем.
+	 * Возвращает строку, в которой абстрактная нотация преобразована в соответствии с разделителем.
 	 *
-	 * @param value Строка в абстрактной нотации.
-	 * @param separatorType Необходимый разделитель для выбранной нотации.
-	 * @return Строку в которой абстрактная нотация преобразована в соответствии с разделителем.
+	 * @param value строка в абстрактной нотации.
+	 * @param separatorType необходимый разделитель для выбранной нотации.
+	 * @return строку, в которой абстрактная нотация преобразована в соответствии с разделителем.
 	 */
 	@NotNull
 	private static String fromAbstract(@NotNull final String value, @NotNull final SeparatorType separatorType)
@@ -180,8 +180,8 @@ public final class NotationConverter
 	 * Возвращает строку в абстрактной нотации.
 	 * Абстрактная нотация - это стиль в котором разделение слов обозначается символом "+", а все буквы прописные.
 	 *
-	 * @param value Строка, которую необходимо конвертировать в абстрактную нотацию.
-	 * @return Строку в абстрактной нотации.
+	 * @param value строка, которую необходимо конвертировать в абстрактную нотацию.
+	 * @return строку в абстрактной нотации.
 	 */
 	@NotNull
 	private static String toAbstract(@NotNull final String value)
