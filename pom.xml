@@ -29,12 +29,12 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>dev.kalenchukov</groupId>
-	<artifactId>notation-converting</artifactId>
+	<artifactId>word-notation</artifactId>
 	<version>1.4.0</version>
 
-	<name>NotationConverting</name>
-	<description>Конвертер нотации составных слов</description>
-	<url>https://github.com/kalenchukov/NotationConverting</url>
+	<name>WordNotation</name>
+	<description>Нотации составных слов</description>
+	<url>https://github.com/kalenchukov/WordNotation</url>
 
 	<licenses>
 		<license>

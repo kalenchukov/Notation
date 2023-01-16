@@ -1,6 +1,6 @@
-# NotationConverting
+# WordNotation
 
-Конвертер нотации составных слов.
+Нотации составных слов.
 
 ## Поддерживаемые нотации
 
@@ -29,41 +29,41 @@
 #### Конвертирование в указанную нотацию
 
 ```java
-NotationConverter.to("HelloWorld", NotationType.UPPER_CASE);
+WordNotation.to("HelloWorld", NotationType.UPPER_CASE);
 // Результат выполнения: HELLO_WORLD
 ```
 
 #### Конвертирование в нотацию Camel Case
 
 ```java
-NotationConverter.toCamelCase("hello-world");
+WordNotation.toCamelCase("hello-world");
 // Результат выполнения: helloWorld
 ```
 
 #### Конвертирование в нотацию Kebab Case
 
 ```java
-NotationConverter.toKebabCase("helloWorld");
+WordNotation.toKebabCase("helloWorld");
 // Результат выполнения: hello-world
 ```
 
 #### Конвертирование в нотацию Upper Case
 
 ```java
-NotationConverter.toUpperCase("HelloWorld");
+WordNotation.toUpperCase("HelloWorld");
 // Результат выполнения: HELLO_WORLD
 ```
 
 #### Конвертирование в нотацию Snake Case
 
 ```java
-NotationConverter.toSnakeCase("hello-world");
+WordNotation.toSnakeCase("hello-world");
 // Результат выполнения: hello_world
 ```
 
 #### Конвертирование в нотацию Pascal Case
 
 ```java
-NotationConverter.toPascalCase("hello_world");
+WordNotation.toPascalCase("hello_world");
 // Результат выполнения: HelloWorld
 ```

@@ -22,12 +22,12 @@
  * SOFTWARE.
  */
 
-package dev.kalenchukov.notation.converting.resources;
+package dev.kalenchukov.word.notation.resources;
 
 /**
  * Перечисление типов нотаций.
  */
-public enum NotationType
+public enum WordNotationType
 {
 	/**
 	 * Нотация Upper Case.

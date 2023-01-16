@@ -22,25 +22,7 @@
  * SOFTWARE.
  */
 
-package dev.kalenchukov.notation.converting.resources;
-
 /**
- * Перечисление возможных типов разделителей нотаций.
+ * Предоставляет перечисления, необходимые для определения типов.
  */
-public enum SeparatorType
-{
-	/**
-	 * Символ дефиса.
-	 */
-	HYPHEN,
-
-	/**
-	 * Символ нижнего подчёркивания.
-	 */
-	UNDERSCORE,
-
-	/**
-	 * Прописная буква.
-	 */
-	UPPERCASE;
-}
+package dev.kalenchukov.word.notation.resources;

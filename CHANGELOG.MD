@@ -6,6 +6,7 @@
 * Добавлен AUTHOR.MD.
 * Добавлен INSTALL.MD.
 * Добавлен CHANGELOG.MD.
+* Переименован проект NotationConverting -> WordNotation.
 
 ### Изменено
 * Обновлён README.MD.
@@ -17,7 +18,7 @@
 
 ### Добавлено
 * Добавлено перечисление NotationType.
-* Добавлен метод NotationConverter.to(String, NotationType).
+* Добавлен метод WordNotation.to(String, NotationType).
 * Добавлен плагин maven-assembly в pom.xml.
 * Добавлен плагин maven-compiler в pom.xml.
 * Добавлен плагин maven-dependency в pom.xml.

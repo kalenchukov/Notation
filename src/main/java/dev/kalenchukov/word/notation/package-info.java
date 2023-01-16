@@ -25,4 +25,4 @@
 /**
  * Предоставляет классы, необходимые для исполнения цели модуля.
  */
-package dev.kalenchukov.notation.converting;
+package dev.kalenchukov.word.notation;
