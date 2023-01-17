@@ -24,6 +24,7 @@
 
 package dev.kalenchukov.word.notation;
 
+import dev.kalenchukov.word.notation.resources.WordNotationRegexp;
 import dev.kalenchukov.word.notation.resources.SeparatorType;
 import dev.kalenchukov.word.notation.resources.WordNotationType;
 import dev.kalenchukov.stringi.Stringi;
@@ -42,6 +43,37 @@ public final class WordNotation
 	 * Конструктор для {@code WordNotation}.
 	 */
 	private WordNotation() {}
+
+	/**
+	 * Проверяет соответствие строки нотации Upper Case.
+	 *
+	 * @param value строка.
+	 * @return {@code true}, если строка соответствует нотации Upper Case, иначе {@code false}.
+	 */
+	public static boolean isUpperCase(@NotNull final String value)
+	{
+		Objects.requireNonNull(value);
+
+		return WordNotation.is(value, WordNotationRegexp.UPPER_CASE);
+	}
+
+	/**
+	 * Проверяет соответствие строки указанной нотации.
+	 *
+	 * @param value строка.
+	 * @param wordNotationRegexp регулярное выражение нотации.
+	 * @return {@code true}, если строка соответствует указанной нотации, иначе {@code false}.
+	 */
+	private static boolean is(@NotNull final String value, @NotNull final WordNotationRegexp wordNotationRegexp)
+	{
+		Objects.requireNonNull(value);
+		Objects.requireNonNull(wordNotationRegexp);
+
+		final Pattern pattern = Pattern.compile(wordNotationRegexp.getPattern(), Pattern.UNICODE_CASE);
+		final Matcher matcher = pattern.matcher(value);
+
+		return matcher.matches();
+	}
 
 	/**
 	 * Возвращает строку в указанной нотации.

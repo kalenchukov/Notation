@@ -7,6 +7,7 @@
 * Добавлен INSTALL.MD.
 * Добавлен CHANGELOG.MD.
 * Переименован проект NotationConverting -> WordNotation.
+* Добавлен метод WordNotation.isUpperCase().
 
 ### Изменено
 * Обновлён README.MD.

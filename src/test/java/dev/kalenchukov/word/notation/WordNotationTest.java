@@ -52,6 +52,45 @@ public class WordNotationTest
 	};
 
 	@Test
+	public void testIsUpperCase()
+	{
+		assertTrue(WordNotation.isUpperCase("HELLO"));
+		assertTrue(WordNotation.isUpperCase("HELLO_WORLD"));
+		assertTrue(WordNotation.isUpperCase("HELLO_WORLD_MATRIX"));
+		assertTrue(WordNotation.isUpperCase("HELLO_WORLD1"));
+		assertTrue(WordNotation.isUpperCase("HEL1LO_000_WORLD1"));
+		assertTrue(WordNotation.isUpperCase("_HELLO_WORLD_1"));
+	}
+
+	@Test
+	public void testIsUpperCaseNotCorrect()
+	{
+		assertFalse(WordNotation.isUpperCase(""));
+		assertFalse(WordNotation.isUpperCase("_"));
+		assertFalse(WordNotation.isUpperCase("__"));
+		assertFalse(WordNotation.isUpperCase("0"));
+		assertFalse(WordNotation.isUpperCase("0123456789"));
+		assertFalse(WordNotation.isUpperCase("0_12345678_9"));
+		assertFalse(WordNotation.isUpperCase("_0_0_"));
+		assertFalse(WordNotation.isUpperCase("0_0"));
+
+		assertFalse(WordNotation.isUpperCase("hello_world"));
+		assertFalse(WordNotation.isUpperCase("HELLo_WORLD"));
+		assertFalse(WordNotation.isUpperCase("HELLO_WORLd"));
+		assertFalse(WordNotation.isUpperCase("h_WORLD1"));
+
+		assertFalse(WordNotation.isUpperCase("HELLO__WORLD"));
+		assertFalse(WordNotation.isUpperCase("__HELLO_WORLD_MATRIX"));
+		assertFalse(WordNotation.isUpperCase("HELLO_WORLD1__"));
+		assertFalse(WordNotation.isUpperCase("HELLO_123__"));
+
+		assertFalse(WordNotation.isUpperCase("HELLO____WORLD"));
+		assertFalse(WordNotation.isUpperCase("____HELLO_WORLD_MATRIX"));
+		assertFalse(WordNotation.isUpperCase("HELLO_WORLD1____"));
+		assertFalse(WordNotation.isUpperCase("HELLO_123____"));
+	}
+
+	@Test
 	public void testToNotationTypeUpperCase()
 	{
 		for (int i = 0; i < UPPER_CASE.length; i++)
