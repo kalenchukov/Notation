@@ -58,6 +58,19 @@ public final class WordNotation
 	}
 
 	/**
+	 * Проверяет соответствие строки нотации Kebab Case.
+	 *
+	 * @param value строка.
+	 * @return {@code true}, если строка соответствует нотации Kebab Case, иначе {@code false}.
+	 */
+	public static boolean isKebabCase(@NotNull final String value)
+	{
+		Objects.requireNonNull(value);
+
+		return WordNotation.is(value, WordNotationRegexp.KEBAB_CASE);
+	}
+
+	/**
 	 * Проверяет соответствие строки указанной нотации.
 	 *
 	 * @param value строка.
@@ -81,6 +94,7 @@ public final class WordNotation
 	 * @param value строка, нотацию которой необходимо изменить.
 	 * @param wordNotationType тип нотации.
 	 * @return строку в указанной нотации.
+	 *
 	 */
 	@NotNull
 	public static String to(@NotNull final String value, @NotNull final WordNotationType wordNotationType)

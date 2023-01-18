@@ -91,6 +91,45 @@ public class WordNotationTest
 	}
 
 	@Test
+	public void testIsKebabCase()
+	{
+		assertTrue(WordNotation.isKebabCase("hello"));
+		assertTrue(WordNotation.isKebabCase("hello-world"));
+		assertTrue(WordNotation.isKebabCase("hello-world-matrix"));
+		assertTrue(WordNotation.isKebabCase("hello-world1"));
+		assertTrue(WordNotation.isKebabCase("hel1lo-000-world1"));
+		assertTrue(WordNotation.isKebabCase("-hello-world-1"));
+	}
+
+	@Test
+	public void testIsKebabCaseNotCorrect()
+	{
+		assertFalse(WordNotation.isKebabCase(""));
+		assertFalse(WordNotation.isKebabCase("-"));
+		assertFalse(WordNotation.isKebabCase("--"));
+		assertFalse(WordNotation.isKebabCase("0"));
+		assertFalse(WordNotation.isKebabCase("0123456789"));
+		assertFalse(WordNotation.isKebabCase("0-12345678-9"));
+		assertFalse(WordNotation.isKebabCase("-0-0-"));
+		assertFalse(WordNotation.isKebabCase("0-0"));
+
+		assertFalse(WordNotation.isKebabCase("HELLO-WORLD"));
+		assertFalse(WordNotation.isKebabCase("hellO-world"));
+		assertFalse(WordNotation.isKebabCase("hello-worlD"));
+		assertFalse(WordNotation.isKebabCase("H-world1"));
+
+		assertFalse(WordNotation.isKebabCase("hello--world"));
+		assertFalse(WordNotation.isKebabCase("--hello-world-matrix"));
+		assertFalse(WordNotation.isKebabCase("hello-world1--"));
+		assertFalse(WordNotation.isKebabCase("hello-123--"));
+
+		assertFalse(WordNotation.isKebabCase("hello----world"));
+		assertFalse(WordNotation.isKebabCase("----hello-world-matrix"));
+		assertFalse(WordNotation.isKebabCase("hello-world1----"));
+		assertFalse(WordNotation.isKebabCase("hello-123----"));
+	}
+
+	@Test
 	public void testToNotationTypeUpperCase()
 	{
 		for (int i = 0; i < UPPER_CASE.length; i++)

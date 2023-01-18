@@ -8,6 +8,7 @@
 * Добавлен CHANGELOG.MD.
 * Переименован проект NotationConverting -> WordNotation.
 * Добавлен метод WordNotation.isUpperCase().
+* Добавлен метод WordNotation.isKebabCase().
 
 ### Изменено
 * Обновлён README.MD.
