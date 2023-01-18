@@ -84,6 +84,19 @@ public final class WordNotation
 	}
 
 	/**
+	 * Проверяет соответствие строки нотации Camel Case.
+	 *
+	 * @param value строка.
+	 * @return {@code true}, если строка соответствует нотации Camel Case, иначе {@code false}.
+	 */
+	public static boolean isCamelCase(@NotNull final String value)
+	{
+		Objects.requireNonNull(value);
+
+		return WordNotation.is(value, WordNotationRegexp.CAMEL_CASE);
+	}
+
+	/**
 	 * Проверяет соответствие строки указанной нотации.
 	 *
 	 * @param value строка.

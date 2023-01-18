@@ -49,6 +49,13 @@ WordNotation.isSnakeCase("hello_world");
 // Результат выполнения: true
 ```
 
+#### Проверка нотации Camel Case
+
+```java
+WordNotation.isCamelCase("helloWorld");
+// Результат выполнения: true
+```
+
 ### Конвертирование нотации
 
 #### Конвертирование в указанную нотацию

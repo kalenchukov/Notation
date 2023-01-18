@@ -10,6 +10,7 @@
 * Добавлен метод WordNotation.isUpperCase().
 * Добавлен метод WordNotation.isKebabCase().
 * Добавлен метод WordNotation.isSnakeCase().
+* Добавлен метод WordNotation.isCamelCase().
 
 ### Изменено
 * Обновлён README.MD.

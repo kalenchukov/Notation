@@ -169,6 +169,40 @@ public class WordNotationTest
 	}
 
 	@Test
+	public void testIsCamelCase()
+	{
+		assertTrue(WordNotation.isCamelCase("hello"));
+		assertTrue(WordNotation.isCamelCase("helloWorld"));
+		assertTrue(WordNotation.isCamelCase("helloWorldMatrix"));
+		assertTrue(WordNotation.isCamelCase("helloWorld1"));
+		assertTrue(WordNotation.isCamelCase("hel1lo000World1"));
+		assertTrue(WordNotation.isCamelCase("helloWorld1"));
+		assertTrue(WordNotation.isCamelCase("hellOWorld"));
+		assertTrue(WordNotation.isCamelCase("helloWorlD"));
+	}
+
+	@Test
+	public void testIsCamelCaseNotCorrect()
+	{
+		assertFalse(WordNotation.isCamelCase(""));
+		assertFalse(WordNotation.isCamelCase("H"));
+		assertFalse(WordNotation.isCamelCase("HH"));
+		assertFalse(WordNotation.isCamelCase("0"));
+		assertFalse(WordNotation.isCamelCase("0123456789"));
+		assertFalse(WordNotation.isCamelCase("0H12345678H9"));
+		assertFalse(WordNotation.isCamelCase("H0H0H"));
+		assertFalse(WordNotation.isCamelCase("0H0"));
+
+		assertFalse(WordNotation.isCamelCase("HELLOWORLD"));
+		assertFalse(WordNotation.isCamelCase("HWorld1"));
+
+		assertFalse(WordNotation.isCamelCase("HelloWorld"));
+		assertFalse(WordNotation.isCamelCase("HHelloWorldMatrix"));
+		assertFalse(WordNotation.isCamelCase("HelloWorld1"));
+		assertFalse(WordNotation.isCamelCase("Hello123"));
+	}
+
+	@Test
 	public void testToNotationTypeUpperCase()
 	{
 		for (int i = 0; i < UPPER_CASE.length; i++)
