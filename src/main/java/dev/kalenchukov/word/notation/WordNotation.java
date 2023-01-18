@@ -97,6 +97,19 @@ public final class WordNotation
 	}
 
 	/**
+	 * Проверяет соответствие строки нотации Pascal Case.
+	 *
+	 * @param value строка.
+	 * @return {@code true}, если строка соответствует нотации Pascal Case, иначе {@code false}.
+	 */
+	public static boolean isPascalCase(@NotNull final String value)
+	{
+		Objects.requireNonNull(value);
+
+		return WordNotation.is(value, WordNotationRegexp.PASCAL_CASE);
+	}
+
+	/**
 	 * Проверяет соответствие строки указанной нотации.
 	 *
 	 * @param value строка.

@@ -11,6 +11,7 @@
 * Добавлен метод WordNotation.isKebabCase().
 * Добавлен метод WordNotation.isSnakeCase().
 * Добавлен метод WordNotation.isCamelCase().
+* Добавлен метод WordNotation.isPascalCase().
 
 ### Изменено
 * Обновлён README.MD.

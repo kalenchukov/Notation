@@ -203,6 +203,40 @@ public class WordNotationTest
 	}
 
 	@Test
+	public void testIsPascalCase()
+	{
+		assertTrue(WordNotation.isPascalCase("Hello"));
+		assertTrue(WordNotation.isPascalCase("HelloWorld"));
+		assertTrue(WordNotation.isPascalCase("HelloWorldMatrix"));
+		assertTrue(WordNotation.isPascalCase("HelloWorld1"));
+		assertTrue(WordNotation.isPascalCase("Hel1lo000World1"));
+		assertTrue(WordNotation.isPascalCase("HelloWorld1"));
+		assertTrue(WordNotation.isPascalCase("HellOWorld"));
+		assertTrue(WordNotation.isPascalCase("HelloWorlD"));
+	}
+
+	@Test
+	public void testIsPascalCaseNotCorrect()
+	{
+		assertFalse(WordNotation.isPascalCase(""));
+		assertFalse(WordNotation.isPascalCase("h"));
+		assertFalse(WordNotation.isPascalCase("hh"));
+		assertFalse(WordNotation.isPascalCase("0"));
+		assertFalse(WordNotation.isPascalCase("0123456789"));
+		assertFalse(WordNotation.isPascalCase("0h12345678h9"));
+		assertFalse(WordNotation.isPascalCase("h0h0h"));
+		assertFalse(WordNotation.isPascalCase("0h0"));
+
+		assertFalse(WordNotation.isPascalCase("hELLOwORLD"));
+		assertFalse(WordNotation.isPascalCase("hWorld1"));
+
+		assertFalse(WordNotation.isPascalCase("helloworld"));
+		assertFalse(WordNotation.isPascalCase("hhelloWorldMatrix"));
+		assertFalse(WordNotation.isPascalCase("helloWorld1"));
+		assertFalse(WordNotation.isPascalCase("hello123"));
+	}
+
+	@Test
 	public void testToNotationTypeUpperCase()
 	{
 		for (int i = 0; i < UPPER_CASE.length; i++)

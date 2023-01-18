@@ -56,6 +56,13 @@ WordNotation.isCamelCase("helloWorld");
 // Результат выполнения: true
 ```
 
+#### Проверка нотации Pascal Case
+
+```java
+WordNotation.isPascalCase("HelloWorld");
+// Результат выполнения: true
+```
+
 ### Конвертирование нотации
 
 #### Конвертирование в указанную нотацию
