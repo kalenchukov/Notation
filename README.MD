@@ -26,6 +26,24 @@
 
 ## Использование
 
+### Проверка нотации
+
+#### Проверка нотации Upper Case
+
+```java
+WordNotation.isUpperCase("HELLO_WORLD");
+// Результат выполнения: true
+```
+
+#### Проверка нотации Kebab Case
+
+```java
+WordNotation.isKebabCase("hello-world");
+// Результат выполнения: true
+```
+
+### Конвертирование нотации
+
 #### Конвертирование в указанную нотацию
 
 ```java
