@@ -42,6 +42,13 @@ WordNotation.isKebabCase("hello-world");
 // Результат выполнения: true
 ```
 
+#### Проверка нотации Snake Case
+
+```java
+WordNotation.isSnakeCase("hello_world");
+// Результат выполнения: true
+```
+
 ### Конвертирование нотации
 
 #### Конвертирование в указанную нотацию

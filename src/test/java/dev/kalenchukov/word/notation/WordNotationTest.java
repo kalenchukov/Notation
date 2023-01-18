@@ -130,6 +130,45 @@ public class WordNotationTest
 	}
 
 	@Test
+	public void testIsSnakeCase()
+	{
+		assertTrue(WordNotation.isSnakeCase("hello"));
+		assertTrue(WordNotation.isSnakeCase("hello_world"));
+		assertTrue(WordNotation.isSnakeCase("hello_world_matrix"));
+		assertTrue(WordNotation.isSnakeCase("hello_world1"));
+		assertTrue(WordNotation.isSnakeCase("hel1lo_000_world1"));
+		assertTrue(WordNotation.isSnakeCase("_hello_world_1"));
+	}
+
+	@Test
+	public void testIsSnakeCaseNotCorrect()
+	{
+		assertFalse(WordNotation.isSnakeCase(""));
+		assertFalse(WordNotation.isSnakeCase("_"));
+		assertFalse(WordNotation.isSnakeCase("__"));
+		assertFalse(WordNotation.isSnakeCase("0"));
+		assertFalse(WordNotation.isSnakeCase("0123456789"));
+		assertFalse(WordNotation.isSnakeCase("0_12345678_9"));
+		assertFalse(WordNotation.isSnakeCase("_0_0_"));
+		assertFalse(WordNotation.isSnakeCase("0_0"));
+
+		assertFalse(WordNotation.isSnakeCase("HELLO_WORLD"));
+		assertFalse(WordNotation.isSnakeCase("hellO_world"));
+		assertFalse(WordNotation.isSnakeCase("hello_worlD"));
+		assertFalse(WordNotation.isSnakeCase("H_world1"));
+
+		assertFalse(WordNotation.isSnakeCase("hello__world"));
+		assertFalse(WordNotation.isSnakeCase("__hello_world_matrix"));
+		assertFalse(WordNotation.isSnakeCase("hello_world1__"));
+		assertFalse(WordNotation.isSnakeCase("hello_123__"));
+
+		assertFalse(WordNotation.isSnakeCase("hello____world"));
+		assertFalse(WordNotation.isSnakeCase("____hello_world_matrix"));
+		assertFalse(WordNotation.isSnakeCase("hello_world1____"));
+		assertFalse(WordNotation.isSnakeCase("hello_123____"));
+	}
+
+	@Test
 	public void testToNotationTypeUpperCase()
 	{
 		for (int i = 0; i < UPPER_CASE.length; i++)

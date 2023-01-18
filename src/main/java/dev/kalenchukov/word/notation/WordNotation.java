@@ -71,6 +71,19 @@ public final class WordNotation
 	}
 
 	/**
+	 * Проверяет соответствие строки нотации Snake Case.
+	 *
+	 * @param value строка.
+	 * @return {@code true}, если строка соответствует нотации Snake Case, иначе {@code false}.
+	 */
+	public static boolean isSnakeCase(@NotNull final String value)
+	{
+		Objects.requireNonNull(value);
+
+		return WordNotation.is(value, WordNotationRegexp.SNAKE_CASE);
+	}
+
+	/**
 	 * Проверяет соответствие строки указанной нотации.
 	 *
 	 * @param value строка.
