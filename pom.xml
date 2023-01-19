@@ -30,7 +30,7 @@
 
 	<groupId>dev.kalenchukov</groupId>
 	<artifactId>notation</artifactId>
-	<version>1.4.0</version>
+	<version>1.5.0</version>
 
 	<name>Notation</name>
 	<description>Нотации составных слов</description>
@@ -62,7 +62,7 @@
 		<dependency>
 			<groupId>org.jetbrains</groupId>
 			<artifactId>annotations</artifactId>
-			<version>23.0.0</version>
+			<version>23.1.0</version>
 			<scope>compile</scope>
 		</dependency>
 		<dependency>
