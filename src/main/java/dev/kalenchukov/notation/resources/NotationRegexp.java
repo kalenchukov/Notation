@@ -22,14 +22,14 @@
  * SOFTWARE.
  */
 
-package dev.kalenchukov.word.notation.resources;
+package dev.kalenchukov.notation.resources;
 
 import org.jetbrains.annotations.NotNull;
 
 /**
  * Перечисление шаблонов регулярных выражений.
  */
-public enum WordNotationRegexp
+public enum NotationRegexp
 {
 	/**
 	 * Нотация Upper Case.
@@ -159,7 +159,7 @@ public enum WordNotationRegexp
 	 *
 	 * @param pattern шаблон регулярного выражения.
 	 */
-	WordNotationRegexp(@NotNull final String group, @NotNull final String pattern)
+	NotationRegexp(@NotNull final String group, @NotNull final String pattern)
 	{
 		this.group = group;
 		this.pattern = pattern;

@@ -1,4 +1,4 @@
-# WordNotation
+# Notation
 
 Нотации составных слов.
 
@@ -31,35 +31,35 @@
 #### Проверка нотации Upper Case
 
 ```java
-WordNotation.isUpperCase("HELLO_WORLD");
+Notation.isUpperCase("HELLO_WORLD");
 // Результат выполнения: true
 ```
 
 #### Проверка нотации Kebab Case
 
 ```java
-WordNotation.isKebabCase("hello-world");
+Notation.isKebabCase("hello-world");
 // Результат выполнения: true
 ```
 
 #### Проверка нотации Snake Case
 
 ```java
-WordNotation.isSnakeCase("hello_world");
+Notation.isSnakeCase("hello_world");
 // Результат выполнения: true
 ```
 
 #### Проверка нотации Camel Case
 
 ```java
-WordNotation.isCamelCase("helloWorld");
+Notation.isCamelCase("helloWorld");
 // Результат выполнения: true
 ```
 
 #### Проверка нотации Pascal Case
 
 ```java
-WordNotation.isPascalCase("HelloWorld");
+Notation.isPascalCase("HelloWorld");
 // Результат выполнения: true
 ```
 
@@ -68,41 +68,41 @@ WordNotation.isPascalCase("HelloWorld");
 #### Конвертирование в указанную нотацию
 
 ```java
-WordNotation.to("HelloWorld", NotationType.UPPER_CASE);
+Notation.to("HelloWorld", NotationType.UPPER_CASE);
 // Результат выполнения: HELLO_WORLD
 ```
 
 #### Конвертирование в нотацию Camel Case
 
 ```java
-WordNotation.toCamelCase("hello-world");
+Notation.toCamelCase("hello-world");
 // Результат выполнения: helloWorld
 ```
 
 #### Конвертирование в нотацию Kebab Case
 
 ```java
-WordNotation.toKebabCase("helloWorld");
+Notation.toKebabCase("helloWorld");
 // Результат выполнения: hello-world
 ```
 
 #### Конвертирование в нотацию Upper Case
 
 ```java
-WordNotation.toUpperCase("HelloWorld");
+Notation.toUpperCase("HelloWorld");
 // Результат выполнения: HELLO_WORLD
 ```
 
 #### Конвертирование в нотацию Snake Case
 
 ```java
-WordNotation.toSnakeCase("hello-world");
+Notation.toSnakeCase("hello-world");
 // Результат выполнения: hello_world
 ```
 
 #### Конвертирование в нотацию Pascal Case
 
 ```java
-WordNotation.toPascalCase("hello_world");
+Notation.toPascalCase("hello_world");
 // Результат выполнения: HelloWorld
 ```

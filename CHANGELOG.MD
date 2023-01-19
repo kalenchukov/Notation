@@ -6,12 +6,11 @@
 * Добавлен AUTHOR.MD.
 * Добавлен INSTALL.MD.
 * Добавлен CHANGELOG.MD.
-* Переименован проект NotationConverting -> WordNotation.
-* Добавлен метод WordNotation.isUpperCase().
-* Добавлен метод WordNotation.isKebabCase().
-* Добавлен метод WordNotation.isSnakeCase().
-* Добавлен метод WordNotation.isCamelCase().
-* Добавлен метод WordNotation.isPascalCase().
+* Добавлен метод Notation.isUpperCase().
+* Добавлен метод Notation.isKebabCase().
+* Добавлен метод Notation.isSnakeCase().
+* Добавлен метод Notation.isCamelCase().
+* Добавлен метод Notation.isPascalCase().
 
 ### Изменено
 * Обновлён README.MD.
@@ -23,7 +22,7 @@
 
 ### Добавлено
 * Добавлено перечисление NotationType.
-* Добавлен метод WordNotation.to(String, NotationType).
+* Добавлен метод Notation.to(String, NotationType).
 * Добавлен плагин maven-assembly в pom.xml.
 * Добавлен плагин maven-compiler в pom.xml.
 * Добавлен плагин maven-dependency в pom.xml.

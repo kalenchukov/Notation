@@ -22,11 +22,11 @@
  * SOFTWARE.
  */
 
-package dev.kalenchukov.word.notation;
+package dev.kalenchukov.notation;
 
-import dev.kalenchukov.word.notation.resources.WordNotationRegexp;
-import dev.kalenchukov.word.notation.resources.SeparatorType;
-import dev.kalenchukov.word.notation.resources.WordNotationType;
+import dev.kalenchukov.notation.resources.SeparatorType;
+import dev.kalenchukov.notation.resources.NotationRegexp;
+import dev.kalenchukov.notation.resources.NotationType;
 import dev.kalenchukov.stringi.Stringi;
 import org.jetbrains.annotations.NotNull;
 
@@ -37,12 +37,12 @@ import java.util.regex.Pattern;
 /**
  * Класс содержит статические методы для нотации составных слов.
  */
-public final class WordNotation
+public final class Notation
 {
 	/**
-	 * Конструктор для {@code WordNotation}.
+	 * Конструктор для {@code Notation}.
 	 */
-	private WordNotation() {}
+	private Notation() {}
 
 	/**
 	 * Проверяет соответствие строки нотации Upper Case.
@@ -54,7 +54,7 @@ public final class WordNotation
 	{
 		Objects.requireNonNull(value);
 
-		return WordNotation.is(value, WordNotationRegexp.UPPER_CASE);
+		return Notation.is(value, NotationRegexp.UPPER_CASE);
 	}
 
 	/**
@@ -67,7 +67,7 @@ public final class WordNotation
 	{
 		Objects.requireNonNull(value);
 
-		return WordNotation.is(value, WordNotationRegexp.KEBAB_CASE);
+		return Notation.is(value, NotationRegexp.KEBAB_CASE);
 	}
 
 	/**
@@ -80,7 +80,7 @@ public final class WordNotation
 	{
 		Objects.requireNonNull(value);
 
-		return WordNotation.is(value, WordNotationRegexp.SNAKE_CASE);
+		return Notation.is(value, NotationRegexp.SNAKE_CASE);
 	}
 
 	/**
@@ -93,7 +93,7 @@ public final class WordNotation
 	{
 		Objects.requireNonNull(value);
 
-		return WordNotation.is(value, WordNotationRegexp.CAMEL_CASE);
+		return Notation.is(value, NotationRegexp.CAMEL_CASE);
 	}
 
 	/**
@@ -106,22 +106,22 @@ public final class WordNotation
 	{
 		Objects.requireNonNull(value);
 
-		return WordNotation.is(value, WordNotationRegexp.PASCAL_CASE);
+		return Notation.is(value, NotationRegexp.PASCAL_CASE);
 	}
 
 	/**
 	 * Проверяет соответствие строки указанной нотации.
 	 *
 	 * @param value строка.
-	 * @param wordNotationRegexp регулярное выражение нотации.
+	 * @param notationRegexp регулярное выражение нотации.
 	 * @return {@code true}, если строка соответствует указанной нотации, иначе {@code false}.
 	 */
-	private static boolean is(@NotNull final String value, @NotNull final WordNotationRegexp wordNotationRegexp)
+	private static boolean is(@NotNull final String value, @NotNull final NotationRegexp notationRegexp)
 	{
 		Objects.requireNonNull(value);
-		Objects.requireNonNull(wordNotationRegexp);
+		Objects.requireNonNull(notationRegexp);
 
-		final Pattern pattern = Pattern.compile(wordNotationRegexp.getPattern(), Pattern.UNICODE_CASE);
+		final Pattern pattern = Pattern.compile(notationRegexp.getPattern(), Pattern.UNICODE_CASE);
 		final Matcher matcher = pattern.matcher(value);
 
 		return matcher.matches();
@@ -131,30 +131,30 @@ public final class WordNotation
 	 * Возвращает строку в указанной нотации.
 	 *
 	 * @param value строка, нотацию которой необходимо изменить.
-	 * @param wordNotationType тип нотации.
+	 * @param notationType тип нотации.
 	 * @return строку в указанной нотации.
 	 *
 	 */
 	@NotNull
-	public static String to(@NotNull final String value, @NotNull final WordNotationType wordNotationType)
+	public static String to(@NotNull final String value, @NotNull final NotationType notationType)
 	{
 		Objects.requireNonNull(value);
-		Objects.requireNonNull(wordNotationType);
+		Objects.requireNonNull(notationType);
 
-		return switch (wordNotationType)
+		return switch (notationType)
 			{
-				case CAMEL_CASE -> WordNotation.toCamelCase(value);
-				case KEBAB_CASE -> WordNotation.toKebabCase(value);
-				case UPPER_CASE -> WordNotation.toUpperCase(value);
-				case SNAKE_CASE -> WordNotation.toSnakeCase(value);
-				case PASCAL_CASE -> WordNotation.toPascalCase(value);
+				case CAMEL_CASE -> Notation.toCamelCase(value);
+				case KEBAB_CASE -> Notation.toKebabCase(value);
+				case UPPER_CASE -> Notation.toUpperCase(value);
+				case SNAKE_CASE -> Notation.toSnakeCase(value);
+				case PASCAL_CASE -> Notation.toPascalCase(value);
 			};
 	}
 
 	/**
 	 * Возвращает строку в нотации Upper Case.
 	 *
-	 * @see WordNotationType#UPPER_CASE
+	 * @see NotationType#UPPER_CASE
 	 * @param value строка, нотацию которой необходимо изменить.
 	 * @return строку в нотации Upper Case.
 	 */
@@ -163,13 +163,13 @@ public final class WordNotation
 	{
 		Objects.requireNonNull(value);
 
-		return WordNotation.fromAbstract(value, SeparatorType.UNDERSCORE).toUpperCase();
+		return Notation.fromAbstract(value, SeparatorType.UNDERSCORE).toUpperCase();
 	}
 
 	/**
 	 * Возвращает строку в нотации Kebab Case.
 	 *
-	 * @see WordNotationType#KEBAB_CASE
+	 * @see NotationType#KEBAB_CASE
 	 * @param value строка, нотацию которой необходимо изменить.
 	 * @return строку в нотации Kebab Case.
 	 */
@@ -178,13 +178,13 @@ public final class WordNotation
 	{
 		Objects.requireNonNull(value);
 
-		return WordNotation.fromAbstract(value, SeparatorType.HYPHEN);
+		return Notation.fromAbstract(value, SeparatorType.HYPHEN);
 	}
 
 	/**
 	 * Возвращает строку в нотации Snake Case.
 	 *
-	 * @see WordNotationType#SNAKE_CASE
+	 * @see NotationType#SNAKE_CASE
 	 * @param value строка, нотацию которой необходимо изменить.
 	 * @return строку в нотации Snake Case.
 	 */
@@ -193,13 +193,13 @@ public final class WordNotation
 	{
 		Objects.requireNonNull(value);
 
-		return WordNotation.fromAbstract(value, SeparatorType.UNDERSCORE);
+		return Notation.fromAbstract(value, SeparatorType.UNDERSCORE);
 	}
 
 	/**
 	 * Возвращает строку в нотации Camel Case.
 	 *
-	 * @see WordNotationType#CAMEL_CASE
+	 * @see NotationType#CAMEL_CASE
 	 * @param value строка, нотацию которой необходимо изменить.
 	 * @return строку в нотации Camel Case.
 	 */
@@ -208,13 +208,13 @@ public final class WordNotation
 	{
 		Objects.requireNonNull(value);
 
-		return WordNotation.fromAbstract(value, SeparatorType.UPPERCASE);
+		return Notation.fromAbstract(value, SeparatorType.UPPERCASE);
 	}
 
 	/**
 	 * Возвращает строку в нотации Pascal Case.
 	 *
-	 * @see WordNotationType#PASCAL_CASE
+	 * @see NotationType#PASCAL_CASE
 	 * @param value строка, нотацию которой необходимо изменить.
 	 * @return строку в нотации Pascal Case.
 	 */
@@ -224,7 +224,7 @@ public final class WordNotation
 		Objects.requireNonNull(value);
 
 		return Stringi.firstLetterToUpperCase(
-			WordNotation.fromAbstract(value, SeparatorType.UPPERCASE)
+			Notation.fromAbstract(value, SeparatorType.UPPERCASE)
 		);
 	}
 
@@ -241,7 +241,7 @@ public final class WordNotation
 		Objects.requireNonNull(value);
 		Objects.requireNonNull(separatorType);
 
-		String abstractValue = WordNotation.toAbstract(value);
+		String abstractValue = Notation.toAbstract(value);
 
 		Matcher matcher = Pattern.compile("\\+(?<target>[a-z0-9])", Pattern.UNICODE_CASE)
 								 .matcher(abstractValue);

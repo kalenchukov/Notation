@@ -3,5 +3,5 @@
 Для установки этого проекта, введите в терминале:
 
 ```bash
-git clone https://github.com/kalenchukov/WordNotation.git
+git clone https://github.com/kalenchukov/Notation.git
 ```

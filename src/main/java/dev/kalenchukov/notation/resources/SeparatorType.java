@@ -22,7 +22,7 @@
  * SOFTWARE.
  */
 
-package dev.kalenchukov.word.notation.resources;
+package dev.kalenchukov.notation.resources;
 
 /**
  * Перечисление возможных типов разделителей.

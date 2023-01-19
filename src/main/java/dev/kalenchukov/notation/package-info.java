@@ -23,6 +23,6 @@
  */
 
 /**
- * Предоставляет перечисления, необходимые для определения типов.
+ * Предоставляет классы, необходимые для исполнения цели модуля.
  */
-package dev.kalenchukov.word.notation.resources;
+package dev.kalenchukov.notation;
