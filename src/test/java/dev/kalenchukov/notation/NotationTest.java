@@ -63,32 +63,16 @@ public class NotationTest
 		assertTrue(Notation.isUpperCase(value));
 	}
 
-	@Test
-	public void testIsUpperCaseNotCorrect()
+	@ParameterizedTest
+	@ValueSource(strings = {
+		"", "_", "__", "0", "0123456789", "0_12345678_9", "_0_0_", "0_0",
+		"hello_world", "HELLo_WORLD", "HELLO_WORLd", "h_WORLD1",
+		"HELLO__WORLD", "__HELLO_WORLD_MATRIX", "HELLO_WORLD1__", "HELLO_123__",
+		"HELLO____WORLD", "____HELLO_WORLD_MATRIX", "HELLO_WORLD1____", "HELLO_123____"
+	})
+	public void testIsUpperCaseNotCorrect(String value)
 	{
-		assertFalse(Notation.isUpperCase(""));
-		assertFalse(Notation.isUpperCase("_"));
-		assertFalse(Notation.isUpperCase("__"));
-		assertFalse(Notation.isUpperCase("0"));
-		assertFalse(Notation.isUpperCase("0123456789"));
-		assertFalse(Notation.isUpperCase("0_12345678_9"));
-		assertFalse(Notation.isUpperCase("_0_0_"));
-		assertFalse(Notation.isUpperCase("0_0"));
-
-		assertFalse(Notation.isUpperCase("hello_world"));
-		assertFalse(Notation.isUpperCase("HELLo_WORLD"));
-		assertFalse(Notation.isUpperCase("HELLO_WORLd"));
-		assertFalse(Notation.isUpperCase("h_WORLD1"));
-
-		assertFalse(Notation.isUpperCase("HELLO__WORLD"));
-		assertFalse(Notation.isUpperCase("__HELLO_WORLD_MATRIX"));
-		assertFalse(Notation.isUpperCase("HELLO_WORLD1__"));
-		assertFalse(Notation.isUpperCase("HELLO_123__"));
-
-		assertFalse(Notation.isUpperCase("HELLO____WORLD"));
-		assertFalse(Notation.isUpperCase("____HELLO_WORLD_MATRIX"));
-		assertFalse(Notation.isUpperCase("HELLO_WORLD1____"));
-		assertFalse(Notation.isUpperCase("HELLO_123____"));
+		assertFalse(Notation.isUpperCase(value));
 	}
 
 	@ParameterizedTest
