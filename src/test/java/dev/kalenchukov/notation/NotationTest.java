@@ -198,17 +198,14 @@ public class NotationTest
 		assertFalse(Notation.isCamelCase("Hello123"));
 	}
 
-	@Test
-	public void testIsPascalCase()
+	@ParameterizedTest
+	@ValueSource(strings = {
+		"Hello", "HelloWorld", "HelloWorldMatrix", "HelloWorld1",
+		"Hel1lo000World1", "HelloWorld1", "HellOWorld", "HelloWorlD"
+	})
+	public void testIsPascalCase(String value)
 	{
-		assertTrue(Notation.isPascalCase("Hello"));
-		assertTrue(Notation.isPascalCase("HelloWorld"));
-		assertTrue(Notation.isPascalCase("HelloWorldMatrix"));
-		assertTrue(Notation.isPascalCase("HelloWorld1"));
-		assertTrue(Notation.isPascalCase("Hel1lo000World1"));
-		assertTrue(Notation.isPascalCase("HelloWorld1"));
-		assertTrue(Notation.isPascalCase("HellOWorld"));
-		assertTrue(Notation.isPascalCase("HelloWorlD"));
+		assertTrue(Notation.isPascalCase(value));
 	}
 
 	@Test
