@@ -85,32 +85,16 @@ public class NotationTest
 		assertTrue(Notation.isKebabCase(value));
 	}
 
-	@Test
-	public void testIsKebabCaseNotCorrect()
+	@ParameterizedTest
+	@ValueSource(strings = {
+		"", "-", "--", "0", "0123456789", "0-12345678-9", "-0-0-", "0-0",
+		"HELLO-WORLD", "hellO-world", "hello-worlD", "H-world1",
+		"hello--world", "--hello-world-matrix", "hello-world1--", "hello-123--",
+		"hello----world", "----hello-world-matrix", "hello-world1----", "hello-123----"
+	})
+	public void testIsKebabCaseNotCorrect(String value)
 	{
-		assertFalse(Notation.isKebabCase(""));
-		assertFalse(Notation.isKebabCase("-"));
-		assertFalse(Notation.isKebabCase("--"));
-		assertFalse(Notation.isKebabCase("0"));
-		assertFalse(Notation.isKebabCase("0123456789"));
-		assertFalse(Notation.isKebabCase("0-12345678-9"));
-		assertFalse(Notation.isKebabCase("-0-0-"));
-		assertFalse(Notation.isKebabCase("0-0"));
-
-		assertFalse(Notation.isKebabCase("HELLO-WORLD"));
-		assertFalse(Notation.isKebabCase("hellO-world"));
-		assertFalse(Notation.isKebabCase("hello-worlD"));
-		assertFalse(Notation.isKebabCase("H-world1"));
-
-		assertFalse(Notation.isKebabCase("hello--world"));
-		assertFalse(Notation.isKebabCase("--hello-world-matrix"));
-		assertFalse(Notation.isKebabCase("hello-world1--"));
-		assertFalse(Notation.isKebabCase("hello-123--"));
-
-		assertFalse(Notation.isKebabCase("hello----world"));
-		assertFalse(Notation.isKebabCase("----hello-world-matrix"));
-		assertFalse(Notation.isKebabCase("hello-world1----"));
-		assertFalse(Notation.isKebabCase("hello-123----"));
+		assertFalse(Notation.isKebabCase(value));
 	}
 
 	@ParameterizedTest
