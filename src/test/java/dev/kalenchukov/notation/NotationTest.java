@@ -129,15 +129,14 @@ public class NotationTest
 		assertFalse(Notation.isKebabCase("hello-123----"));
 	}
 
-	@Test
-	public void testIsSnakeCase()
+	@ParameterizedTest
+	@ValueSource(strings = {
+		"hello", "hello_world", "hello_world_matrix",
+		"hello_world1", "hel1lo_000_world1", "_hello_world_1"
+	})
+	public void testIsSnakeCase(String value)
 	{
-		assertTrue(Notation.isSnakeCase("hello"));
-		assertTrue(Notation.isSnakeCase("hello_world"));
-		assertTrue(Notation.isSnakeCase("hello_world_matrix"));
-		assertTrue(Notation.isSnakeCase("hello_world1"));
-		assertTrue(Notation.isSnakeCase("hel1lo_000_world1"));
-		assertTrue(Notation.isSnakeCase("_hello_world_1"));
+		assertTrue(Notation.isSnakeCase(value));
 	}
 
 	@Test
