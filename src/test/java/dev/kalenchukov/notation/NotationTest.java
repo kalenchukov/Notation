@@ -129,25 +129,15 @@ public class NotationTest
 		assertTrue(Notation.isCamelCase(value));
 	}
 
-	@Test
-	public void testIsCamelCaseNotCorrect()
+	@ParameterizedTest
+	@ValueSource(strings = {
+		"", "H", "HH", "0", "0123456789", "0H12345678H9", "H0H0H", "0H0",
+		"HELLOWORLD", "HWorld1",
+		"HelloWorld", "HHelloWorldMatrix", "HelloWorld1", "Hello123"
+	})
+	public void testIsCamelCaseNotCorrect(String value)
 	{
-		assertFalse(Notation.isCamelCase(""));
-		assertFalse(Notation.isCamelCase("H"));
-		assertFalse(Notation.isCamelCase("HH"));
-		assertFalse(Notation.isCamelCase("0"));
-		assertFalse(Notation.isCamelCase("0123456789"));
-		assertFalse(Notation.isCamelCase("0H12345678H9"));
-		assertFalse(Notation.isCamelCase("H0H0H"));
-		assertFalse(Notation.isCamelCase("0H0"));
-
-		assertFalse(Notation.isCamelCase("HELLOWORLD"));
-		assertFalse(Notation.isCamelCase("HWorld1"));
-
-		assertFalse(Notation.isCamelCase("HelloWorld"));
-		assertFalse(Notation.isCamelCase("HHelloWorldMatrix"));
-		assertFalse(Notation.isCamelCase("HelloWorld1"));
-		assertFalse(Notation.isCamelCase("Hello123"));
+		assertFalse(Notation.isCamelCase(value));
 	}
 
 	@ParameterizedTest
