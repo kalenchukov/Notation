@@ -32,7 +32,7 @@ import org.junit.jupiter.params.provider.ValueSource;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * Класс тестирования методов класса {@code Notation}.
+ * Класс проверки методов класса {@code Notation}.
  */
 public class NotationTest
 {
@@ -72,7 +72,7 @@ public class NotationTest
 	};
 
 	/**
-	 * Тестирование метода {@link Notation#isUpperCase(String)} с корректными значениями.
+	 * Проверка метода {@link Notation#isUpperCase(String)} с корректными значениями.
 	 *
 	 * @param value проверяемое значение.
 	 */
@@ -87,7 +87,7 @@ public class NotationTest
 	}
 
 	/**
-	 * Тестирование метода {@link Notation#isUpperCase(String)} с некорректными значениями.
+	 * Проверка метода {@link Notation#isUpperCase(String)} с некорректными значениями.
 	 *
 	 * @param value проверяемое значение.
 	 */
@@ -104,7 +104,7 @@ public class NotationTest
 	}
 
 	/**
-	 * Тестирование метода {@link Notation#isKebabCase(String)} с корректными значениями.
+	 * Проверка метода {@link Notation#isKebabCase(String)} с корректными значениями.
 	 *
 	 * @param value проверяемое значение.
 	 */
@@ -119,7 +119,7 @@ public class NotationTest
 	}
 
 	/**
-	 * Тестирование метода {@link Notation#isKebabCase(String)} с некорректными значениями.
+	 * Проверка метода {@link Notation#isKebabCase(String)} с некорректными значениями.
 	 *
 	 * @param value проверяемое значение.
 	 */
@@ -136,7 +136,7 @@ public class NotationTest
 	}
 
 	/**
-	 * Тестирование метода {@link Notation#isSnakeCase(String)} с корректными значениями.
+	 * Проверка метода {@link Notation#isSnakeCase(String)} с корректными значениями.
 	 *
 	 * @param value проверяемое значение.
 	 */
@@ -151,7 +151,7 @@ public class NotationTest
 	}
 
 	/**
-	 * Тестирование метода {@link Notation#isSnakeCase(String)} с некорректными значениями.
+	 * Проверка метода {@link Notation#isSnakeCase(String)} с некорректными значениями.
 	 *
 	 * @param value проверяемое значение.
 	 */
@@ -168,7 +168,7 @@ public class NotationTest
 	}
 
 	/**
-	 * Тестирование метода {@link Notation#isCamelCase(String)} с корректными значениями.
+	 * Проверка метода {@link Notation#isCamelCase(String)} с корректными значениями.
 	 *
 	 * @param value проверяемое значение.
 	 */
@@ -183,7 +183,7 @@ public class NotationTest
 	}
 
 	/**
-	 * Тестирование метода {@link Notation#isCamelCase(String)} с некорректными значениями.
+	 * Проверка метода {@link Notation#isCamelCase(String)} с некорректными значениями.
 	 *
 	 * @param value проверяемое значение.
 	 */
@@ -199,7 +199,7 @@ public class NotationTest
 	}
 
 	/**
-	 * Тестирование метода {@link Notation#isPascalCase(String)} с корректными значениями.
+	 * Проверка метода {@link Notation#isPascalCase(String)} с корректными значениями.
 	 *
 	 * @param value проверяемое значение.
 	 */
@@ -214,7 +214,7 @@ public class NotationTest
 	}
 
 	/**
-	 * Тестирование метода {@link Notation#isPascalCase(String)} с некорректными значениями.
+	 * Проверка метода {@link Notation#isPascalCase(String)} с некорректными значениями.
 	 *
 	 * @param value проверяемое значение.
 	 */
@@ -230,7 +230,7 @@ public class NotationTest
 	}
 
 	/**
-	 * Тестирование метода {@link Notation#to(String, NotationType)} для нотации Upper Case.
+	 * Проверка метода {@link Notation#to(String, NotationType)} для нотации Upper Case.
 	 */
 	@Test
 	public void testToNotationTypeUpperCase()
@@ -246,7 +246,7 @@ public class NotationTest
 	}
 
 	/**
-	 * Тестирование метода {@link Notation#to(String, NotationType)} для нотации Kebab Case.
+	 * Проверка метода {@link Notation#to(String, NotationType)} для нотации Kebab Case.
 	 */
 	@Test
 	public void testToNotationTypeKebabCase()
@@ -262,7 +262,7 @@ public class NotationTest
 	}
 
 	/**
-	 * Тестирование метода {@link Notation#to(String, NotationType)} для нотации Snake Case.
+	 * Проверка метода {@link Notation#to(String, NotationType)} для нотации Snake Case.
 	 */
 	@Test
 	public void testToNotationTypeSnakeCase()
@@ -278,7 +278,7 @@ public class NotationTest
 	}
 
 	/**
-	 * Тестирование метода {@link Notation#to(String, NotationType)} для нотации Camel Case.
+	 * Проверка метода {@link Notation#to(String, NotationType)} для нотации Camel Case.
 	 */
 	@Test
 	public void testToNotationTypeCamelCase()
@@ -294,7 +294,7 @@ public class NotationTest
 	}
 
 	/**
-	 * Тестирование метода {@link Notation#to(String, NotationType)} для нотации Pascal Case.
+	 * Проверка метода {@link Notation#to(String, NotationType)} для нотации Pascal Case.
 	 */
 	@Test
 	public void testToNotationTypePascalCase()
@@ -310,7 +310,7 @@ public class NotationTest
 	}
 
 	/**
-	 * Тестирование метода {@link Notation#toUpperCase(String)}.
+	 * Проверка метода {@link Notation#toUpperCase(String)}.
 	 */
 	@Test
 	public void testToUpperCase()
@@ -326,7 +326,7 @@ public class NotationTest
 	}
 
 	/**
-	 * Тестирование метода {@link Notation#toKebabCase(String)}.
+	 * Проверка метода {@link Notation#toKebabCase(String)}.
 	 */
 	@Test
 	public void testToKebabCase()
@@ -342,7 +342,7 @@ public class NotationTest
 	}
 
 	/**
-	 * Тестирование метода {@link Notation#toSnakeCase(String)}.
+	 * Проверка метода {@link Notation#toSnakeCase(String)}.
 	 */
 	@Test
 	public void testToSnakeCase()
@@ -358,7 +358,7 @@ public class NotationTest
 	}
 
 	/**
-	 * Тестирование метода {@link Notation#toCamelCase(String)}.
+	 * Проверка метода {@link Notation#toCamelCase(String)}.
 	 */
 	@Test
 	public void testToCamelCase()
@@ -374,7 +374,7 @@ public class NotationTest
 	}
 
 	/**
-	 * Тестирование метода {@link Notation#toPascalCase(String)}.
+	 * Проверка метода {@link Notation#toPascalCase(String)}.
 	 */
 	@Test
 	public void testToPascalCase()
