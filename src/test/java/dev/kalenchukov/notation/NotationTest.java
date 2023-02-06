@@ -31,28 +31,51 @@ import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Класс тестирования методов класса {@code Notation}.
+ */
 public class NotationTest
 {
-	private static final String[] UPPER_CASE = {
+	/**
+	 * Значения в нотации Upper Case.
+	 */
+	private static final String[] VALUES_UPPER_CASE = {
 		"HELLO", "HELLO_WORLD", "HELLO_WORLD_MATRIX", "HELLO_WORLD1", "__HELLO_WORLD_MATRIX", "_HELLO_"
 	};
 
-	private static final String[] CAMEL_CASE = {
+	/**
+	 * Значения в нотации Camel Case.
+	 */
+	private static final String[] VALUES_CAMEL_CASE = {
 		"hello", "helloWorld", "helloWorldMatrix", "helloWorld1", "__helloWorldMatrix", "_hello_"
 	};
 
-	private static final String[] KEBAB_CASE = {
+	/**
+	 * Значения в нотации Kebab Case.
+	 */
+	private static final String[] VALUES_KEBAB_CASE = {
 		"hello", "hello-world", "hello-world-matrix", "hello-world1", "__hello-world-matrix", "_hello_"
 	};
 
-	private static final String[] SNAKE_CASE = {
+	/**
+	 * Значения в нотации Snake Case.
+	 */
+	private static final String[] VALUES_SNAKE_CASE = {
 		"hello", "hello_world", "hello_world_matrix", "hello_world1", "__hello_world_matrix", "_hello_"
 	};
 
-	private static final String[] PASCAL_CASE = {
+	/**
+	 * Значения в нотации Pascal Case.
+	 */
+	private static final String[] VALUES_PASCAL_CASE = {
 		"Hello", "HelloWorld", "HelloWorldMatrix", "HelloWorld1", "__HelloWorldMatrix", "_Hello_"
 	};
 
+	/**
+	 * Тестирование метода {@link Notation#isUpperCase(String)} с корректными значениями.
+	 *
+	 * @param value проверяемое значение.
+	 */
 	@ParameterizedTest
 	@ValueSource(strings = {
 		"HELLO", "HELLO_WORLD", "HELLO_WORLD_MATRIX", "HELLO_WORLD1",
@@ -63,6 +86,11 @@ public class NotationTest
 		assertTrue(Notation.isUpperCase(value));
 	}
 
+	/**
+	 * Тестирование метода {@link Notation#isUpperCase(String)} с некорректными значениями.
+	 *
+	 * @param value проверяемое значение.
+	 */
 	@ParameterizedTest
 	@ValueSource(strings = {
 		"", "_", "__", "0", "0123456789", "0_12345678_9", "_0_0_", "0_0",
@@ -75,6 +103,11 @@ public class NotationTest
 		assertFalse(Notation.isUpperCase(value));
 	}
 
+	/**
+	 * Тестирование метода {@link Notation#isKebabCase(String)} с корректными значениями.
+	 *
+	 * @param value проверяемое значение.
+	 */
 	@ParameterizedTest
 	@ValueSource(strings = {
 		"hello", "hello-world", "hello-world-matrix",
@@ -85,6 +118,11 @@ public class NotationTest
 		assertTrue(Notation.isKebabCase(value));
 	}
 
+	/**
+	 * Тестирование метода {@link Notation#isKebabCase(String)} с некорректными значениями.
+	 *
+	 * @param value проверяемое значение.
+	 */
 	@ParameterizedTest
 	@ValueSource(strings = {
 		"", "-", "--", "0", "0123456789", "0-12345678-9", "-0-0-", "0-0",
@@ -97,6 +135,11 @@ public class NotationTest
 		assertFalse(Notation.isKebabCase(value));
 	}
 
+	/**
+	 * Тестирование метода {@link Notation#isSnakeCase(String)} с корректными значениями.
+	 *
+	 * @param value проверяемое значение.
+	 */
 	@ParameterizedTest
 	@ValueSource(strings = {
 		"hello", "hello_world", "hello_world_matrix",
@@ -107,6 +150,11 @@ public class NotationTest
 		assertTrue(Notation.isSnakeCase(value));
 	}
 
+	/**
+	 * Тестирование метода {@link Notation#isSnakeCase(String)} с некорректными значениями.
+	 *
+	 * @param value проверяемое значение.
+	 */
 	@ParameterizedTest
 	@ValueSource(strings = {
 		"", "_", "__", "0", "0123456789", "0_12345678_9", "_0_0_", "0_0",
@@ -119,6 +167,11 @@ public class NotationTest
 		assertFalse(Notation.isSnakeCase(value));
 	}
 
+	/**
+	 * Тестирование метода {@link Notation#isCamelCase(String)} с корректными значениями.
+	 *
+	 * @param value проверяемое значение.
+	 */
 	@ParameterizedTest
 	@ValueSource(strings = {
 		"hello", "helloWorld", "helloWorldMatrix", "helloWorld1",
@@ -129,6 +182,11 @@ public class NotationTest
 		assertTrue(Notation.isCamelCase(value));
 	}
 
+	/**
+	 * Тестирование метода {@link Notation#isCamelCase(String)} с некорректными значениями.
+	 *
+	 * @param value проверяемое значение.
+	 */
 	@ParameterizedTest
 	@ValueSource(strings = {
 		"", "H", "HH", "0", "0123456789", "0H12345678H9", "H0H0H", "0H0",
@@ -140,6 +198,11 @@ public class NotationTest
 		assertFalse(Notation.isCamelCase(value));
 	}
 
+	/**
+	 * Тестирование метода {@link Notation#isPascalCase(String)} с корректными значениями.
+	 *
+	 * @param value проверяемое значение.
+	 */
 	@ParameterizedTest
 	@ValueSource(strings = {
 		"Hello", "HelloWorld", "HelloWorldMatrix", "HelloWorld1",
@@ -150,6 +213,11 @@ public class NotationTest
 		assertTrue(Notation.isPascalCase(value));
 	}
 
+	/**
+	 * Тестирование метода {@link Notation#isPascalCase(String)} с некорректными значениями.
+	 *
+	 * @param value проверяемое значение.
+	 */
 	@ParameterizedTest
 	@ValueSource(strings = {
 		"", "h", "hh", "0", "0123456789", "0h12345678h9", "h0h0h", "h0h0h", "0h0",
@@ -161,133 +229,163 @@ public class NotationTest
 		assertFalse(Notation.isPascalCase(value));
 	}
 
+	/**
+	 * Тестирование метода {@link Notation#to(String, NotationType)} для нотации Upper Case.
+	 */
 	@Test
 	public void testToNotationTypeUpperCase()
 	{
-		for (int i = 0; i < UPPER_CASE.length; i++)
+		for (int i = 0; i < VALUES_UPPER_CASE.length; i++)
 		{
-			assertEquals(UPPER_CASE[i], Notation.to(UPPER_CASE[i], NotationType.UPPER_CASE));
-			assertEquals(UPPER_CASE[i], Notation.to(CAMEL_CASE[i], NotationType.UPPER_CASE));
-			assertEquals(UPPER_CASE[i], Notation.to(KEBAB_CASE[i], NotationType.UPPER_CASE));
-			assertEquals(UPPER_CASE[i], Notation.to(SNAKE_CASE[i], NotationType.UPPER_CASE));
-			assertEquals(UPPER_CASE[i], Notation.to(PASCAL_CASE[i], NotationType.UPPER_CASE));
+			assertEquals(VALUES_UPPER_CASE[i], Notation.to(VALUES_UPPER_CASE[i], NotationType.UPPER_CASE));
+			assertEquals(VALUES_UPPER_CASE[i], Notation.to(VALUES_CAMEL_CASE[i], NotationType.UPPER_CASE));
+			assertEquals(VALUES_UPPER_CASE[i], Notation.to(VALUES_KEBAB_CASE[i], NotationType.UPPER_CASE));
+			assertEquals(VALUES_UPPER_CASE[i], Notation.to(VALUES_SNAKE_CASE[i], NotationType.UPPER_CASE));
+			assertEquals(VALUES_UPPER_CASE[i], Notation.to(VALUES_PASCAL_CASE[i], NotationType.UPPER_CASE));
 		}
 	}
 
+	/**
+	 * Тестирование метода {@link Notation#to(String, NotationType)} для нотации Kebab Case.
+	 */
 	@Test
 	public void testToNotationTypeKebabCase()
 	{
-		for (int i = 0; i < KEBAB_CASE.length; i++)
+		for (int i = 0; i < VALUES_KEBAB_CASE.length; i++)
 		{
-			assertEquals(KEBAB_CASE[i], Notation.to(UPPER_CASE[i], NotationType.KEBAB_CASE));
-			assertEquals(KEBAB_CASE[i], Notation.to(CAMEL_CASE[i], NotationType.KEBAB_CASE));
-			assertEquals(KEBAB_CASE[i], Notation.to(KEBAB_CASE[i], NotationType.KEBAB_CASE));
-			assertEquals(KEBAB_CASE[i], Notation.to(SNAKE_CASE[i], NotationType.KEBAB_CASE));
-			assertEquals(KEBAB_CASE[i], Notation.to(PASCAL_CASE[i], NotationType.KEBAB_CASE));
+			assertEquals(VALUES_KEBAB_CASE[i], Notation.to(VALUES_UPPER_CASE[i], NotationType.KEBAB_CASE));
+			assertEquals(VALUES_KEBAB_CASE[i], Notation.to(VALUES_CAMEL_CASE[i], NotationType.KEBAB_CASE));
+			assertEquals(VALUES_KEBAB_CASE[i], Notation.to(VALUES_KEBAB_CASE[i], NotationType.KEBAB_CASE));
+			assertEquals(VALUES_KEBAB_CASE[i], Notation.to(VALUES_SNAKE_CASE[i], NotationType.KEBAB_CASE));
+			assertEquals(VALUES_KEBAB_CASE[i], Notation.to(VALUES_PASCAL_CASE[i], NotationType.KEBAB_CASE));
 		}
 	}
 
+	/**
+	 * Тестирование метода {@link Notation#to(String, NotationType)} для нотации Snake Case.
+	 */
 	@Test
 	public void testToNotationTypeSnakeCase()
 	{
-		for (int i = 0; i < SNAKE_CASE.length; i++)
+		for (int i = 0; i < VALUES_SNAKE_CASE.length; i++)
 		{
-			assertEquals(SNAKE_CASE[i], Notation.to(UPPER_CASE[i], NotationType.SNAKE_CASE));
-			assertEquals(SNAKE_CASE[i], Notation.to(CAMEL_CASE[i], NotationType.SNAKE_CASE));
-			assertEquals(SNAKE_CASE[i], Notation.to(KEBAB_CASE[i], NotationType.SNAKE_CASE));
-			assertEquals(SNAKE_CASE[i], Notation.to(SNAKE_CASE[i], NotationType.SNAKE_CASE));
-			assertEquals(SNAKE_CASE[i], Notation.to(PASCAL_CASE[i], NotationType.SNAKE_CASE));
+			assertEquals(VALUES_SNAKE_CASE[i], Notation.to(VALUES_UPPER_CASE[i], NotationType.SNAKE_CASE));
+			assertEquals(VALUES_SNAKE_CASE[i], Notation.to(VALUES_CAMEL_CASE[i], NotationType.SNAKE_CASE));
+			assertEquals(VALUES_SNAKE_CASE[i], Notation.to(VALUES_KEBAB_CASE[i], NotationType.SNAKE_CASE));
+			assertEquals(VALUES_SNAKE_CASE[i], Notation.to(VALUES_SNAKE_CASE[i], NotationType.SNAKE_CASE));
+			assertEquals(VALUES_SNAKE_CASE[i], Notation.to(VALUES_PASCAL_CASE[i], NotationType.SNAKE_CASE));
 		}
 	}
 
+	/**
+	 * Тестирование метода {@link Notation#to(String, NotationType)} для нотации Camel Case.
+	 */
 	@Test
 	public void testToNotationTypeCamelCase()
 	{
-		for (int i = 0; i < UPPER_CASE.length; i++)
+		for (int i = 0; i < VALUES_UPPER_CASE.length; i++)
 		{
-			assertEquals(CAMEL_CASE[i], Notation.to(UPPER_CASE[i], NotationType.CAMEL_CASE));
-			assertEquals(CAMEL_CASE[i], Notation.to(CAMEL_CASE[i], NotationType.CAMEL_CASE));
-			assertEquals(CAMEL_CASE[i], Notation.to(KEBAB_CASE[i], NotationType.CAMEL_CASE));
-			assertEquals(CAMEL_CASE[i], Notation.to(SNAKE_CASE[i], NotationType.CAMEL_CASE));
-			assertEquals(CAMEL_CASE[i], Notation.to(PASCAL_CASE[i], NotationType.CAMEL_CASE));
+			assertEquals(VALUES_CAMEL_CASE[i], Notation.to(VALUES_UPPER_CASE[i], NotationType.CAMEL_CASE));
+			assertEquals(VALUES_CAMEL_CASE[i], Notation.to(VALUES_CAMEL_CASE[i], NotationType.CAMEL_CASE));
+			assertEquals(VALUES_CAMEL_CASE[i], Notation.to(VALUES_KEBAB_CASE[i], NotationType.CAMEL_CASE));
+			assertEquals(VALUES_CAMEL_CASE[i], Notation.to(VALUES_SNAKE_CASE[i], NotationType.CAMEL_CASE));
+			assertEquals(VALUES_CAMEL_CASE[i], Notation.to(VALUES_PASCAL_CASE[i], NotationType.CAMEL_CASE));
 		}
 	}
 
+	/**
+	 * Тестирование метода {@link Notation#to(String, NotationType)} для нотации Pascal Case.
+	 */
 	@Test
 	public void testToNotationTypePascalCase()
 	{
-		for (int i = 0; i < UPPER_CASE.length; i++)
+		for (int i = 0; i < VALUES_UPPER_CASE.length; i++)
 		{
-			assertEquals(PASCAL_CASE[i], Notation.to(UPPER_CASE[i], NotationType.PASCAL_CASE));
-			assertEquals(PASCAL_CASE[i], Notation.to(CAMEL_CASE[i], NotationType.PASCAL_CASE));
-			assertEquals(PASCAL_CASE[i], Notation.to(KEBAB_CASE[i], NotationType.PASCAL_CASE));
-			assertEquals(PASCAL_CASE[i], Notation.to(SNAKE_CASE[i], NotationType.PASCAL_CASE));
-			assertEquals(PASCAL_CASE[i], Notation.to(PASCAL_CASE[i], NotationType.PASCAL_CASE));
+			assertEquals(VALUES_PASCAL_CASE[i], Notation.to(VALUES_UPPER_CASE[i], NotationType.PASCAL_CASE));
+			assertEquals(VALUES_PASCAL_CASE[i], Notation.to(VALUES_CAMEL_CASE[i], NotationType.PASCAL_CASE));
+			assertEquals(VALUES_PASCAL_CASE[i], Notation.to(VALUES_KEBAB_CASE[i], NotationType.PASCAL_CASE));
+			assertEquals(VALUES_PASCAL_CASE[i], Notation.to(VALUES_SNAKE_CASE[i], NotationType.PASCAL_CASE));
+			assertEquals(VALUES_PASCAL_CASE[i], Notation.to(VALUES_PASCAL_CASE[i], NotationType.PASCAL_CASE));
 		}
 	}
 
+	/**
+	 * Тестирование метода {@link Notation#toUpperCase(String)}.
+	 */
 	@Test
 	public void testToUpperCase()
 	{
-		for (int i = 0; i < UPPER_CASE.length; i++)
+		for (int i = 0; i < VALUES_UPPER_CASE.length; i++)
 		{
-			assertEquals(UPPER_CASE[i], Notation.toUpperCase(UPPER_CASE[i]));
-			assertEquals(UPPER_CASE[i], Notation.toUpperCase(CAMEL_CASE[i]));
-			assertEquals(UPPER_CASE[i], Notation.toUpperCase(KEBAB_CASE[i]));
-			assertEquals(UPPER_CASE[i], Notation.toUpperCase(SNAKE_CASE[i]));
-			assertEquals(UPPER_CASE[i], Notation.toUpperCase(PASCAL_CASE[i]));
+			assertEquals(VALUES_UPPER_CASE[i], Notation.toUpperCase(VALUES_UPPER_CASE[i]));
+			assertEquals(VALUES_UPPER_CASE[i], Notation.toUpperCase(VALUES_CAMEL_CASE[i]));
+			assertEquals(VALUES_UPPER_CASE[i], Notation.toUpperCase(VALUES_KEBAB_CASE[i]));
+			assertEquals(VALUES_UPPER_CASE[i], Notation.toUpperCase(VALUES_SNAKE_CASE[i]));
+			assertEquals(VALUES_UPPER_CASE[i], Notation.toUpperCase(VALUES_PASCAL_CASE[i]));
 		}
 	}
 
+	/**
+	 * Тестирование метода {@link Notation#toKebabCase(String)}.
+	 */
 	@Test
 	public void testToKebabCase()
 	{
-		for (int i = 0; i < UPPER_CASE.length; i++)
+		for (int i = 0; i < VALUES_UPPER_CASE.length; i++)
 		{
-			assertEquals(KEBAB_CASE[i], Notation.toKebabCase(UPPER_CASE[i]));
-			assertEquals(KEBAB_CASE[i], Notation.toKebabCase(CAMEL_CASE[i]));
-			assertEquals(KEBAB_CASE[i], Notation.toKebabCase(KEBAB_CASE[i]));
-			assertEquals(KEBAB_CASE[i], Notation.toKebabCase(SNAKE_CASE[i]));
-			assertEquals(KEBAB_CASE[i], Notation.toKebabCase(PASCAL_CASE[i]));
+			assertEquals(VALUES_KEBAB_CASE[i], Notation.toKebabCase(VALUES_UPPER_CASE[i]));
+			assertEquals(VALUES_KEBAB_CASE[i], Notation.toKebabCase(VALUES_CAMEL_CASE[i]));
+			assertEquals(VALUES_KEBAB_CASE[i], Notation.toKebabCase(VALUES_KEBAB_CASE[i]));
+			assertEquals(VALUES_KEBAB_CASE[i], Notation.toKebabCase(VALUES_SNAKE_CASE[i]));
+			assertEquals(VALUES_KEBAB_CASE[i], Notation.toKebabCase(VALUES_PASCAL_CASE[i]));
 		}
 	}
 
+	/**
+	 * Тестирование метода {@link Notation#toSnakeCase(String)}.
+	 */
 	@Test
 	public void testToSnakeCase()
 	{
-		for (int i = 0; i < UPPER_CASE.length; i++)
+		for (int i = 0; i < VALUES_UPPER_CASE.length; i++)
 		{
-			assertEquals(SNAKE_CASE[i], Notation.toSnakeCase(UPPER_CASE[i]));
-			assertEquals(SNAKE_CASE[i], Notation.toSnakeCase(CAMEL_CASE[i]));
-			assertEquals(SNAKE_CASE[i], Notation.toSnakeCase(KEBAB_CASE[i]));
-			assertEquals(SNAKE_CASE[i], Notation.toSnakeCase(SNAKE_CASE[i]));
-			assertEquals(SNAKE_CASE[i], Notation.toSnakeCase(PASCAL_CASE[i]));
+			assertEquals(VALUES_SNAKE_CASE[i], Notation.toSnakeCase(VALUES_UPPER_CASE[i]));
+			assertEquals(VALUES_SNAKE_CASE[i], Notation.toSnakeCase(VALUES_CAMEL_CASE[i]));
+			assertEquals(VALUES_SNAKE_CASE[i], Notation.toSnakeCase(VALUES_KEBAB_CASE[i]));
+			assertEquals(VALUES_SNAKE_CASE[i], Notation.toSnakeCase(VALUES_SNAKE_CASE[i]));
+			assertEquals(VALUES_SNAKE_CASE[i], Notation.toSnakeCase(VALUES_PASCAL_CASE[i]));
 		}
 	}
 
+	/**
+	 * Тестирование метода {@link Notation#toCamelCase(String)}.
+	 */
 	@Test
 	public void testToCamelCase()
 	{
-		for (int i = 0; i < UPPER_CASE.length; i++)
+		for (int i = 0; i < VALUES_UPPER_CASE.length; i++)
 		{
-			assertEquals(CAMEL_CASE[i], Notation.toCamelCase(UPPER_CASE[i]));
-			assertEquals(CAMEL_CASE[i], Notation.toCamelCase(CAMEL_CASE[i]));
-			assertEquals(CAMEL_CASE[i], Notation.toCamelCase(KEBAB_CASE[i]));
-			assertEquals(CAMEL_CASE[i], Notation.toCamelCase(SNAKE_CASE[i]));
-			assertEquals(CAMEL_CASE[i], Notation.toCamelCase(PASCAL_CASE[i]));
+			assertEquals(VALUES_CAMEL_CASE[i], Notation.toCamelCase(VALUES_UPPER_CASE[i]));
+			assertEquals(VALUES_CAMEL_CASE[i], Notation.toCamelCase(VALUES_CAMEL_CASE[i]));
+			assertEquals(VALUES_CAMEL_CASE[i], Notation.toCamelCase(VALUES_KEBAB_CASE[i]));
+			assertEquals(VALUES_CAMEL_CASE[i], Notation.toCamelCase(VALUES_SNAKE_CASE[i]));
+			assertEquals(VALUES_CAMEL_CASE[i], Notation.toCamelCase(VALUES_PASCAL_CASE[i]));
 		}
 	}
 
+	/**
+	 * Тестирование метода {@link Notation#toPascalCase(String)}.
+	 */
 	@Test
 	public void testToPascalCase()
 	{
-		for (int i = 0; i < UPPER_CASE.length; i++)
+		for (int i = 0; i < VALUES_UPPER_CASE.length; i++)
 		{
-			assertEquals(PASCAL_CASE[i], Notation.toPascalCase(UPPER_CASE[i]));
-			assertEquals(PASCAL_CASE[i], Notation.toPascalCase(CAMEL_CASE[i]));
-			assertEquals(PASCAL_CASE[i], Notation.toPascalCase(KEBAB_CASE[i]));
-			assertEquals(PASCAL_CASE[i], Notation.toPascalCase(SNAKE_CASE[i]));
-			assertEquals(PASCAL_CASE[i], Notation.toPascalCase(PASCAL_CASE[i]));
+			assertEquals(VALUES_PASCAL_CASE[i], Notation.toPascalCase(VALUES_UPPER_CASE[i]));
+			assertEquals(VALUES_PASCAL_CASE[i], Notation.toPascalCase(VALUES_CAMEL_CASE[i]));
+			assertEquals(VALUES_PASCAL_CASE[i], Notation.toPascalCase(VALUES_KEBAB_CASE[i]));
+			assertEquals(VALUES_PASCAL_CASE[i], Notation.toPascalCase(VALUES_SNAKE_CASE[i]));
+			assertEquals(VALUES_PASCAL_CASE[i], Notation.toPascalCase(VALUES_PASCAL_CASE[i]));
 		}
 	}
 }
