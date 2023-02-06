@@ -32,7 +32,7 @@ import org.junit.jupiter.params.provider.ValueSource;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * Класс проверки методов класса {@code Notation}.
+ * Класс проверки методов класса {@link Notation}.
  */
 public class NotationTest
 {
