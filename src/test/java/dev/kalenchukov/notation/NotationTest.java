@@ -91,15 +91,14 @@ public class NotationTest
 		assertFalse(Notation.isUpperCase("HELLO_123____"));
 	}
 
-	@Test
-	public void testIsKebabCase()
+	@ParameterizedTest
+	@ValueSource(strings = {
+		"hello", "hello-world", "hello-world-matrix",
+		"hello-world1", "hel1lo-000-world1", "-hello-world-1"
+	})
+	public void testIsKebabCase(String value)
 	{
-		assertTrue(Notation.isKebabCase("hello"));
-		assertTrue(Notation.isKebabCase("hello-world"));
-		assertTrue(Notation.isKebabCase("hello-world-matrix"));
-		assertTrue(Notation.isKebabCase("hello-world1"));
-		assertTrue(Notation.isKebabCase("hel1lo-000-world1"));
-		assertTrue(Notation.isKebabCase("-hello-world-1"));
+		assertTrue(Notation.isKebabCase(value));
 	}
 
 	@Test
