@@ -150,25 +150,15 @@ public class NotationTest
 		assertTrue(Notation.isPascalCase(value));
 	}
 
-	@Test
-	public void testIsPascalCaseNotCorrect()
+	@ParameterizedTest
+	@ValueSource(strings = {
+		"", "h", "hh", "0", "0123456789", "0h12345678h9", "h0h0h", "h0h0h", "0h0",
+		"hELLOwORLD", "hWorld1",
+		"helloworld", "hhelloWorldMatrix", "helloWorld1", "hello123"
+	})
+	public void testIsPascalCaseNotCorrect(String value)
 	{
-		assertFalse(Notation.isPascalCase(""));
-		assertFalse(Notation.isPascalCase("h"));
-		assertFalse(Notation.isPascalCase("hh"));
-		assertFalse(Notation.isPascalCase("0"));
-		assertFalse(Notation.isPascalCase("0123456789"));
-		assertFalse(Notation.isPascalCase("0h12345678h9"));
-		assertFalse(Notation.isPascalCase("h0h0h"));
-		assertFalse(Notation.isPascalCase("0h0"));
-
-		assertFalse(Notation.isPascalCase("hELLOwORLD"));
-		assertFalse(Notation.isPascalCase("hWorld1"));
-
-		assertFalse(Notation.isPascalCase("helloworld"));
-		assertFalse(Notation.isPascalCase("hhelloWorldMatrix"));
-		assertFalse(Notation.isPascalCase("helloWorld1"));
-		assertFalse(Notation.isPascalCase("hello123"));
+		assertFalse(Notation.isPascalCase(value));
 	}
 
 	@Test
