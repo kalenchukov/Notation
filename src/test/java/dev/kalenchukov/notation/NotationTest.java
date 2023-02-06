@@ -107,32 +107,16 @@ public class NotationTest
 		assertTrue(Notation.isSnakeCase(value));
 	}
 
-	@Test
-	public void testIsSnakeCaseNotCorrect()
+	@ParameterizedTest
+	@ValueSource(strings = {
+		"", "_", "__", "0", "0123456789", "0_12345678_9", "_0_0_", "0_0",
+		"HELLO_WORLD", "hellO_world", "hello_worlD", "H_world1",
+		"hello__world", "__hello_world_matrix", "hello_world1__", "hello_123__",
+		"hello____world", "____hello_world_matrix", "hello_world1____", "hello_123____"
+	})
+	public void testIsSnakeCaseNotCorrect(String value)
 	{
-		assertFalse(Notation.isSnakeCase(""));
-		assertFalse(Notation.isSnakeCase("_"));
-		assertFalse(Notation.isSnakeCase("__"));
-		assertFalse(Notation.isSnakeCase("0"));
-		assertFalse(Notation.isSnakeCase("0123456789"));
-		assertFalse(Notation.isSnakeCase("0_12345678_9"));
-		assertFalse(Notation.isSnakeCase("_0_0_"));
-		assertFalse(Notation.isSnakeCase("0_0"));
-
-		assertFalse(Notation.isSnakeCase("HELLO_WORLD"));
-		assertFalse(Notation.isSnakeCase("hellO_world"));
-		assertFalse(Notation.isSnakeCase("hello_worlD"));
-		assertFalse(Notation.isSnakeCase("H_world1"));
-
-		assertFalse(Notation.isSnakeCase("hello__world"));
-		assertFalse(Notation.isSnakeCase("__hello_world_matrix"));
-		assertFalse(Notation.isSnakeCase("hello_world1__"));
-		assertFalse(Notation.isSnakeCase("hello_123__"));
-
-		assertFalse(Notation.isSnakeCase("hello____world"));
-		assertFalse(Notation.isSnakeCase("____hello_world_matrix"));
-		assertFalse(Notation.isSnakeCase("hello_world1____"));
-		assertFalse(Notation.isSnakeCase("hello_123____"));
+		assertFalse(Notation.isSnakeCase(value));
 	}
 
 	@ParameterizedTest
