@@ -26,6 +26,8 @@ package dev.kalenchukov.notation;
 
 import dev.kalenchukov.notation.resources.NotationType;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -51,15 +53,14 @@ public class NotationTest
 		"Hello", "HelloWorld", "HelloWorldMatrix", "HelloWorld1", "__HelloWorldMatrix", "_Hello_"
 	};
 
-	@Test
-	public void testIsUpperCase()
+	@ParameterizedTest
+	@ValueSource(strings = {
+		"HELLO", "HELLO_WORLD", "HELLO_WORLD_MATRIX", "HELLO_WORLD1",
+		"HEL1LO_000_WORLD1", "_HELLO_WORLD_1"
+	})
+	public void testIsUpperCase(String value)
 	{
-		assertTrue(Notation.isUpperCase("HELLO"));
-		assertTrue(Notation.isUpperCase("HELLO_WORLD"));
-		assertTrue(Notation.isUpperCase("HELLO_WORLD_MATRIX"));
-		assertTrue(Notation.isUpperCase("HELLO_WORLD1"));
-		assertTrue(Notation.isUpperCase("HEL1LO_000_WORLD1"));
-		assertTrue(Notation.isUpperCase("_HELLO_WORLD_1"));
+		assertTrue(Notation.isUpperCase(value));
 	}
 
 	@Test
