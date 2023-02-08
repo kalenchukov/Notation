@@ -72,7 +72,7 @@ public class NotationTest
 	};
 
 	/**
-	 * Проверка метода {@link Notation#isUpperCase(String)} с корректными значениями.
+	 * Проверка метода {@link Notation#isUpperCase(String)}.
 	 *
 	 * @param value проверяемое значение.
 	 */
@@ -104,7 +104,7 @@ public class NotationTest
 	}
 
 	/**
-	 * Проверка метода {@link Notation#isKebabCase(String)} с корректными значениями.
+	 * Проверка метода {@link Notation#isKebabCase(String)}.
 	 *
 	 * @param value проверяемое значение.
 	 */
@@ -136,7 +136,7 @@ public class NotationTest
 	}
 
 	/**
-	 * Проверка метода {@link Notation#isSnakeCase(String)} с корректными значениями.
+	 * Проверка метода {@link Notation#isSnakeCase(String)}.
 	 *
 	 * @param value проверяемое значение.
 	 */
@@ -168,7 +168,7 @@ public class NotationTest
 	}
 
 	/**
-	 * Проверка метода {@link Notation#isCamelCase(String)} с корректными значениями.
+	 * Проверка метода {@link Notation#isCamelCase(String)}.
 	 *
 	 * @param value проверяемое значение.
 	 */
@@ -199,7 +199,7 @@ public class NotationTest
 	}
 
 	/**
-	 * Проверка метода {@link Notation#isPascalCase(String)} с корректными значениями.
+	 * Проверка метода {@link Notation#isPascalCase(String)}.
 	 *
 	 * @param value проверяемое значение.
 	 */
