@@ -4,11 +4,11 @@
 * Добавлен AUTHOR.MD.
 * Добавлен INSTALL.MD.
 * Добавлен CHANGELOG.MD.
-* Добавлен метод Notation.isUpperCase().
-* Добавлен метод Notation.isKebabCase().
-* Добавлен метод Notation.isSnakeCase().
-* Добавлен метод Notation.isCamelCase().
-* Добавлен метод Notation.isPascalCase().
+* Добавлен метод Notation.isUpperCase(String).
+* Добавлен метод Notation.isKebabCase(String).
+* Добавлен метод Notation.isSnakeCase(String).
+* Добавлен метод Notation.isCamelCase(String).
+* Добавлен метод Notation.isPascalCase(String).
 
 ### Изменено
 * Обновлён README.MD.
