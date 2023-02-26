@@ -154,9 +154,9 @@ public final class Notation
 	/**
 	 * Возвращает строку в нотации Upper Case.
 	 *
-	 * @see NotationType#UPPER_CASE
 	 * @param value строка, нотацию которой необходимо изменить.
 	 * @return строку в нотации Upper Case.
+	 * @see NotationType#UPPER_CASE
 	 */
 	@NotNull
 	public static String toUpperCase(@NotNull final String value)
@@ -169,9 +169,9 @@ public final class Notation
 	/**
 	 * Возвращает строку в нотации Kebab Case.
 	 *
-	 * @see NotationType#KEBAB_CASE
 	 * @param value строка, нотацию которой необходимо изменить.
 	 * @return строку в нотации Kebab Case.
+	 * @see NotationType#KEBAB_CASE
 	 */
 	@NotNull
 	public static String toKebabCase(@NotNull final String value)
@@ -184,9 +184,9 @@ public final class Notation
 	/**
 	 * Возвращает строку в нотации Snake Case.
 	 *
-	 * @see NotationType#SNAKE_CASE
 	 * @param value строка, нотацию которой необходимо изменить.
 	 * @return строку в нотации Snake Case.
+	 * @see NotationType#SNAKE_CASE
 	 */
 	@NotNull
 	public static String toSnakeCase(@NotNull final String value)
@@ -199,9 +199,9 @@ public final class Notation
 	/**
 	 * Возвращает строку в нотации Camel Case.
 	 *
-	 * @see NotationType#CAMEL_CASE
 	 * @param value строка, нотацию которой необходимо изменить.
 	 * @return строку в нотации Camel Case.
+	 * @see NotationType#CAMEL_CASE
 	 */
 	@NotNull
 	public static String toCamelCase(@NotNull final String value)
@@ -214,9 +214,9 @@ public final class Notation
 	/**
 	 * Возвращает строку в нотации Pascal Case.
 	 *
-	 * @see NotationType#PASCAL_CASE
 	 * @param value строка, нотацию которой необходимо изменить.
 	 * @return строку в нотации Pascal Case.
+	 * @see NotationType#PASCAL_CASE
 	 */
 	@NotNull
 	public static String toPascalCase(@NotNull final String value)
