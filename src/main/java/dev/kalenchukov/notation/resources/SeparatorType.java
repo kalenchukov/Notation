@@ -26,6 +26,8 @@ package dev.kalenchukov.notation.resources;
 
 /**
  * Перечисление возможных типов разделителей.
+ *
+ * @author Aleksey Kalenchukov
  */
 public enum SeparatorType
 {

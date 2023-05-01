@@ -26,6 +26,8 @@ package dev.kalenchukov.notation.resources;
 
 /**
  * Перечисление типов нотаций.
+ *
+ * @author Aleksey Kalenchukov
  */
 public enum NotationType
 {
