@@ -3,6 +3,7 @@
 ### Добавлено
 * Добавлен метод Notation.is(String, NotationType).
 * Добавлен метод Notation.isPointCase(String).
+* Добавлен метод Notation.toPointCase(String).
 
 ### Изменено
 *

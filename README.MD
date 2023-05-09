@@ -153,3 +153,13 @@ Notation.toPascalCase("hello_world");
 ```
 HelloWorld
 ```
+
+#### Конвертирование в нотацию Point Case
+```java
+Notation.toPointCase("helloWorld");
+```
+
+Результат выполнения:
+```
+hello.world
+```

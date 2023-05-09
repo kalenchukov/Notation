@@ -24,6 +24,8 @@
 
 package dev.kalenchukov.notation.resources;
 
+import org.jetbrains.annotations.NotNull;
+
 /**
  * Перечисление возможных типов разделителей.
  *
@@ -34,20 +36,64 @@ public enum SeparatorType
 	/**
 	 * Символ дефиса.
 	 */
-	HYPHEN,
+	HYPHEN("-"),
 
 	/**
 	 * Символ нижнего подчёркивания.
 	 */
-	UNDERSCORE,
+	UNDERSCORE("_"),
 
 	/**
 	 * Прописная буква.
 	 */
-	UPPERCASE,
+	UPPERCASE(""),
 
 	/**
 	 * Символ точки.
 	 */
-	POINT;
+	POINT(".");
+
+	/**
+	 * Символ разделителя.
+	 */
+	@NotNull
+	private final String separatorSymbol;
+
+	/**
+	 * Конструктор для {@code SeparatorType}.
+	 *
+	 * @param separatorSymbol символ разделителя.
+	 */
+	SeparatorType(@NotNull final String separatorSymbol)
+	{
+		this.separatorSymbol = separatorSymbol;
+	}
+
+	/**
+	 * Возвращает символ разделителя.
+	 *
+	 * @return символ разделителя.
+	 */
+	@NotNull
+	public String getSeparatorSymbol()
+	{
+		return this.separatorSymbol;
+	}
+
+	/**
+	 * Возвращает все символы разделителей.
+	 *
+	 * @return строка из символов разделителей.
+	 */
+	@NotNull
+	public static String getAllSeparatorSymbols()
+	{
+		StringBuilder values = new StringBuilder();
+
+		for (SeparatorType separatorType : SeparatorType.values()) {
+			values.append(separatorType.getSeparatorSymbol());
+		}
+
+		return values.toString();
+	}
 }

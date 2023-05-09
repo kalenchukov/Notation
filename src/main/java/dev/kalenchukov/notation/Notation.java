@@ -169,7 +169,7 @@ public final class Notation
 				case UPPER_CASE -> Notation.toUpperCase(value);
 				case SNAKE_CASE -> Notation.toSnakeCase(value);
 				case PASCAL_CASE -> Notation.toPascalCase(value);
-				case POINT_CASE -> Notation.toPascalCase(value);
+				case POINT_CASE -> Notation.toPointCase(value);
 			};
 	}
 
@@ -178,7 +178,6 @@ public final class Notation
 	 *
 	 * @param value строка, нотацию которой необходимо изменить.
 	 * @return строку в нотации Upper Case.
-	 * @see NotationType#UPPER_CASE
 	 */
 	@NotNull
 	public static String toUpperCase(@NotNull final String value)
@@ -193,7 +192,6 @@ public final class Notation
 	 *
 	 * @param value строка, нотацию которой необходимо изменить.
 	 * @return строку в нотации Kebab Case.
-	 * @see NotationType#KEBAB_CASE
 	 */
 	@NotNull
 	public static String toKebabCase(@NotNull final String value)
@@ -208,7 +206,6 @@ public final class Notation
 	 *
 	 * @param value строка, нотацию которой необходимо изменить.
 	 * @return строку в нотации Snake Case.
-	 * @see NotationType#SNAKE_CASE
 	 */
 	@NotNull
 	public static String toSnakeCase(@NotNull final String value)
@@ -223,7 +220,6 @@ public final class Notation
 	 *
 	 * @param value строка, нотацию которой необходимо изменить.
 	 * @return строку в нотации Camel Case.
-	 * @see NotationType#CAMEL_CASE
 	 */
 	@NotNull
 	public static String toCamelCase(@NotNull final String value)
@@ -238,7 +234,6 @@ public final class Notation
 	 *
 	 * @param value строка, нотацию которой необходимо изменить.
 	 * @return строку в нотации Pascal Case.
-	 * @see NotationType#PASCAL_CASE
 	 */
 	@NotNull
 	public static String toPascalCase(@NotNull final String value)
@@ -248,6 +243,20 @@ public final class Notation
 		return Stringi.firstLetterToUpperCase(
 			Notation.fromAbstract(value, SeparatorType.UPPERCASE)
 		);
+	}
+
+	/**
+	 * Возвращает строку в нотации Point Case.
+	 *
+	 * @param value строка, нотацию которой необходимо изменить.
+	 * @return строку в нотации Point Case.
+	 */
+	@NotNull
+	public static String toPointCase(@NotNull final String value)
+	{
+		Objects.requireNonNull(value);
+
+		return Notation.fromAbstract(value, SeparatorType.POINT);
 	}
 
 	/**
@@ -288,15 +297,14 @@ public final class Notation
 
 		while (matcher.find())
 		{
-			String replacement = switch (separatorType)
-				{
-					case HYPHEN -> "-" + matcher.group("target");
-					case UNDERSCORE -> "_" + matcher.group("target");
-					case POINT -> "." + matcher.group("target");
-					case UPPERCASE -> matcher.group("target").toUpperCase();
-				};
+			String target = matcher.group("target");
+			String replacement = separatorType.getSeparatorSymbol() + target;
 
-			abstractValue = abstractValue.replaceAll("\\+" + matcher.group("target"), replacement);
+			if (separatorType == SeparatorType.UPPERCASE) {
+				replacement = replacement.toUpperCase();
+			}
+
+			abstractValue = abstractValue.replaceAll("\\+" + target, replacement);
 		}
 
 		return abstractValue;
@@ -304,7 +312,7 @@ public final class Notation
 
 	/**
 	 * Возвращает строку в абстрактной нотации.
-	 * Абстрактная нотация - это стиль в котором разделение слов обозначается символом "+", а все буквы прописные.
+	 * Абстрактная нотация - это стиль в котором разделение слов обозначается символом "+", а все буквы строчные.
 	 *
 	 * @param value строка, которую необходимо конвертировать в абстрактную нотацию.
 	 * @return строку в абстрактной нотации.
@@ -315,17 +323,18 @@ public final class Notation
 		Objects.requireNonNull(value);
 
 		String separator = "+";
-		String abstractValue = value.replaceAll("(?<=[a-zA-Z])[_-](?=[a-z0-9A-Z])", separator);
+		String regexp = "(?<=[a-zA-Z])[" + SeparatorType.getAllSeparatorSymbols() + "](?=[a-z0-9A-Z])";
+		String abstractValue = value.replaceAll(regexp, separator);
 
 		Matcher matcher = Pattern.compile("(?<=[a-z])(?<word>[A-Z])(?=[a-z0-9A-Z])", Pattern.UNICODE_CASE)
 								 .matcher(abstractValue);
 
 		while (matcher.find())
 		{
-			abstractValue = abstractValue.replaceAll(
-				"(?<=[a-z])" + matcher.group("word"),
-				separator + matcher.group("word")
-			);
+			String target = matcher.group("word");
+			String replacement = separator + target;
+
+			abstractValue = abstractValue.replaceAll("(?<=[a-z])" + target, replacement);
 		}
 
 		return abstractValue.toLowerCase();
