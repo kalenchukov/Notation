@@ -93,6 +93,16 @@ Notation.isDotCase("hello.world");
 true
 ```
 
+#### Проверка нотации Train Case
+```java
+Notation.isTrainCase("HELLO-WORLD");
+```
+
+Результат выполнения:
+```
+true
+```
+
 ### Конвертирование нотации
 #### Конвертирование в указанную нотацию
 ```java
@@ -162,4 +172,14 @@ Notation.toDotCase("helloWorld");
 Результат выполнения:
 ```
 hello.world
+```
+
+#### Конвертирование в нотацию Train Case
+```java
+Notation.toTrainCase("hello_World");
+```
+
+Результат выполнения:
+```
+HELLO-WORLD
 ```

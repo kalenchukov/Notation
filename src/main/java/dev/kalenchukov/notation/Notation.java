@@ -67,6 +67,7 @@ public final class Notation
 			case SNAKE_CASE -> Notation.isSnakeCase(value);
 			case PASCAL_CASE -> Notation.isPascalCase(value);
 			case DOT_CASE -> Notation.isDotCase(value);
+			case TRAIN_CASE -> Notation.isTrainCase(value);
 		};
 	}
 
@@ -149,6 +150,19 @@ public final class Notation
 	}
 
 	/**
+	 * Проверяет соответствие строки нотации Train Case.
+	 *
+	 * @param value строка.
+	 * @return {@code true}, если строка соответствует нотации Train Case, иначе {@code false}.
+	 */
+	public static boolean isTrainCase(@NotNull final String value)
+	{
+		Objects.requireNonNull(value);
+
+		return Notation.is(value, NotationRegexp.TRAIN_CASE);
+	}
+
+	/**
 	 * Возвращает строку в указанной нотации.
 	 *
 	 * @param value строка, нотацию которой необходимо изменить.
@@ -170,6 +184,7 @@ public final class Notation
 				case SNAKE_CASE -> Notation.toSnakeCase(value);
 				case PASCAL_CASE -> Notation.toPascalCase(value);
 				case DOT_CASE -> Notation.toDotCase(value);
+				case TRAIN_CASE -> Notation.toTrainCase(value);
 			};
 	}
 
@@ -257,6 +272,20 @@ public final class Notation
 		Objects.requireNonNull(value);
 
 		return Notation.fromAbstract(value, SeparatorType.DOT);
+	}
+
+	/**
+	 * Возвращает строку в нотации Train Case.
+	 *
+	 * @param value строка, нотацию которой необходимо изменить.
+	 * @return строку в нотации Train Case.
+	 */
+	@NotNull
+	public static String toTrainCase(@NotNull final String value)
+	{
+		Objects.requireNonNull(value);
+
+		return Notation.fromAbstract(value, SeparatorType.HYPHEN).toUpperCase();
 	}
 
 	/**

@@ -4,6 +4,8 @@
 * Добавлен метод Notation.is(String, NotationType).
 * Добавлен метод Notation.isDotCase(String).
 * Добавлен метод Notation.toDotCase(String).
+* Добавлен метод Notation.isTrainCase(String).
+* Добавлен метод Notation.toTrainCase(String).
 
 ### Изменено
 *

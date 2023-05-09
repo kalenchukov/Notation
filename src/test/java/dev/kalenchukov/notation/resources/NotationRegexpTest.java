@@ -151,4 +151,20 @@ public class NotationRegexpTest
 
 		assertEquals("dot.case", matcher.group(NotationRegexp.DOT_CASE.getGroup()));
 	}
+
+	/**
+	 * Проверка групп константы {@link NotationRegexp#TRAIN_CASE}.
+	 */
+	@Test
+	public void testGroupTrainCase()
+	{
+		String value = "TRAIN-CASE";
+
+		Pattern pattern = Pattern.compile(NotationRegexp.TRAIN_CASE.getPattern());
+		Matcher matcher = pattern.matcher(value);
+
+		assertTrue(matcher.find());
+
+		assertEquals("TRAIN-CASE", matcher.group(NotationRegexp.TRAIN_CASE.getGroup()));
+	}
 }

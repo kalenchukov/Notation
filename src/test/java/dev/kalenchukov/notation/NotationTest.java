@@ -81,6 +81,13 @@ public class NotationTest
 	};
 
 	/**
+	 * Значения в нотации Train Case.
+	 */
+	private static final String[] VALUES_TRAIN_CASE = {
+		"HELLO", "HELLO-WORLD", "HELLO-WORLD-MATRIX", "HELLO-WORLD1"
+	};
+
+	/**
 	 * Проверка метода {@link Notation#is(String, NotationType)} для нотации Upper Case.
 	 *
 	 * @param value проверяемое значение.
@@ -108,6 +115,21 @@ public class NotationTest
 	public void testIsNotationTypeKebabCase(String value)
 	{
 		assertTrue(Notation.is(value, NotationType.KEBAB_CASE));
+	}
+
+	/**
+	 * Проверка метода {@link Notation#is(String, NotationType)} для нотации Train Case.
+	 *
+	 * @param value проверяемое значение.
+	 */
+	@ParameterizedTest
+	@ValueSource(strings = {
+		"HELLO", "HELLO-WORLD", "HELLO-WORLD-MATRIX",
+		"HELLO-WORLD1", "HEL1LO-000-WORLD1"
+	})
+	public void testIsNotationTypeTrainCase(String value)
+	{
+		assertTrue(Notation.is(value, NotationType.TRAIN_CASE));
 	}
 
 	/**
@@ -219,6 +241,39 @@ public class NotationTest
 	public void testIsKebabCaseNotCorrect(String value)
 	{
 		assertFalse(Notation.isKebabCase(value));
+	}
+
+	/**
+	 * Проверка метода {@link Notation#isTrainCase(String)}.
+	 *
+	 * @param value проверяемое значение.
+	 */
+	@ParameterizedTest
+	@ValueSource(strings = {
+		"HELLO", "HELLO-WORLD", "HELLO-WORLD-MATRIX",
+		"HELLO-WORLD1", "HEL1LO-000-WORLD1"
+	})
+	public void testIsTrainCase(String value)
+	{
+		assertTrue(Notation.isTrainCase(value));
+	}
+
+	/**
+	 * Проверка метода {@link Notation#isTrainCase(String)} с некорректными значениями.
+	 *
+	 * @param value проверяемое значение.
+	 */
+	@ParameterizedTest
+	@ValueSource(strings = {
+		"", "-", "--", "0", "0123456789", "0-12345678-9", "-0-0-", "0-0",
+		"hello-world", "HELLo-WORLD", "HELLO-WORLd", "h-WORLD1",
+		"-HELLo-WORLD", "HELLo-WORLD-", "-HELLo-WORLD-",
+		"HELLO--WORLD", "--HELLO-WORLD-MATRIX", "HELLO-WORLD1--", "HELLO-123--",
+		"HELLO----WORLD", "----HELLO-WORLD-MATRIX", "HELLO-WORLD1----", "HELLO-123----"
+	})
+	public void testIsTrainCaseNotCorrect(String value)
+	{
+		assertFalse(Notation.isTrainCase(value));
 	}
 
 	/**
@@ -363,6 +418,7 @@ public class NotationTest
 			assertEquals(VALUES_UPPER_CASE[i], Notation.to(VALUES_SNAKE_CASE[i], NotationType.UPPER_CASE));
 			assertEquals(VALUES_UPPER_CASE[i], Notation.to(VALUES_PASCAL_CASE[i], NotationType.UPPER_CASE));
 			assertEquals(VALUES_UPPER_CASE[i], Notation.to(VALUES_DOT_CASE[i], NotationType.UPPER_CASE));
+			assertEquals(VALUES_UPPER_CASE[i], Notation.to(VALUES_TRAIN_CASE[i], NotationType.UPPER_CASE));
 		}
 	}
 
@@ -380,6 +436,25 @@ public class NotationTest
 			assertEquals(VALUES_KEBAB_CASE[i], Notation.to(VALUES_SNAKE_CASE[i], NotationType.KEBAB_CASE));
 			assertEquals(VALUES_KEBAB_CASE[i], Notation.to(VALUES_PASCAL_CASE[i], NotationType.KEBAB_CASE));
 			assertEquals(VALUES_KEBAB_CASE[i], Notation.to(VALUES_DOT_CASE[i], NotationType.KEBAB_CASE));
+			assertEquals(VALUES_KEBAB_CASE[i], Notation.to(VALUES_TRAIN_CASE[i], NotationType.KEBAB_CASE));
+		}
+	}
+
+	/**
+	 * Проверка метода {@link Notation#to(String, NotationType)} для нотации Train Case.
+	 */
+	@Test
+	public void testToNotationTypeTrainCase()
+	{
+		for (int i = 0; i < VALUES_TRAIN_CASE.length; i++)
+		{
+			assertEquals(VALUES_TRAIN_CASE[i], Notation.to(VALUES_UPPER_CASE[i], NotationType.TRAIN_CASE));
+			assertEquals(VALUES_TRAIN_CASE[i], Notation.to(VALUES_CAMEL_CASE[i], NotationType.TRAIN_CASE));
+			assertEquals(VALUES_TRAIN_CASE[i], Notation.to(VALUES_KEBAB_CASE[i], NotationType.TRAIN_CASE));
+			assertEquals(VALUES_TRAIN_CASE[i], Notation.to(VALUES_SNAKE_CASE[i], NotationType.TRAIN_CASE));
+			assertEquals(VALUES_TRAIN_CASE[i], Notation.to(VALUES_PASCAL_CASE[i], NotationType.TRAIN_CASE));
+			assertEquals(VALUES_TRAIN_CASE[i], Notation.to(VALUES_DOT_CASE[i], NotationType.TRAIN_CASE));
+			assertEquals(VALUES_TRAIN_CASE[i], Notation.to(VALUES_TRAIN_CASE[i], NotationType.TRAIN_CASE));
 		}
 	}
 
@@ -397,6 +472,7 @@ public class NotationTest
 			assertEquals(VALUES_SNAKE_CASE[i], Notation.to(VALUES_SNAKE_CASE[i], NotationType.SNAKE_CASE));
 			assertEquals(VALUES_SNAKE_CASE[i], Notation.to(VALUES_PASCAL_CASE[i], NotationType.SNAKE_CASE));
 			assertEquals(VALUES_SNAKE_CASE[i], Notation.to(VALUES_DOT_CASE[i], NotationType.SNAKE_CASE));
+			assertEquals(VALUES_SNAKE_CASE[i], Notation.to(VALUES_TRAIN_CASE[i], NotationType.SNAKE_CASE));
 		}
 	}
 
@@ -414,6 +490,7 @@ public class NotationTest
 			assertEquals(VALUES_CAMEL_CASE[i], Notation.to(VALUES_SNAKE_CASE[i], NotationType.CAMEL_CASE));
 			assertEquals(VALUES_CAMEL_CASE[i], Notation.to(VALUES_PASCAL_CASE[i], NotationType.CAMEL_CASE));
 			assertEquals(VALUES_CAMEL_CASE[i], Notation.to(VALUES_DOT_CASE[i], NotationType.CAMEL_CASE));
+			assertEquals(VALUES_CAMEL_CASE[i], Notation.to(VALUES_TRAIN_CASE[i], NotationType.CAMEL_CASE));
 		}
 	}
 
@@ -431,6 +508,7 @@ public class NotationTest
 			assertEquals(VALUES_PASCAL_CASE[i], Notation.to(VALUES_SNAKE_CASE[i], NotationType.PASCAL_CASE));
 			assertEquals(VALUES_PASCAL_CASE[i], Notation.to(VALUES_PASCAL_CASE[i], NotationType.PASCAL_CASE));
 			assertEquals(VALUES_PASCAL_CASE[i], Notation.to(VALUES_DOT_CASE[i], NotationType.PASCAL_CASE));
+			assertEquals(VALUES_PASCAL_CASE[i], Notation.to(VALUES_TRAIN_CASE[i], NotationType.PASCAL_CASE));
 		}
 	}
 
@@ -448,6 +526,7 @@ public class NotationTest
 			assertEquals(VALUES_DOT_CASE[i], Notation.to(VALUES_SNAKE_CASE[i], NotationType.DOT_CASE));
 			assertEquals(VALUES_DOT_CASE[i], Notation.to(VALUES_PASCAL_CASE[i], NotationType.DOT_CASE));
 			assertEquals(VALUES_DOT_CASE[i], Notation.to(VALUES_DOT_CASE[i], NotationType.DOT_CASE));
+			assertEquals(VALUES_DOT_CASE[i], Notation.to(VALUES_TRAIN_CASE[i], NotationType.DOT_CASE));
 		}
 	}
 
@@ -465,6 +544,7 @@ public class NotationTest
 			assertEquals(VALUES_UPPER_CASE[i], Notation.toUpperCase(VALUES_SNAKE_CASE[i]));
 			assertEquals(VALUES_UPPER_CASE[i], Notation.toUpperCase(VALUES_PASCAL_CASE[i]));
 			assertEquals(VALUES_UPPER_CASE[i], Notation.toUpperCase(VALUES_DOT_CASE[i]));
+			assertEquals(VALUES_UPPER_CASE[i], Notation.toUpperCase(VALUES_TRAIN_CASE[i]));
 		}
 	}
 
@@ -482,6 +562,25 @@ public class NotationTest
 			assertEquals(VALUES_KEBAB_CASE[i], Notation.toKebabCase(VALUES_SNAKE_CASE[i]));
 			assertEquals(VALUES_KEBAB_CASE[i], Notation.toKebabCase(VALUES_PASCAL_CASE[i]));
 			assertEquals(VALUES_KEBAB_CASE[i], Notation.toKebabCase(VALUES_DOT_CASE[i]));
+			assertEquals(VALUES_KEBAB_CASE[i], Notation.toKebabCase(VALUES_TRAIN_CASE[i]));
+		}
+	}
+
+	/**
+	 * Проверка метода {@link Notation#toTrainCase(String)}.
+	 */
+	@Test
+	public void testToTrainCase()
+	{
+		for (int i = 0; i < VALUES_TRAIN_CASE.length; i++)
+		{
+			assertEquals(VALUES_TRAIN_CASE[i], Notation.toTrainCase(VALUES_UPPER_CASE[i]));
+			assertEquals(VALUES_TRAIN_CASE[i], Notation.toTrainCase(VALUES_CAMEL_CASE[i]));
+			assertEquals(VALUES_TRAIN_CASE[i], Notation.toTrainCase(VALUES_KEBAB_CASE[i]));
+			assertEquals(VALUES_TRAIN_CASE[i], Notation.toTrainCase(VALUES_SNAKE_CASE[i]));
+			assertEquals(VALUES_TRAIN_CASE[i], Notation.toTrainCase(VALUES_PASCAL_CASE[i]));
+			assertEquals(VALUES_TRAIN_CASE[i], Notation.toTrainCase(VALUES_DOT_CASE[i]));
+			assertEquals(VALUES_TRAIN_CASE[i], Notation.toTrainCase(VALUES_TRAIN_CASE[i]));
 		}
 	}
 
@@ -499,6 +598,7 @@ public class NotationTest
 			assertEquals(VALUES_SNAKE_CASE[i], Notation.toSnakeCase(VALUES_SNAKE_CASE[i]));
 			assertEquals(VALUES_SNAKE_CASE[i], Notation.toSnakeCase(VALUES_PASCAL_CASE[i]));
 			assertEquals(VALUES_SNAKE_CASE[i], Notation.toSnakeCase(VALUES_DOT_CASE[i]));
+			assertEquals(VALUES_SNAKE_CASE[i], Notation.toSnakeCase(VALUES_TRAIN_CASE[i]));
 		}
 	}
 
@@ -516,6 +616,7 @@ public class NotationTest
 			assertEquals(VALUES_CAMEL_CASE[i], Notation.toCamelCase(VALUES_SNAKE_CASE[i]));
 			assertEquals(VALUES_CAMEL_CASE[i], Notation.toCamelCase(VALUES_PASCAL_CASE[i]));
 			assertEquals(VALUES_CAMEL_CASE[i], Notation.toCamelCase(VALUES_DOT_CASE[i]));
+			assertEquals(VALUES_CAMEL_CASE[i], Notation.toCamelCase(VALUES_TRAIN_CASE[i]));
 		}
 	}
 
@@ -533,6 +634,7 @@ public class NotationTest
 			assertEquals(VALUES_PASCAL_CASE[i], Notation.toPascalCase(VALUES_SNAKE_CASE[i]));
 			assertEquals(VALUES_PASCAL_CASE[i], Notation.toPascalCase(VALUES_PASCAL_CASE[i]));
 			assertEquals(VALUES_PASCAL_CASE[i], Notation.toPascalCase(VALUES_DOT_CASE[i]));
+			assertEquals(VALUES_PASCAL_CASE[i], Notation.toPascalCase(VALUES_TRAIN_CASE[i]));
 		}
 	}
 
@@ -550,6 +652,7 @@ public class NotationTest
 			assertEquals(VALUES_DOT_CASE[i], Notation.toDotCase(VALUES_SNAKE_CASE[i]));
 			assertEquals(VALUES_DOT_CASE[i], Notation.toDotCase(VALUES_PASCAL_CASE[i]));
 			assertEquals(VALUES_DOT_CASE[i], Notation.toDotCase(VALUES_DOT_CASE[i]));
+			assertEquals(VALUES_DOT_CASE[i], Notation.toDotCase(VALUES_TRAIN_CASE[i]));
 		}
 	}
 }
