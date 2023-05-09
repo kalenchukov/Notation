@@ -20,6 +20,16 @@
 
 ## Использование
 ### Проверка нотации
+#### Проверка указанной нотации
+```java
+Notation.is("HELLO_WORLD", NotationType.UPPER_CASE);
+```
+
+Результат выполнения:
+```
+true
+```
+
 #### Проверка нотации Upper Case
 ```java
 Notation.isUpperCase("HELLO_WORLD");

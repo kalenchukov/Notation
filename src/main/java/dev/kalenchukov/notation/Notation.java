@@ -47,6 +47,29 @@ public final class Notation
 	private Notation() {}
 
 	/**
+	 * Проверяет соответствие строки указанной нотации.
+	 *
+	 * @param value строка, нотацию которой необходимо проверить.
+	 * @param notationType тип нотации.
+	 * @return {@code true}, если строка соответствует указанной нотации, иначе {@code false}.
+	 *
+	 */
+	public static boolean is(@NotNull final String value, @NotNull final NotationType notationType)
+	{
+		Objects.requireNonNull(value);
+		Objects.requireNonNull(notationType);
+
+		return switch (notationType)
+		{
+			case CAMEL_CASE -> Notation.isCamelCase(value);
+			case KEBAB_CASE -> Notation.isKebabCase(value);
+			case UPPER_CASE -> Notation.isUpperCase(value);
+			case SNAKE_CASE -> Notation.isSnakeCase(value);
+			case PASCAL_CASE -> Notation.isPascalCase(value);
+		};
+	}
+
+	/**
 	 * Проверяет соответствие строки нотации Upper Case.
 	 *
 	 * @param value строка.
@@ -109,24 +132,6 @@ public final class Notation
 		Objects.requireNonNull(value);
 
 		return Notation.is(value, NotationRegexp.PASCAL_CASE);
-	}
-
-	/**
-	 * Проверяет соответствие строки указанной нотации.
-	 *
-	 * @param value строка.
-	 * @param notationRegexp регулярное выражение нотации.
-	 * @return {@code true}, если строка соответствует указанной нотации, иначе {@code false}.
-	 */
-	private static boolean is(@NotNull final String value, @NotNull final NotationRegexp notationRegexp)
-	{
-		Objects.requireNonNull(value);
-		Objects.requireNonNull(notationRegexp);
-
-		final Pattern pattern = Pattern.compile(notationRegexp.getPattern(), Pattern.UNICODE_CASE);
-		final Matcher matcher = pattern.matcher(value);
-
-		return matcher.matches();
 	}
 
 	/**
@@ -228,6 +233,24 @@ public final class Notation
 		return Stringi.firstLetterToUpperCase(
 			Notation.fromAbstract(value, SeparatorType.UPPERCASE)
 		);
+	}
+
+	/**
+	 * Проверяет соответствие строки указанной нотации.
+	 *
+	 * @param value строка.
+	 * @param notationRegexp регулярное выражение нотации.
+	 * @return {@code true}, если строка соответствует указанной нотации, иначе {@code false}.
+	 */
+	private static boolean is(@NotNull final String value, @NotNull final NotationRegexp notationRegexp)
+	{
+		Objects.requireNonNull(value);
+		Objects.requireNonNull(notationRegexp);
+
+		final Pattern pattern = Pattern.compile(notationRegexp.getPattern(), Pattern.UNICODE_CASE);
+		final Matcher matcher = pattern.matcher(value);
+
+		return matcher.matches();
 	}
 
 	/**

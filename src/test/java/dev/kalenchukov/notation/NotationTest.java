@@ -74,6 +74,81 @@ public class NotationTest
 	};
 
 	/**
+	 * Проверка метода {@link Notation#is(String, NotationType)} для нотации Upper Case.
+	 *
+	 * @param value проверяемое значение.
+	 */
+	@ParameterizedTest
+	@ValueSource(strings = {
+		"HELLO", "HELLO_WORLD", "HELLO_WORLD_MATRIX", "HELLO_WORLD1",
+		"HEL1LO_000_WORLD1", "_HELLO_WORLD_1"
+	})
+	public void testIsNotationTypeUpperCase(String value)
+	{
+		assertTrue(Notation.is(value, NotationType.UPPER_CASE));
+	}
+
+	/**
+	 * Проверка метода {@link Notation#is(String, NotationType)} для нотации Kebab Case.
+	 *
+	 * @param value проверяемое значение.
+	 */
+	@ParameterizedTest
+	@ValueSource(strings = {
+		"hello", "hello-world", "hello-world-matrix",
+		"hello-world1", "hel1lo-000-world1", "-hello-world-1"
+	})
+	public void testIsNotationTypeKebabCase(String value)
+	{
+		assertTrue(Notation.is(value, NotationType.KEBAB_CASE));
+	}
+
+	/**
+	 * Проверка метода {@link Notation#is(String, NotationType)} для нотации Snake Case.
+	 *
+	 * @param value проверяемое значение.
+	 */
+	@ParameterizedTest
+	@ValueSource(strings = {
+		"hello", "hello_world", "hello_world_matrix",
+		"hello_world1", "hel1lo_000_world1", "_hello_world_1"
+	})
+	public void testIsNotationTypeSnakeCase(String value)
+	{
+		assertTrue(Notation.is(value, NotationType.SNAKE_CASE));
+	}
+
+	/**
+	 * Проверка метода {@link Notation#is(String, NotationType)} для нотации Camel Case.
+	 *
+	 * @param value проверяемое значение.
+	 */
+	@ParameterizedTest
+	@ValueSource(strings = {
+		"hello", "helloWorld", "helloWorldMatrix", "helloWorld1",
+		"hel1lo000World1", "helloWorld1", "hellOWorld", "helloWorlD"
+	})
+	public void testIsNotationTypeCamelCase(String value)
+	{
+		assertTrue(Notation.is(value, NotationType.CAMEL_CASE));
+	}
+
+	/**
+	 * Проверка метода {@link Notation#is(String, NotationType)} для нотации Pascal Case.
+	 *
+	 * @param value проверяемое значение.
+	 */
+	@ParameterizedTest
+	@ValueSource(strings = {
+		"Hello", "HelloWorld", "HelloWorldMatrix", "HelloWorld1",
+		"Hel1lo000World1", "HelloWorld1", "HellOWorld", "HelloWorlD"
+	})
+	public void testIsNotationTypePascalCase(String value)
+	{
+		assertTrue(Notation.is(value, NotationType.PASCAL_CASE));
+	}
+
+	/**
 	 * Проверка метода {@link Notation#isUpperCase(String)}.
 	 *
 	 * @param value проверяемое значение.
