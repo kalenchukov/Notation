@@ -6,6 +6,7 @@
 * Добавлен метод Notation.toDotCase(String).
 * Добавлен метод Notation.isTrainCase(String).
 * Добавлен метод Notation.toTrainCase(String).
+* Добавлено преобразование слов разделённых пробелами в нотацию.
 
 ### Изменено
 *

@@ -166,7 +166,7 @@ HelloWorld
 
 #### Конвертирование в нотацию Dot Case
 ```java
-Notation.toDotCase("helloWorld");
+Notation.toDotCase("hello World");
 ```
 
 Результат выполнения:
@@ -176,7 +176,7 @@ hello.world
 
 #### Конвертирование в нотацию Train Case
 ```java
-Notation.toTrainCase("hello_World");
+Notation.toTrainCase("hello World");
 ```
 
 Результат выполнения:

@@ -351,9 +351,10 @@ public final class Notation
 	{
 		Objects.requireNonNull(value);
 
-		String separator = "+";
-		String regexp = "(?<=[a-zA-Z])[" + SeparatorType.getAllSeparatorSymbols() + "](?=[a-z0-9A-Z])";
-		String abstractValue = value.replaceAll(regexp, separator);
+		String abstractSeparator = "+";
+		String separators = SeparatorType.getAllSeparatorSymbols() + "\\s";
+		String regexp = "(?<=[a-zA-Z])[" + separators + "](?=[a-z0-9A-Z])";
+		String abstractValue = value.replaceAll(regexp, abstractSeparator);
 
 		Matcher matcher = Pattern.compile("(?<=[a-z])(?<word>[A-Z])(?=[a-z0-9A-Z])", Pattern.UNICODE_CASE)
 								 .matcher(abstractValue);
@@ -361,7 +362,7 @@ public final class Notation
 		while (matcher.find())
 		{
 			String target = matcher.group("word");
-			String replacement = separator + target;
+			String replacement = abstractSeparator + target;
 
 			abstractValue = abstractValue.replaceAll("(?<=[a-z])" + target, replacement);
 		}

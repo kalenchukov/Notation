@@ -39,6 +39,13 @@ import static org.junit.jupiter.api.Assertions.*;
 public class NotationTest
 {
 	/**
+	 * Значения без нотации.
+	 */
+	private static final String[] VALUES_NOT_CASE = {
+		"hello", "HELLO WORLD", "hello World MATRIX", "Hello World1"
+	};
+
+	/**
 	 * Значения в нотации Upper Case.
 	 */
 	private static final String[] VALUES_UPPER_CASE = {
@@ -412,6 +419,7 @@ public class NotationTest
 	{
 		for (int i = 0; i < VALUES_UPPER_CASE.length; i++)
 		{
+			assertEquals(VALUES_UPPER_CASE[i], Notation.to(VALUES_NOT_CASE[i], NotationType.UPPER_CASE));
 			assertEquals(VALUES_UPPER_CASE[i], Notation.to(VALUES_UPPER_CASE[i], NotationType.UPPER_CASE));
 			assertEquals(VALUES_UPPER_CASE[i], Notation.to(VALUES_CAMEL_CASE[i], NotationType.UPPER_CASE));
 			assertEquals(VALUES_UPPER_CASE[i], Notation.to(VALUES_KEBAB_CASE[i], NotationType.UPPER_CASE));
@@ -430,6 +438,7 @@ public class NotationTest
 	{
 		for (int i = 0; i < VALUES_KEBAB_CASE.length; i++)
 		{
+			assertEquals(VALUES_KEBAB_CASE[i], Notation.to(VALUES_NOT_CASE[i], NotationType.KEBAB_CASE));
 			assertEquals(VALUES_KEBAB_CASE[i], Notation.to(VALUES_UPPER_CASE[i], NotationType.KEBAB_CASE));
 			assertEquals(VALUES_KEBAB_CASE[i], Notation.to(VALUES_CAMEL_CASE[i], NotationType.KEBAB_CASE));
 			assertEquals(VALUES_KEBAB_CASE[i], Notation.to(VALUES_KEBAB_CASE[i], NotationType.KEBAB_CASE));
@@ -448,6 +457,7 @@ public class NotationTest
 	{
 		for (int i = 0; i < VALUES_TRAIN_CASE.length; i++)
 		{
+			assertEquals(VALUES_TRAIN_CASE[i], Notation.to(VALUES_NOT_CASE[i], NotationType.TRAIN_CASE));
 			assertEquals(VALUES_TRAIN_CASE[i], Notation.to(VALUES_UPPER_CASE[i], NotationType.TRAIN_CASE));
 			assertEquals(VALUES_TRAIN_CASE[i], Notation.to(VALUES_CAMEL_CASE[i], NotationType.TRAIN_CASE));
 			assertEquals(VALUES_TRAIN_CASE[i], Notation.to(VALUES_KEBAB_CASE[i], NotationType.TRAIN_CASE));
@@ -466,6 +476,7 @@ public class NotationTest
 	{
 		for (int i = 0; i < VALUES_SNAKE_CASE.length; i++)
 		{
+			assertEquals(VALUES_SNAKE_CASE[i], Notation.to(VALUES_NOT_CASE[i], NotationType.SNAKE_CASE));
 			assertEquals(VALUES_SNAKE_CASE[i], Notation.to(VALUES_UPPER_CASE[i], NotationType.SNAKE_CASE));
 			assertEquals(VALUES_SNAKE_CASE[i], Notation.to(VALUES_CAMEL_CASE[i], NotationType.SNAKE_CASE));
 			assertEquals(VALUES_SNAKE_CASE[i], Notation.to(VALUES_KEBAB_CASE[i], NotationType.SNAKE_CASE));
@@ -484,6 +495,7 @@ public class NotationTest
 	{
 		for (int i = 0; i < VALUES_CAMEL_CASE.length; i++)
 		{
+			assertEquals(VALUES_CAMEL_CASE[i], Notation.to(VALUES_NOT_CASE[i], NotationType.CAMEL_CASE));
 			assertEquals(VALUES_CAMEL_CASE[i], Notation.to(VALUES_UPPER_CASE[i], NotationType.CAMEL_CASE));
 			assertEquals(VALUES_CAMEL_CASE[i], Notation.to(VALUES_CAMEL_CASE[i], NotationType.CAMEL_CASE));
 			assertEquals(VALUES_CAMEL_CASE[i], Notation.to(VALUES_KEBAB_CASE[i], NotationType.CAMEL_CASE));
@@ -502,6 +514,7 @@ public class NotationTest
 	{
 		for (int i = 0; i < VALUES_PASCAL_CASE.length; i++)
 		{
+			assertEquals(VALUES_PASCAL_CASE[i], Notation.to(VALUES_NOT_CASE[i], NotationType.PASCAL_CASE));
 			assertEquals(VALUES_PASCAL_CASE[i], Notation.to(VALUES_UPPER_CASE[i], NotationType.PASCAL_CASE));
 			assertEquals(VALUES_PASCAL_CASE[i], Notation.to(VALUES_CAMEL_CASE[i], NotationType.PASCAL_CASE));
 			assertEquals(VALUES_PASCAL_CASE[i], Notation.to(VALUES_KEBAB_CASE[i], NotationType.PASCAL_CASE));
@@ -520,6 +533,7 @@ public class NotationTest
 	{
 		for (int i = 0; i < VALUES_DOT_CASE.length; i++)
 		{
+			assertEquals(VALUES_DOT_CASE[i], Notation.to(VALUES_NOT_CASE[i], NotationType.DOT_CASE));
 			assertEquals(VALUES_DOT_CASE[i], Notation.to(VALUES_UPPER_CASE[i], NotationType.DOT_CASE));
 			assertEquals(VALUES_DOT_CASE[i], Notation.to(VALUES_CAMEL_CASE[i], NotationType.DOT_CASE));
 			assertEquals(VALUES_DOT_CASE[i], Notation.to(VALUES_KEBAB_CASE[i], NotationType.DOT_CASE));
@@ -538,6 +552,7 @@ public class NotationTest
 	{
 		for (int i = 0; i < VALUES_UPPER_CASE.length; i++)
 		{
+			assertEquals(VALUES_UPPER_CASE[i], Notation.toUpperCase(VALUES_NOT_CASE[i]));
 			assertEquals(VALUES_UPPER_CASE[i], Notation.toUpperCase(VALUES_UPPER_CASE[i]));
 			assertEquals(VALUES_UPPER_CASE[i], Notation.toUpperCase(VALUES_CAMEL_CASE[i]));
 			assertEquals(VALUES_UPPER_CASE[i], Notation.toUpperCase(VALUES_KEBAB_CASE[i]));
@@ -556,6 +571,7 @@ public class NotationTest
 	{
 		for (int i = 0; i < VALUES_KEBAB_CASE.length; i++)
 		{
+			assertEquals(VALUES_KEBAB_CASE[i], Notation.toKebabCase(VALUES_NOT_CASE[i]));
 			assertEquals(VALUES_KEBAB_CASE[i], Notation.toKebabCase(VALUES_UPPER_CASE[i]));
 			assertEquals(VALUES_KEBAB_CASE[i], Notation.toKebabCase(VALUES_CAMEL_CASE[i]));
 			assertEquals(VALUES_KEBAB_CASE[i], Notation.toKebabCase(VALUES_KEBAB_CASE[i]));
@@ -574,6 +590,7 @@ public class NotationTest
 	{
 		for (int i = 0; i < VALUES_TRAIN_CASE.length; i++)
 		{
+			assertEquals(VALUES_TRAIN_CASE[i], Notation.toTrainCase(VALUES_NOT_CASE[i]));
 			assertEquals(VALUES_TRAIN_CASE[i], Notation.toTrainCase(VALUES_UPPER_CASE[i]));
 			assertEquals(VALUES_TRAIN_CASE[i], Notation.toTrainCase(VALUES_CAMEL_CASE[i]));
 			assertEquals(VALUES_TRAIN_CASE[i], Notation.toTrainCase(VALUES_KEBAB_CASE[i]));
@@ -592,6 +609,7 @@ public class NotationTest
 	{
 		for (int i = 0; i < VALUES_SNAKE_CASE.length; i++)
 		{
+			assertEquals(VALUES_SNAKE_CASE[i], Notation.toSnakeCase(VALUES_NOT_CASE[i]));
 			assertEquals(VALUES_SNAKE_CASE[i], Notation.toSnakeCase(VALUES_UPPER_CASE[i]));
 			assertEquals(VALUES_SNAKE_CASE[i], Notation.toSnakeCase(VALUES_CAMEL_CASE[i]));
 			assertEquals(VALUES_SNAKE_CASE[i], Notation.toSnakeCase(VALUES_KEBAB_CASE[i]));
@@ -610,6 +628,7 @@ public class NotationTest
 	{
 		for (int i = 0; i < VALUES_CAMEL_CASE.length; i++)
 		{
+			assertEquals(VALUES_CAMEL_CASE[i], Notation.toCamelCase(VALUES_NOT_CASE[i]));
 			assertEquals(VALUES_CAMEL_CASE[i], Notation.toCamelCase(VALUES_UPPER_CASE[i]));
 			assertEquals(VALUES_CAMEL_CASE[i], Notation.toCamelCase(VALUES_CAMEL_CASE[i]));
 			assertEquals(VALUES_CAMEL_CASE[i], Notation.toCamelCase(VALUES_KEBAB_CASE[i]));
@@ -628,6 +647,7 @@ public class NotationTest
 	{
 		for (int i = 0; i < VALUES_PASCAL_CASE.length; i++)
 		{
+			assertEquals(VALUES_PASCAL_CASE[i], Notation.toPascalCase(VALUES_NOT_CASE[i]));
 			assertEquals(VALUES_PASCAL_CASE[i], Notation.toPascalCase(VALUES_UPPER_CASE[i]));
 			assertEquals(VALUES_PASCAL_CASE[i], Notation.toPascalCase(VALUES_CAMEL_CASE[i]));
 			assertEquals(VALUES_PASCAL_CASE[i], Notation.toPascalCase(VALUES_KEBAB_CASE[i]));
@@ -646,6 +666,7 @@ public class NotationTest
 	{
 		for (int i = 0; i < VALUES_DOT_CASE.length; i++)
 		{
+			assertEquals(VALUES_DOT_CASE[i], Notation.toDotCase(VALUES_NOT_CASE[i]));
 			assertEquals(VALUES_DOT_CASE[i], Notation.toDotCase(VALUES_UPPER_CASE[i]));
 			assertEquals(VALUES_DOT_CASE[i], Notation.toDotCase(VALUES_CAMEL_CASE[i]));
 			assertEquals(VALUES_DOT_CASE[i], Notation.toDotCase(VALUES_KEBAB_CASE[i]));
