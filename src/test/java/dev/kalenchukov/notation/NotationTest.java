@@ -199,7 +199,7 @@ public class NotationTest
 	 */
 	@ParameterizedTest
 	@ValueSource(strings = {
-		"", "_", "__", "0", "0123456789", "0_12345678_9", "_0_0_", "0_0",
+		"", "_", "__", "0", "0123456789", "0_12345678_9", "_0_0_", "0_0", "hello World",
 		"hello_world", "HELLo_WORLD", "HELLO_WORLd", "h_WORLD1",
 		"_HELLo_WORLD", "HELLO_WORLd_", "_HELLO_WORLd_",
 		"HELLO__WORLD", "__HELLO_WORLD_MATRIX", "HELLO_WORLD1__", "HELLO_123__",
@@ -232,7 +232,7 @@ public class NotationTest
 	 */
 	@ParameterizedTest
 	@ValueSource(strings = {
-		"", "-", "--", "0", "0123456789", "0-12345678-9", "-0-0-", "0-0",
+		"", "-", "--", "0", "0123456789", "0-12345678-9", "-0-0-", "0-0", "hello world",
 		"HELLO-WORLD", "hellO-world", "hello-worlD", "H-world1",
 		"-hellO-world", "hellO-world-", "-hellO-world-",
 		"hello--world", "--hello-world-matrix", "hello-world1--", "hello-123--",
@@ -265,7 +265,7 @@ public class NotationTest
 	 */
 	@ParameterizedTest
 	@ValueSource(strings = {
-		"", "-", "--", "0", "0123456789", "0-12345678-9", "-0-0-", "0-0",
+		"", "-", "--", "0", "0123456789", "0-12345678-9", "-0-0-", "0-0", "HELLO WORLD",
 		"hello-world", "HELLo-WORLD", "HELLO-WORLd", "h-WORLD1",
 		"-HELLo-WORLD", "HELLo-WORLD-", "-HELLo-WORLD-",
 		"HELLO--WORLD", "--HELLO-WORLD-MATRIX", "HELLO-WORLD1--", "HELLO-123--",
@@ -298,7 +298,7 @@ public class NotationTest
 	 */
 	@ParameterizedTest
 	@ValueSource(strings = {
-		"", "_", "__", "0", "0123456789", "0_12345678_9", "_0_0_", "0_0",
+		"", "_", "__", "0", "0123456789", "0_12345678_9", "_0_0_", "0_0", "hello world",
 		"HELLO_WORLD", "hellO_world", "hello_worlD", "H_world1",
 		"_hello_worlD", "hello_worlD_", "_hello_worlD_",
 		"hello__world", "__hello_world_matrix", "hello_world1__", "hello_123__",
@@ -331,7 +331,7 @@ public class NotationTest
 	 */
 	@ParameterizedTest
 	@ValueSource(strings = {
-		"", "H", "HH", "0", "0123456789", "0H12345678H9", "H0H0H", "0H0",
+		"", "H", "HH", "0", "0123456789", "0H12345678H9", "H0H0H", "0H0", "hello World",
 		"HELLOWORLD", "HWorld1",
 		"HelloWorld", "HHelloWorldMatrix", "HelloWorld1", "Hello123"
 	})
@@ -362,7 +362,7 @@ public class NotationTest
 	 */
 	@ParameterizedTest
 	@ValueSource(strings = {
-		"", "h", "hh", "0", "0123456789", "0h12345678h9", "h0h0h", "h0h0h", "0h0",
+		"", "h", "hh", "0", "0123456789", "0h12345678h9", "h0h0h", "h0h0h", "0h0", "Hello World",
 		"hELLOwORLD", "hWorld1",
 		"helloworld", "hhelloWorldMatrix", "helloWorld1", "hello123"
 	})
@@ -393,7 +393,7 @@ public class NotationTest
 	 */
 	@ParameterizedTest
 	@ValueSource(strings = {
-		"", ".", "..", "0", "0123456789", "0.12345678.9", ".0.0.", "0.0",
+		"", ".", "..", "0", "0123456789", "0.12345678.9", ".0.0.", "0.0", "hello world",
 		"HELLO.WORLD", "hellO.world", "hello.worlD", "H.world1",
 		".hellO.world", "hellO.world.", ".hellO.world.",
 		"hello..world", "..hello.world.matrix", "hello.world1..", "hello.123..",
