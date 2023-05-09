@@ -137,18 +137,18 @@ public class NotationRegexpTest
 	}
 
 	/**
-	 * Проверка групп константы {@link NotationRegexp#POINT_CASE}.
+	 * Проверка групп константы {@link NotationRegexp#DOT_CASE}.
 	 */
 	@Test
-	public void testGroupPointCase()
+	public void testGroupDotCase()
 	{
-		String value = "point.case";
+		String value = "dot.case";
 
-		Pattern pattern = Pattern.compile(NotationRegexp.POINT_CASE.getPattern());
+		Pattern pattern = Pattern.compile(NotationRegexp.DOT_CASE.getPattern());
 		Matcher matcher = pattern.matcher(value);
 
 		assertTrue(matcher.find());
 
-		assertEquals("point.case", matcher.group(NotationRegexp.POINT_CASE.getGroup()));
+		assertEquals("dot.case", matcher.group(NotationRegexp.DOT_CASE.getGroup()));
 	}
 }

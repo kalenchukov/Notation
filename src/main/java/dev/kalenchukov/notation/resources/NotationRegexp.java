@@ -151,7 +151,7 @@ public enum NotationRegexp
 		"""),
 
 	/**
-	 * Нотация Point Case.
+	 * Нотация Dot Case.
 	 *
 	 * <p>Требования:</p>
 	 * <ul>
@@ -164,8 +164,8 @@ public enum NotationRegexp
 	 * 		<li>Не может быть меньше 1 символа;</li>
 	 * </ul>
 	 */
-	POINT_CASE("pointCase", """
-		(?<pointCase>
+	DOT_CASE("dotCase", """
+		(?<dotCase>
 			(?=.{1,})
 			(?![0-9.]+)
 			(?!\\.{2,})

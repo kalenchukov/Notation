@@ -51,7 +51,7 @@ public enum SeparatorType
 	/**
 	 * Символ точки.
 	 */
-	POINT(".");
+	DOT(".");
 
 	/**
 	 * Символ разделителя.

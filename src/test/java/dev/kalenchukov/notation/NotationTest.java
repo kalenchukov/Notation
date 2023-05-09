@@ -74,9 +74,9 @@ public class NotationTest
 	};
 
 	/**
-	 * Значения в нотации Point Case.
+	 * Значения в нотации Dot Case.
 	 */
-	private static final String[] VALUES_POINT_CASE = {
+	private static final String[] VALUES_DOT_CASE = {
 		"hello", "hello.world", "hello.world.matrix", "hello.world1"
 	};
 
@@ -317,7 +317,7 @@ public class NotationTest
 	}
 
 	/**
-	 * Проверка метода {@link Notation#isPointCase(String)}.
+	 * Проверка метода {@link Notation#isDotCase(String)}.
 	 *
 	 * @param value проверяемое значение.
 	 */
@@ -326,13 +326,13 @@ public class NotationTest
 		"hello", "hello.world", "hello.world.matrix",
 		"hello.world1", "hel1lo.000.world1"
 	})
-	public void testIsPointCase(String value)
+	public void testIsDotCase(String value)
 	{
-		assertTrue(Notation.isPointCase(value));
+		assertTrue(Notation.isDotCase(value));
 	}
 
 	/**
-	 * Проверка метода {@link Notation#isPointCase(String)} с некорректными значениями.
+	 * Проверка метода {@link Notation#isDotCase(String)} с некорректными значениями.
 	 *
 	 * @param value проверяемое значение.
 	 */
@@ -344,9 +344,9 @@ public class NotationTest
 		"hello..world", "..hello.world.matrix", "hello.world1..", "hello.123..",
 		"hello....world", "....hello.world.matrix", "hello.world1....", "hello.123...."
 	})
-	public void testIsPointCaseNotCorrect(String value)
+	public void testIsDotCaseNotCorrect(String value)
 	{
-		assertFalse(Notation.isPointCase(value));
+		assertFalse(Notation.isDotCase(value));
 	}
 
 	/**
@@ -362,7 +362,7 @@ public class NotationTest
 			assertEquals(VALUES_UPPER_CASE[i], Notation.to(VALUES_KEBAB_CASE[i], NotationType.UPPER_CASE));
 			assertEquals(VALUES_UPPER_CASE[i], Notation.to(VALUES_SNAKE_CASE[i], NotationType.UPPER_CASE));
 			assertEquals(VALUES_UPPER_CASE[i], Notation.to(VALUES_PASCAL_CASE[i], NotationType.UPPER_CASE));
-			assertEquals(VALUES_UPPER_CASE[i], Notation.to(VALUES_POINT_CASE[i], NotationType.UPPER_CASE));
+			assertEquals(VALUES_UPPER_CASE[i], Notation.to(VALUES_DOT_CASE[i], NotationType.UPPER_CASE));
 		}
 	}
 
@@ -379,7 +379,7 @@ public class NotationTest
 			assertEquals(VALUES_KEBAB_CASE[i], Notation.to(VALUES_KEBAB_CASE[i], NotationType.KEBAB_CASE));
 			assertEquals(VALUES_KEBAB_CASE[i], Notation.to(VALUES_SNAKE_CASE[i], NotationType.KEBAB_CASE));
 			assertEquals(VALUES_KEBAB_CASE[i], Notation.to(VALUES_PASCAL_CASE[i], NotationType.KEBAB_CASE));
-			assertEquals(VALUES_KEBAB_CASE[i], Notation.to(VALUES_POINT_CASE[i], NotationType.KEBAB_CASE));
+			assertEquals(VALUES_KEBAB_CASE[i], Notation.to(VALUES_DOT_CASE[i], NotationType.KEBAB_CASE));
 		}
 	}
 
@@ -396,7 +396,7 @@ public class NotationTest
 			assertEquals(VALUES_SNAKE_CASE[i], Notation.to(VALUES_KEBAB_CASE[i], NotationType.SNAKE_CASE));
 			assertEquals(VALUES_SNAKE_CASE[i], Notation.to(VALUES_SNAKE_CASE[i], NotationType.SNAKE_CASE));
 			assertEquals(VALUES_SNAKE_CASE[i], Notation.to(VALUES_PASCAL_CASE[i], NotationType.SNAKE_CASE));
-			assertEquals(VALUES_SNAKE_CASE[i], Notation.to(VALUES_POINT_CASE[i], NotationType.SNAKE_CASE));
+			assertEquals(VALUES_SNAKE_CASE[i], Notation.to(VALUES_DOT_CASE[i], NotationType.SNAKE_CASE));
 		}
 	}
 
@@ -413,7 +413,7 @@ public class NotationTest
 			assertEquals(VALUES_CAMEL_CASE[i], Notation.to(VALUES_KEBAB_CASE[i], NotationType.CAMEL_CASE));
 			assertEquals(VALUES_CAMEL_CASE[i], Notation.to(VALUES_SNAKE_CASE[i], NotationType.CAMEL_CASE));
 			assertEquals(VALUES_CAMEL_CASE[i], Notation.to(VALUES_PASCAL_CASE[i], NotationType.CAMEL_CASE));
-			assertEquals(VALUES_CAMEL_CASE[i], Notation.to(VALUES_POINT_CASE[i], NotationType.CAMEL_CASE));
+			assertEquals(VALUES_CAMEL_CASE[i], Notation.to(VALUES_DOT_CASE[i], NotationType.CAMEL_CASE));
 		}
 	}
 
@@ -430,24 +430,24 @@ public class NotationTest
 			assertEquals(VALUES_PASCAL_CASE[i], Notation.to(VALUES_KEBAB_CASE[i], NotationType.PASCAL_CASE));
 			assertEquals(VALUES_PASCAL_CASE[i], Notation.to(VALUES_SNAKE_CASE[i], NotationType.PASCAL_CASE));
 			assertEquals(VALUES_PASCAL_CASE[i], Notation.to(VALUES_PASCAL_CASE[i], NotationType.PASCAL_CASE));
-			assertEquals(VALUES_PASCAL_CASE[i], Notation.to(VALUES_POINT_CASE[i], NotationType.PASCAL_CASE));
+			assertEquals(VALUES_PASCAL_CASE[i], Notation.to(VALUES_DOT_CASE[i], NotationType.PASCAL_CASE));
 		}
 	}
 
 	/**
-	 * Проверка метода {@link Notation#to(String, NotationType)} для нотации Point Case.
+	 * Проверка метода {@link Notation#to(String, NotationType)} для нотации Dot Case.
 	 */
 	@Test
-	public void testToNotationTypePointCase()
+	public void testToNotationTypeDotCase()
 	{
-		for (int i = 0; i < VALUES_POINT_CASE.length; i++)
+		for (int i = 0; i < VALUES_DOT_CASE.length; i++)
 		{
-			assertEquals(VALUES_POINT_CASE[i], Notation.to(VALUES_UPPER_CASE[i], NotationType.POINT_CASE));
-			assertEquals(VALUES_POINT_CASE[i], Notation.to(VALUES_CAMEL_CASE[i], NotationType.POINT_CASE));
-			assertEquals(VALUES_POINT_CASE[i], Notation.to(VALUES_KEBAB_CASE[i], NotationType.POINT_CASE));
-			assertEquals(VALUES_POINT_CASE[i], Notation.to(VALUES_SNAKE_CASE[i], NotationType.POINT_CASE));
-			assertEquals(VALUES_POINT_CASE[i], Notation.to(VALUES_PASCAL_CASE[i], NotationType.POINT_CASE));
-			assertEquals(VALUES_POINT_CASE[i], Notation.to(VALUES_POINT_CASE[i], NotationType.POINT_CASE));
+			assertEquals(VALUES_DOT_CASE[i], Notation.to(VALUES_UPPER_CASE[i], NotationType.DOT_CASE));
+			assertEquals(VALUES_DOT_CASE[i], Notation.to(VALUES_CAMEL_CASE[i], NotationType.DOT_CASE));
+			assertEquals(VALUES_DOT_CASE[i], Notation.to(VALUES_KEBAB_CASE[i], NotationType.DOT_CASE));
+			assertEquals(VALUES_DOT_CASE[i], Notation.to(VALUES_SNAKE_CASE[i], NotationType.DOT_CASE));
+			assertEquals(VALUES_DOT_CASE[i], Notation.to(VALUES_PASCAL_CASE[i], NotationType.DOT_CASE));
+			assertEquals(VALUES_DOT_CASE[i], Notation.to(VALUES_DOT_CASE[i], NotationType.DOT_CASE));
 		}
 	}
 
@@ -464,7 +464,7 @@ public class NotationTest
 			assertEquals(VALUES_UPPER_CASE[i], Notation.toUpperCase(VALUES_KEBAB_CASE[i]));
 			assertEquals(VALUES_UPPER_CASE[i], Notation.toUpperCase(VALUES_SNAKE_CASE[i]));
 			assertEquals(VALUES_UPPER_CASE[i], Notation.toUpperCase(VALUES_PASCAL_CASE[i]));
-			assertEquals(VALUES_UPPER_CASE[i], Notation.toUpperCase(VALUES_POINT_CASE[i]));
+			assertEquals(VALUES_UPPER_CASE[i], Notation.toUpperCase(VALUES_DOT_CASE[i]));
 		}
 	}
 
@@ -481,7 +481,7 @@ public class NotationTest
 			assertEquals(VALUES_KEBAB_CASE[i], Notation.toKebabCase(VALUES_KEBAB_CASE[i]));
 			assertEquals(VALUES_KEBAB_CASE[i], Notation.toKebabCase(VALUES_SNAKE_CASE[i]));
 			assertEquals(VALUES_KEBAB_CASE[i], Notation.toKebabCase(VALUES_PASCAL_CASE[i]));
-			assertEquals(VALUES_KEBAB_CASE[i], Notation.toKebabCase(VALUES_POINT_CASE[i]));
+			assertEquals(VALUES_KEBAB_CASE[i], Notation.toKebabCase(VALUES_DOT_CASE[i]));
 		}
 	}
 
@@ -498,7 +498,7 @@ public class NotationTest
 			assertEquals(VALUES_SNAKE_CASE[i], Notation.toSnakeCase(VALUES_KEBAB_CASE[i]));
 			assertEquals(VALUES_SNAKE_CASE[i], Notation.toSnakeCase(VALUES_SNAKE_CASE[i]));
 			assertEquals(VALUES_SNAKE_CASE[i], Notation.toSnakeCase(VALUES_PASCAL_CASE[i]));
-			assertEquals(VALUES_SNAKE_CASE[i], Notation.toSnakeCase(VALUES_POINT_CASE[i]));
+			assertEquals(VALUES_SNAKE_CASE[i], Notation.toSnakeCase(VALUES_DOT_CASE[i]));
 		}
 	}
 
@@ -515,7 +515,7 @@ public class NotationTest
 			assertEquals(VALUES_CAMEL_CASE[i], Notation.toCamelCase(VALUES_KEBAB_CASE[i]));
 			assertEquals(VALUES_CAMEL_CASE[i], Notation.toCamelCase(VALUES_SNAKE_CASE[i]));
 			assertEquals(VALUES_CAMEL_CASE[i], Notation.toCamelCase(VALUES_PASCAL_CASE[i]));
-			assertEquals(VALUES_CAMEL_CASE[i], Notation.toCamelCase(VALUES_POINT_CASE[i]));
+			assertEquals(VALUES_CAMEL_CASE[i], Notation.toCamelCase(VALUES_DOT_CASE[i]));
 		}
 	}
 
@@ -532,24 +532,24 @@ public class NotationTest
 			assertEquals(VALUES_PASCAL_CASE[i], Notation.toPascalCase(VALUES_KEBAB_CASE[i]));
 			assertEquals(VALUES_PASCAL_CASE[i], Notation.toPascalCase(VALUES_SNAKE_CASE[i]));
 			assertEquals(VALUES_PASCAL_CASE[i], Notation.toPascalCase(VALUES_PASCAL_CASE[i]));
-			assertEquals(VALUES_PASCAL_CASE[i], Notation.toPascalCase(VALUES_POINT_CASE[i]));
+			assertEquals(VALUES_PASCAL_CASE[i], Notation.toPascalCase(VALUES_DOT_CASE[i]));
 		}
 	}
 
 	/**
-	 * Проверка метода {@link Notation#toPointCase(String)}.
+	 * Проверка метода {@link Notation#toDotCase(String)}.
 	 */
 	@Test
-	public void testToPointCase()
+	public void testToDotCase()
 	{
-		for (int i = 0; i < VALUES_POINT_CASE.length; i++)
+		for (int i = 0; i < VALUES_DOT_CASE.length; i++)
 		{
-			assertEquals(VALUES_POINT_CASE[i], Notation.toPointCase(VALUES_UPPER_CASE[i]));
-			assertEquals(VALUES_POINT_CASE[i], Notation.toPointCase(VALUES_CAMEL_CASE[i]));
-			assertEquals(VALUES_POINT_CASE[i], Notation.toPointCase(VALUES_KEBAB_CASE[i]));
-			assertEquals(VALUES_POINT_CASE[i], Notation.toPointCase(VALUES_SNAKE_CASE[i]));
-			assertEquals(VALUES_POINT_CASE[i], Notation.toPointCase(VALUES_PASCAL_CASE[i]));
-			assertEquals(VALUES_POINT_CASE[i], Notation.toPointCase(VALUES_POINT_CASE[i]));
+			assertEquals(VALUES_DOT_CASE[i], Notation.toDotCase(VALUES_UPPER_CASE[i]));
+			assertEquals(VALUES_DOT_CASE[i], Notation.toDotCase(VALUES_CAMEL_CASE[i]));
+			assertEquals(VALUES_DOT_CASE[i], Notation.toDotCase(VALUES_KEBAB_CASE[i]));
+			assertEquals(VALUES_DOT_CASE[i], Notation.toDotCase(VALUES_SNAKE_CASE[i]));
+			assertEquals(VALUES_DOT_CASE[i], Notation.toDotCase(VALUES_PASCAL_CASE[i]));
+			assertEquals(VALUES_DOT_CASE[i], Notation.toDotCase(VALUES_DOT_CASE[i]));
 		}
 	}
 }

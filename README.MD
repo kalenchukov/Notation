@@ -18,7 +18,7 @@
 #### Паскаля (Pascal Case)
 Все слова пишутся слитно и первая буква каждого слова должна быть прописной.
 
-#### Точечная (Point Case)
+#### Точечная (Dot Case)
 Все буквы строчные, а слова разделяются символом точки.
 
 ## Использование
@@ -83,9 +83,9 @@ Notation.isPascalCase("HelloWorld");
 true
 ```
 
-#### Проверка нотации Point Case
+#### Проверка нотации Dot Case
 ```java
-Notation.isPointCase("hello.world");
+Notation.isDotCase("hello.world");
 ```
 
 Результат выполнения:
@@ -154,9 +154,9 @@ Notation.toPascalCase("hello_world");
 HelloWorld
 ```
 
-#### Конвертирование в нотацию Point Case
+#### Конвертирование в нотацию Dot Case
 ```java
-Notation.toPointCase("helloWorld");
+Notation.toDotCase("helloWorld");
 ```
 
 Результат выполнения:

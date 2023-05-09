@@ -66,7 +66,7 @@ public final class Notation
 			case UPPER_CASE -> Notation.isUpperCase(value);
 			case SNAKE_CASE -> Notation.isSnakeCase(value);
 			case PASCAL_CASE -> Notation.isPascalCase(value);
-			case POINT_CASE -> Notation.isPointCase(value);
+			case DOT_CASE -> Notation.isDotCase(value);
 		};
 	}
 
@@ -136,16 +136,16 @@ public final class Notation
 	}
 
 	/**
-	 * Проверяет соответствие строки нотации Point Case.
+	 * Проверяет соответствие строки нотации Dot Case.
 	 *
 	 * @param value строка.
-	 * @return {@code true}, если строка соответствует нотации Point Case, иначе {@code false}.
+	 * @return {@code true}, если строка соответствует нотации Dot Case, иначе {@code false}.
 	 */
-	public static boolean isPointCase(@NotNull final String value)
+	public static boolean isDotCase(@NotNull final String value)
 	{
 		Objects.requireNonNull(value);
 
-		return Notation.is(value, NotationRegexp.POINT_CASE);
+		return Notation.is(value, NotationRegexp.DOT_CASE);
 	}
 
 	/**
@@ -169,7 +169,7 @@ public final class Notation
 				case UPPER_CASE -> Notation.toUpperCase(value);
 				case SNAKE_CASE -> Notation.toSnakeCase(value);
 				case PASCAL_CASE -> Notation.toPascalCase(value);
-				case POINT_CASE -> Notation.toPointCase(value);
+				case DOT_CASE -> Notation.toDotCase(value);
 			};
 	}
 
@@ -246,17 +246,17 @@ public final class Notation
 	}
 
 	/**
-	 * Возвращает строку в нотации Point Case.
+	 * Возвращает строку в нотации Dot Case.
 	 *
 	 * @param value строка, нотацию которой необходимо изменить.
-	 * @return строку в нотации Point Case.
+	 * @return строку в нотации Dot Case.
 	 */
 	@NotNull
-	public static String toPointCase(@NotNull final String value)
+	public static String toDotCase(@NotNull final String value)
 	{
 		Objects.requireNonNull(value);
 
-		return Notation.fromAbstract(value, SeparatorType.POINT);
+		return Notation.fromAbstract(value, SeparatorType.DOT);
 	}
 
 	/**

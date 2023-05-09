@@ -67,9 +67,9 @@ public enum NotationType
 	PASCAL_CASE,
 
 	/**
-	 * Нотация Point Case.
+	 * Нотация Dot Case.
 	 * <p>Все слова пишутся строчными буквами,
 	 * а в качестве разделителя слов символ точки.</p>
 	 */
-	POINT_CASE;
+	DOT_CASE;
 }
