@@ -66,6 +66,7 @@ public final class Notation
 			case UPPER_CASE -> Notation.isUpperCase(value);
 			case SNAKE_CASE -> Notation.isSnakeCase(value);
 			case PASCAL_CASE -> Notation.isPascalCase(value);
+			case POINT_CASE -> Notation.isPointCase(value);
 		};
 	}
 
@@ -135,6 +136,19 @@ public final class Notation
 	}
 
 	/**
+	 * Проверяет соответствие строки нотации Point Case.
+	 *
+	 * @param value строка.
+	 * @return {@code true}, если строка соответствует нотации Point Case, иначе {@code false}.
+	 */
+	public static boolean isPointCase(@NotNull final String value)
+	{
+		Objects.requireNonNull(value);
+
+		return Notation.is(value, NotationRegexp.POINT_CASE);
+	}
+
+	/**
 	 * Возвращает строку в указанной нотации.
 	 *
 	 * @param value строка, нотацию которой необходимо изменить.
@@ -155,6 +169,7 @@ public final class Notation
 				case UPPER_CASE -> Notation.toUpperCase(value);
 				case SNAKE_CASE -> Notation.toSnakeCase(value);
 				case PASCAL_CASE -> Notation.toPascalCase(value);
+				case POINT_CASE -> Notation.toPascalCase(value);
 			};
 	}
 
@@ -277,6 +292,7 @@ public final class Notation
 				{
 					case HYPHEN -> "-" + matcher.group("target");
 					case UNDERSCORE -> "_" + matcher.group("target");
+					case POINT -> "." + matcher.group("target");
 					case UPPERCASE -> matcher.group("target").toUpperCase();
 				};
 
@@ -301,14 +317,14 @@ public final class Notation
 		String separator = "+";
 		String abstractValue = value.replaceAll("(?<=[a-zA-Z])[_-](?=[a-z0-9A-Z])", separator);
 
-		Matcher matcher = Pattern.compile("(?<=[a-z])(?<joint>[A-Z])(?=[a-z0-9A-Z])", Pattern.UNICODE_CASE)
+		Matcher matcher = Pattern.compile("(?<=[a-z])(?<word>[A-Z])(?=[a-z0-9A-Z])", Pattern.UNICODE_CASE)
 								 .matcher(abstractValue);
 
 		while (matcher.find())
 		{
 			abstractValue = abstractValue.replaceAll(
-				"(?<=[a-z])" + matcher.group("joint"),
-				separator + matcher.group("joint")
+				"(?<=[a-z])" + matcher.group("word"),
+				separator + matcher.group("word")
 			);
 		}
 

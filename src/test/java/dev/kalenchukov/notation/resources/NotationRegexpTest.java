@@ -135,4 +135,20 @@ public class NotationRegexpTest
 
 		assertEquals("PascalCase", matcher.group(NotationRegexp.PASCAL_CASE.getGroup()));
 	}
+
+	/**
+	 * Проверка групп константы {@link NotationRegexp#POINT_CASE}.
+	 */
+	@Test
+	public void testGroupPointCase()
+	{
+		String value = "point.case";
+
+		Pattern pattern = Pattern.compile(NotationRegexp.POINT_CASE.getPattern());
+		Matcher matcher = pattern.matcher(value);
+
+		assertTrue(matcher.find());
+
+		assertEquals("point.case", matcher.group(NotationRegexp.POINT_CASE.getGroup()));
+	}
 }

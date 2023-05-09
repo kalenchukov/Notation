@@ -44,5 +44,10 @@ public enum SeparatorType
 	/**
 	 * Прописная буква.
 	 */
-	UPPERCASE;
+	UPPERCASE,
+
+	/**
+	 * Символ точки.
+	 */
+	POINT;
 }

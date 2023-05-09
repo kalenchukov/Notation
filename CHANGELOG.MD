@@ -2,6 +2,7 @@
 ## vX.X.X - XX.XX.XXXX
 ### Добавлено
 * Добавлен метод Notation.is(String, NotationType).
+* Добавлен метод Notation.isPointCase(String).
 
 ### Изменено
 *

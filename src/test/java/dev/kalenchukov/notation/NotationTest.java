@@ -307,6 +307,38 @@ public class NotationTest
 	}
 
 	/**
+	 * Проверка метода {@link Notation#isPointCase(String)}.
+	 *
+	 * @param value проверяемое значение.
+	 */
+	@ParameterizedTest
+	@ValueSource(strings = {
+		"hello", "hello.world", "hello.world.matrix",
+		"hello.world1", "hel1lo.000.world1", ".hello.world.1"
+	})
+	public void testIsPointCase(String value)
+	{
+		assertTrue(Notation.isPointCase(value));
+	}
+
+	/**
+	 * Проверка метода {@link Notation#isPointCase(String)} с некорректными значениями.
+	 *
+	 * @param value проверяемое значение.
+	 */
+	@ParameterizedTest
+	@ValueSource(strings = {
+		"", ".", "..", "0", "0123456789", "0.12345678.9", ".0.0.", "0.0",
+		"HELLO.WORLD", "hellO.world", "hello.worlD", "H.world1",
+		"hello..world", "..hello.world.matrix", "hello.world1..", "hello.123..",
+		"hello....world", "....hello.world.matrix", "hello.world1....", "hello.123...."
+	})
+	public void testIsPointCaseNotCorrect(String value)
+	{
+		assertFalse(Notation.isPointCase(value));
+	}
+
+	/**
 	 * Проверка метода {@link Notation#to(String, NotationType)} для нотации Upper Case.
 	 */
 	@Test
