@@ -37,7 +37,7 @@ import java.util.regex.Pattern;
 /**
  * Класс содержит статические методы для нотации составных слов.
  *
- * @author Aleksey Kalenchukov
+ * @author Алексей Каленчуков
  */
 public final class Notation
 {

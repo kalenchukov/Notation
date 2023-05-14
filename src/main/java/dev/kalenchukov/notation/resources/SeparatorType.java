@@ -29,7 +29,7 @@ import org.jetbrains.annotations.NotNull;
 /**
  * Перечисление возможных типов разделителей.
  *
- * @author Aleksey Kalenchukov
+ * @author Алексей Каленчуков
  */
 public enum SeparatorType
 {
