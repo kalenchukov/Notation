@@ -42,6 +42,11 @@ import java.util.regex.Pattern;
 public final class Notations
 {
 	/**
+	 * Абстрактный разделитель слов.
+	 */
+	private static final String ABSTRACT_SEPARATOR = "+";
+
+	/**
 	 * Конструктор для {@code Notations}.
 	 */
 	private Notations() {}
@@ -320,9 +325,10 @@ public final class Notations
 		Objects.requireNonNull(separatorType);
 
 		String abstractValue = Notations.toAbstract(value);
-
-		Matcher matcher = Pattern.compile("\\+(?<target>[a-z0-9])", Pattern.UNICODE_CASE)
-								 .matcher(abstractValue);
+		Matcher matcher = Pattern.compile(
+				Pattern.quote(Notations.ABSTRACT_SEPARATOR) + "(?<target>[a-z0-9])",
+				Pattern.UNICODE_CASE
+		).matcher(abstractValue);
 
 		while (matcher.find())
 		{
@@ -333,7 +339,10 @@ public final class Notations
 				replacement = replacement.toUpperCase();
 			}
 
-			abstractValue = abstractValue.replaceAll("\\+" + target, replacement);
+			abstractValue = abstractValue.replaceAll(
+					Pattern.quote(Notations.ABSTRACT_SEPARATOR) + target,
+					replacement
+			);
 		}
 
 		return abstractValue;
@@ -341,7 +350,8 @@ public final class Notations
 
 	/**
 	 * Возвращает строку в абстрактной нотации.
-	 * Абстрактная нотация - это стиль в котором разделение слов обозначается символом "+", а все буквы строчные.
+	 * Абстрактная нотация - это стиль в котором разделение слов обозначается
+	 * символом {@value Notations#ABSTRACT_SEPARATOR}, а все буквы строчные.
 	 *
 	 * @param value строка, которую необходимо конвертировать в абстрактную нотацию.
 	 * @return строку в абстрактной нотации.
@@ -351,10 +361,9 @@ public final class Notations
 	{
 		Objects.requireNonNull(value);
 
-		String abstractSeparator = "+";
 		String separators = SeparatorType.getAllSeparatorSymbols();
 		String regexp = "(?<=[a-zA-Z])[" + separators + "](?=[a-z0-9A-Z])";
-		String abstractValue = value.replaceAll(regexp, abstractSeparator);
+		String abstractValue = value.replaceAll(regexp, Notations.ABSTRACT_SEPARATOR);
 
 		Matcher matcher = Pattern.compile("(?<=[a-z])(?<word>[A-Z])(?=[a-z0-9A-Z])", Pattern.UNICODE_CASE)
 								 .matcher(abstractValue);
@@ -362,7 +371,7 @@ public final class Notations
 		while (matcher.find())
 		{
 			String target = matcher.group("word");
-			String replacement = abstractSeparator + target;
+			String replacement = Notations.ABSTRACT_SEPARATOR + target;
 
 			abstractValue = abstractValue.replaceAll("(?<=[a-z])" + target, replacement);
 		}
