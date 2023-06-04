@@ -39,12 +39,12 @@ import java.util.regex.Pattern;
  *
  * @author Алексей Каленчуков
  */
-public final class Notation
+public final class Notations
 {
 	/**
-	 * Конструктор для {@code Notation}.
+	 * Конструктор для {@code Notations}.
 	 */
-	private Notation() {}
+	private Notations() {}
 
 	/**
 	 * Проверяет соответствие строки указанной нотации.
@@ -61,13 +61,13 @@ public final class Notation
 
 		return switch (notationType)
 		{
-			case CAMEL_CASE -> Notation.isCamelCase(value);
-			case KEBAB_CASE -> Notation.isKebabCase(value);
-			case UPPER_CASE -> Notation.isUpperCase(value);
-			case SNAKE_CASE -> Notation.isSnakeCase(value);
-			case PASCAL_CASE -> Notation.isPascalCase(value);
-			case DOT_CASE -> Notation.isDotCase(value);
-			case TRAIN_CASE -> Notation.isTrainCase(value);
+			case CAMEL_CASE -> Notations.isCamelCase(value);
+			case KEBAB_CASE -> Notations.isKebabCase(value);
+			case UPPER_CASE -> Notations.isUpperCase(value);
+			case SNAKE_CASE -> Notations.isSnakeCase(value);
+			case PASCAL_CASE -> Notations.isPascalCase(value);
+			case DOT_CASE -> Notations.isDotCase(value);
+			case TRAIN_CASE -> Notations.isTrainCase(value);
 		};
 	}
 
@@ -81,7 +81,7 @@ public final class Notation
 	{
 		Objects.requireNonNull(value);
 
-		return Notation.is(value, NotationRegexp.UPPER_CASE);
+		return Notations.is(value, NotationRegexp.UPPER_CASE);
 	}
 
 	/**
@@ -94,7 +94,7 @@ public final class Notation
 	{
 		Objects.requireNonNull(value);
 
-		return Notation.is(value, NotationRegexp.KEBAB_CASE);
+		return Notations.is(value, NotationRegexp.KEBAB_CASE);
 	}
 
 	/**
@@ -107,7 +107,7 @@ public final class Notation
 	{
 		Objects.requireNonNull(value);
 
-		return Notation.is(value, NotationRegexp.SNAKE_CASE);
+		return Notations.is(value, NotationRegexp.SNAKE_CASE);
 	}
 
 	/**
@@ -120,7 +120,7 @@ public final class Notation
 	{
 		Objects.requireNonNull(value);
 
-		return Notation.is(value, NotationRegexp.CAMEL_CASE);
+		return Notations.is(value, NotationRegexp.CAMEL_CASE);
 	}
 
 	/**
@@ -133,7 +133,7 @@ public final class Notation
 	{
 		Objects.requireNonNull(value);
 
-		return Notation.is(value, NotationRegexp.PASCAL_CASE);
+		return Notations.is(value, NotationRegexp.PASCAL_CASE);
 	}
 
 	/**
@@ -146,7 +146,7 @@ public final class Notation
 	{
 		Objects.requireNonNull(value);
 
-		return Notation.is(value, NotationRegexp.DOT_CASE);
+		return Notations.is(value, NotationRegexp.DOT_CASE);
 	}
 
 	/**
@@ -159,7 +159,7 @@ public final class Notation
 	{
 		Objects.requireNonNull(value);
 
-		return Notation.is(value, NotationRegexp.TRAIN_CASE);
+		return Notations.is(value, NotationRegexp.TRAIN_CASE);
 	}
 
 	/**
@@ -178,13 +178,13 @@ public final class Notation
 
 		return switch (notationType)
 			{
-				case CAMEL_CASE -> Notation.toCamelCase(value);
-				case KEBAB_CASE -> Notation.toKebabCase(value);
-				case UPPER_CASE -> Notation.toUpperCase(value);
-				case SNAKE_CASE -> Notation.toSnakeCase(value);
-				case PASCAL_CASE -> Notation.toPascalCase(value);
-				case DOT_CASE -> Notation.toDotCase(value);
-				case TRAIN_CASE -> Notation.toTrainCase(value);
+				case CAMEL_CASE -> Notations.toCamelCase(value);
+				case KEBAB_CASE -> Notations.toKebabCase(value);
+				case UPPER_CASE -> Notations.toUpperCase(value);
+				case SNAKE_CASE -> Notations.toSnakeCase(value);
+				case PASCAL_CASE -> Notations.toPascalCase(value);
+				case DOT_CASE -> Notations.toDotCase(value);
+				case TRAIN_CASE -> Notations.toTrainCase(value);
 			};
 	}
 
@@ -199,7 +199,7 @@ public final class Notation
 	{
 		Objects.requireNonNull(value);
 
-		return Notation.fromAbstract(value, SeparatorType.UNDERSCORE).toUpperCase();
+		return Notations.fromAbstract(value, SeparatorType.UNDERSCORE).toUpperCase();
 	}
 
 	/**
@@ -213,7 +213,7 @@ public final class Notation
 	{
 		Objects.requireNonNull(value);
 
-		return Notation.fromAbstract(value, SeparatorType.HYPHEN);
+		return Notations.fromAbstract(value, SeparatorType.HYPHEN);
 	}
 
 	/**
@@ -227,7 +227,7 @@ public final class Notation
 	{
 		Objects.requireNonNull(value);
 
-		return Notation.fromAbstract(value, SeparatorType.UNDERSCORE);
+		return Notations.fromAbstract(value, SeparatorType.UNDERSCORE);
 	}
 
 	/**
@@ -241,7 +241,7 @@ public final class Notation
 	{
 		Objects.requireNonNull(value);
 
-		return Notation.fromAbstract(value, SeparatorType.UPPERCASE);
+		return Notations.fromAbstract(value, SeparatorType.UPPERCASE);
 	}
 
 	/**
@@ -256,7 +256,7 @@ public final class Notation
 		Objects.requireNonNull(value);
 
 		return Stringi.firstLetterToUpperCase(
-			Notation.fromAbstract(value, SeparatorType.UPPERCASE)
+			Notations.fromAbstract(value, SeparatorType.UPPERCASE)
 		);
 	}
 
@@ -271,7 +271,7 @@ public final class Notation
 	{
 		Objects.requireNonNull(value);
 
-		return Notation.fromAbstract(value, SeparatorType.DOT);
+		return Notations.fromAbstract(value, SeparatorType.DOT);
 	}
 
 	/**
@@ -285,7 +285,7 @@ public final class Notation
 	{
 		Objects.requireNonNull(value);
 
-		return Notation.fromAbstract(value, SeparatorType.HYPHEN).toUpperCase();
+		return Notations.fromAbstract(value, SeparatorType.HYPHEN).toUpperCase();
 	}
 
 	/**
@@ -319,7 +319,7 @@ public final class Notation
 		Objects.requireNonNull(value);
 		Objects.requireNonNull(separatorType);
 
-		String abstractValue = Notation.toAbstract(value);
+		String abstractValue = Notations.toAbstract(value);
 
 		Matcher matcher = Pattern.compile("\\+(?<target>[a-z0-9])", Pattern.UNICODE_CASE)
 								 .matcher(abstractValue);
