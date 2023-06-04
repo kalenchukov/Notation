@@ -49,6 +49,11 @@ public enum SeparatorType
 	UPPERCASE(""),
 
 	/**
+	 * Символ пробела.
+	 */
+	SPACE(" "),
+
+	/**
 	 * Символ точки.
 	 */
 	DOT(".");

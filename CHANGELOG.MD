@@ -1,7 +1,7 @@
 # Журнал изменений
 ## vX.X.X - XX.XX.XXXX
 ### Добавлено
-*
+* Добавлено перечисление SeparatorType.SPACE.
 
 ### Изменено
 * Переименован класс Notation -> Notations.

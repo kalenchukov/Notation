@@ -352,7 +352,7 @@ public final class Notations
 		Objects.requireNonNull(value);
 
 		String abstractSeparator = "+";
-		String separators = SeparatorType.getAllSeparatorSymbols() + "\\s";
+		String separators = SeparatorType.getAllSeparatorSymbols();
 		String regexp = "(?<=[a-zA-Z])[" + separators + "](?=[a-z0-9A-Z])";
 		String abstractValue = value.replaceAll(regexp, abstractSeparator);
 
