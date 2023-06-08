@@ -42,7 +42,7 @@ public class NotationRegexpTest
 	 * Проверка константы {@link NotationRegexp#UPPER_CASE}.
 	 */
 	@Test
-	public void testUpperCase()
+	public void upperCase()
 	{
 		String value = "CAMEL_CASE";
 
@@ -57,7 +57,7 @@ public class NotationRegexpTest
 	 * Проверка константы {@link NotationRegexp#UPPER_CASE} с некорректным значением.
 	 */
 	@Test
-	public void testUpperCaseNotCorrect()
+	public void upperCaseNotCorrect()
 	{
 		String value = "CAMEL#CASE";
 
@@ -71,7 +71,7 @@ public class NotationRegexpTest
 	 * Проверка константы {@link NotationRegexp#KEBAB_CASE}.
 	 */
 	@Test
-	public void testKebabCase()
+	public void kebabCase()
 	{
 		String value = "kebab-case";
 
@@ -86,7 +86,7 @@ public class NotationRegexpTest
 	 * Проверка константы {@link NotationRegexp#KEBAB_CASE} с некорректным значением.
 	 */
 	@Test
-	public void testKebabCaseNotCorrect()
+	public void kebabCaseNotCorrect()
 	{
 		String value = "kebab#case";
 
@@ -100,7 +100,7 @@ public class NotationRegexpTest
 	 * Проверка константы {@link NotationRegexp#SNAKE_CASE}.
 	 */
 	@Test
-	public void testSnakeCase()
+	public void snakeCase()
 	{
 		String value = "snake_case";
 
@@ -115,7 +115,7 @@ public class NotationRegexpTest
 	 * Проверка константы {@link NotationRegexp#SNAKE_CASE} с некорректным значением.
 	 */
 	@Test
-	public void testSnakeCaseNotCorrect()
+	public void snakeCaseNotCorrect()
 	{
 		String value = "snake#case";
 
@@ -129,7 +129,7 @@ public class NotationRegexpTest
 	 * Проверка константы {@link NotationRegexp#CAMEL_CASE}.
 	 */
 	@Test
-	public void testCamelCase()
+	public void camelCase()
 	{
 		String value = "camelCase";
 
@@ -144,7 +144,7 @@ public class NotationRegexpTest
 	 * Проверка константы {@link NotationRegexp#CAMEL_CASE} с некорректным значением.
 	 */
 	@Test
-	public void testCamelCaseNotCorrect()
+	public void camelCaseNotCorrect()
 	{
 		String value = "camel#case";
 
@@ -158,7 +158,7 @@ public class NotationRegexpTest
 	 * Проверка константы {@link NotationRegexp#PASCAL_CASE}.
 	 */
 	@Test
-	public void testPascalCase()
+	public void pascalCase()
 	{
 		String value = "PascalCase";
 
@@ -173,7 +173,7 @@ public class NotationRegexpTest
 	 * Проверка константы {@link NotationRegexp#PASCAL_CASE} с некорректным значением.
 	 */
 	@Test
-	public void testPascalCaseNotCorrect()
+	public void pascalCaseNotCorrect()
 	{
 		String value = "Pascal#case";
 
@@ -187,7 +187,7 @@ public class NotationRegexpTest
 	 * Проверка константы {@link NotationRegexp#DOT_CASE}.
 	 */
 	@Test
-	public void testDotCase()
+	public void dotCase()
 	{
 		String value = "dot.case";
 
@@ -202,7 +202,7 @@ public class NotationRegexpTest
 	 * Проверка константы {@link NotationRegexp#DOT_CASE} с некорректным значением.
 	 */
 	@Test
-	public void testDotCaseNotCorrect()
+	public void dotCaseNotCorrect()
 	{
 		String value = "dot#case";
 
@@ -216,7 +216,7 @@ public class NotationRegexpTest
 	 * Проверка константы {@link NotationRegexp#TRAIN_CASE}.
 	 */
 	@Test
-	public void testTrainCase()
+	public void trainCase()
 	{
 		String value = "TRAIN-CASE";
 
@@ -231,7 +231,7 @@ public class NotationRegexpTest
 	 * Проверка константы {@link NotationRegexp#TRAIN_CASE} с некорректным значением.
 	 */
 	@Test
-	public void testTrainCaseNotCorrect()
+	public void trainCaseNotCorrect()
 	{
 		String value = "TRAIN#CASE";
 

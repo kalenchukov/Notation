@@ -104,7 +104,7 @@ public class NotationsTest
 		"HELLO", "HELLO_WORLD", "HELLO_WORLD_MATRIX", "HELLO_WORLD1",
 		"HEL1LO_000_WORLD1"
 	})
-	public void testIsNotationTypeUpperCase(String value)
+	public void isNotationTypeUpperCase(String value)
 	{
 		assertTrue(Notations.is(value, NotationType.UPPER_CASE));
 	}
@@ -119,7 +119,7 @@ public class NotationsTest
 		"hello", "hello-world", "hello-world-matrix",
 		"hello-world1", "hel1lo-000-world1"
 	})
-	public void testIsNotationTypeKebabCase(String value)
+	public void isNotationTypeKebabCase(String value)
 	{
 		assertTrue(Notations.is(value, NotationType.KEBAB_CASE));
 	}
@@ -134,7 +134,7 @@ public class NotationsTest
 		"HELLO", "HELLO-WORLD", "HELLO-WORLD-MATRIX",
 		"HELLO-WORLD1", "HEL1LO-000-WORLD1"
 	})
-	public void testIsNotationTypeTrainCase(String value)
+	public void isNotationTypeTrainCase(String value)
 	{
 		assertTrue(Notations.is(value, NotationType.TRAIN_CASE));
 	}
@@ -149,7 +149,7 @@ public class NotationsTest
 		"hello", "hello_world", "hello_world_matrix",
 		"hello_world1", "hel1lo_000_world1"
 	})
-	public void testIsNotationTypeSnakeCase(String value)
+	public void isNotationTypeSnakeCase(String value)
 	{
 		assertTrue(Notations.is(value, NotationType.SNAKE_CASE));
 	}
@@ -164,7 +164,7 @@ public class NotationsTest
 		"hello", "helloWorld", "helloWorldMatrix", "helloWorld1",
 		"hel1lo000World1", "helloWorld1", "hellOWorld", "helloWorlD"
 	})
-	public void testIsNotationTypeCamelCase(String value)
+	public void isNotationTypeCamelCase(String value)
 	{
 		assertTrue(Notations.is(value, NotationType.CAMEL_CASE));
 	}
@@ -179,7 +179,7 @@ public class NotationsTest
 		"Hello", "HelloWorld", "HelloWorldMatrix", "HelloWorld1",
 		"Hel1lo000World1", "HelloWorld1", "HellOWorld", "HelloWorlD"
 	})
-	public void testIsNotationTypePascalCase(String value)
+	public void isNotationTypePascalCase(String value)
 	{
 		assertTrue(Notations.is(value, NotationType.PASCAL_CASE));
 	}
@@ -194,7 +194,7 @@ public class NotationsTest
 		"HELLO", "HELLO_WORLD", "HELLO_WORLD_MATRIX", "HELLO_WORLD1",
 		"HEL1LO_000_WORLD1"
 	})
-	public void testIsUpperCase(String value)
+	public void isUpperCase(String value)
 	{
 		assertTrue(Notations.isUpperCase(value));
 	}
@@ -212,7 +212,7 @@ public class NotationsTest
 		"HELLO__WORLD", "__HELLO_WORLD_MATRIX", "HELLO_WORLD1__", "HELLO_123__",
 		"HELLO____WORLD", "____HELLO_WORLD_MATRIX", "HELLO_WORLD1____", "HELLO_123____"
 	})
-	public void testIsUpperCaseNotCorrect(String value)
+	public void isUpperCaseNotCorrect(String value)
 	{
 		assertFalse(Notations.isUpperCase(value));
 	}
@@ -227,7 +227,7 @@ public class NotationsTest
 		"hello", "hello-world", "hello-world-matrix",
 		"hello-world1", "hel1lo-000-world1"
 	})
-	public void testIsKebabCase(String value)
+	public void isKebabCase(String value)
 	{
 		assertTrue(Notations.isKebabCase(value));
 	}
@@ -245,7 +245,7 @@ public class NotationsTest
 		"hello--world", "--hello-world-matrix", "hello-world1--", "hello-123--",
 		"hello----world", "----hello-world-matrix", "hello-world1----", "hello-123----"
 	})
-	public void testIsKebabCaseNotCorrect(String value)
+	public void isKebabCaseNotCorrect(String value)
 	{
 		assertFalse(Notations.isKebabCase(value));
 	}
@@ -260,7 +260,7 @@ public class NotationsTest
 		"HELLO", "HELLO-WORLD", "HELLO-WORLD-MATRIX",
 		"HELLO-WORLD1", "HEL1LO-000-WORLD1"
 	})
-	public void testIsTrainCase(String value)
+	public void isTrainCase(String value)
 	{
 		assertTrue(Notations.isTrainCase(value));
 	}
@@ -278,7 +278,7 @@ public class NotationsTest
 		"HELLO--WORLD", "--HELLO-WORLD-MATRIX", "HELLO-WORLD1--", "HELLO-123--",
 		"HELLO----WORLD", "----HELLO-WORLD-MATRIX", "HELLO-WORLD1----", "HELLO-123----"
 	})
-	public void testIsTrainCaseNotCorrect(String value)
+	public void isTrainCaseNotCorrect(String value)
 	{
 		assertFalse(Notations.isTrainCase(value));
 	}
@@ -293,7 +293,7 @@ public class NotationsTest
 		"hello", "hello_world", "hello_world_matrix",
 		"hello_world1", "hel1lo_000_world1"
 	})
-	public void testIsSnakeCase(String value)
+	public void isSnakeCase(String value)
 	{
 		assertTrue(Notations.isSnakeCase(value));
 	}
@@ -311,7 +311,7 @@ public class NotationsTest
 		"hello__world", "__hello_world_matrix", "hello_world1__", "hello_123__",
 		"hello____world", "____hello_world_matrix", "hello_world1____", "hello_123____"
 	})
-	public void testIsSnakeCaseNotCorrect(String value)
+	public void isSnakeCaseNotCorrect(String value)
 	{
 		assertFalse(Notations.isSnakeCase(value));
 	}
@@ -326,7 +326,7 @@ public class NotationsTest
 		"hello", "helloWorld", "helloWorldMatrix", "helloWorld1",
 		"hel1lo000World1", "helloWorld1", "hellOWorld", "helloWorlD"
 	})
-	public void testIsCamelCase(String value)
+	public void isCamelCase(String value)
 	{
 		assertTrue(Notations.isCamelCase(value));
 	}
@@ -342,7 +342,7 @@ public class NotationsTest
 		"HELLOWORLD", "HWorld1",
 		"HelloWorld", "HHelloWorldMatrix", "HelloWorld1", "Hello123"
 	})
-	public void testIsCamelCaseNotCorrect(String value)
+	public void isCamelCaseNotCorrect(String value)
 	{
 		assertFalse(Notations.isCamelCase(value));
 	}
@@ -357,7 +357,7 @@ public class NotationsTest
 		"Hello", "HelloWorld", "HelloWorldMatrix", "HelloWorld1",
 		"Hel1lo000World1", "HelloWorld1", "HellOWorld", "HelloWorlD"
 	})
-	public void testIsPascalCase(String value)
+	public void isPascalCase(String value)
 	{
 		assertTrue(Notations.isPascalCase(value));
 	}
@@ -373,7 +373,7 @@ public class NotationsTest
 		"hELLOwORLD", "hWorld1",
 		"helloworld", "hhelloWorldMatrix", "helloWorld1", "hello123"
 	})
-	public void testIsPascalCaseNotCorrect(String value)
+	public void isPascalCaseNotCorrect(String value)
 	{
 		assertFalse(Notations.isPascalCase(value));
 	}
@@ -388,7 +388,7 @@ public class NotationsTest
 		"hello", "hello.world", "hello.world.matrix",
 		"hello.world1", "hel1lo.000.world1"
 	})
-	public void testIsDotCase(String value)
+	public void isDotCase(String value)
 	{
 		assertTrue(Notations.isDotCase(value));
 	}
@@ -406,7 +406,7 @@ public class NotationsTest
 		"hello..world", "..hello.world.matrix", "hello.world1..", "hello.123..",
 		"hello....world", "....hello.world.matrix", "hello.world1....", "hello.123...."
 	})
-	public void testIsDotCaseNotCorrect(String value)
+	public void isDotCaseNotCorrect(String value)
 	{
 		assertFalse(Notations.isDotCase(value));
 	}
@@ -415,7 +415,7 @@ public class NotationsTest
 	 * Проверка метода {@link Notations#to(String, NotationType)} для нотации Upper Case.
 	 */
 	@Test
-	public void testToNotationTypeUpperCase()
+	public void toNotationTypeUpperCase()
 	{
 		for (int i = 0; i < VALUES_UPPER_CASE.length; i++)
 		{
@@ -434,7 +434,7 @@ public class NotationsTest
 	 * Проверка метода {@link Notations#to(String, NotationType)} для нотации Kebab Case.
 	 */
 	@Test
-	public void testToNotationTypeKebabCase()
+	public void toNotationTypeKebabCase()
 	{
 		for (int i = 0; i < VALUES_KEBAB_CASE.length; i++)
 		{
@@ -453,7 +453,7 @@ public class NotationsTest
 	 * Проверка метода {@link Notations#to(String, NotationType)} для нотации Train Case.
 	 */
 	@Test
-	public void testToNotationTypeTrainCase()
+	public void toNotationTypeTrainCase()
 	{
 		for (int i = 0; i < VALUES_TRAIN_CASE.length; i++)
 		{
@@ -472,7 +472,7 @@ public class NotationsTest
 	 * Проверка метода {@link Notations#to(String, NotationType)} для нотации Snake Case.
 	 */
 	@Test
-	public void testToNotationTypeSnakeCase()
+	public void toNotationTypeSnakeCase()
 	{
 		for (int i = 0; i < VALUES_SNAKE_CASE.length; i++)
 		{
@@ -491,7 +491,7 @@ public class NotationsTest
 	 * Проверка метода {@link Notations#to(String, NotationType)} для нотации Camel Case.
 	 */
 	@Test
-	public void testToNotationTypeCamelCase()
+	public void toNotationTypeCamelCase()
 	{
 		for (int i = 0; i < VALUES_CAMEL_CASE.length; i++)
 		{
@@ -510,7 +510,7 @@ public class NotationsTest
 	 * Проверка метода {@link Notations#to(String, NotationType)} для нотации Pascal Case.
 	 */
 	@Test
-	public void testToNotationTypePascalCase()
+	public void toNotationTypePascalCase()
 	{
 		for (int i = 0; i < VALUES_PASCAL_CASE.length; i++)
 		{
@@ -529,7 +529,7 @@ public class NotationsTest
 	 * Проверка метода {@link Notations#to(String, NotationType)} для нотации Dot Case.
 	 */
 	@Test
-	public void testToNotationTypeDotCase()
+	public void toNotationTypeDotCase()
 	{
 		for (int i = 0; i < VALUES_DOT_CASE.length; i++)
 		{
@@ -548,7 +548,7 @@ public class NotationsTest
 	 * Проверка метода {@link Notations#toUpperCase(String)}.
 	 */
 	@Test
-	public void testToUpperCase()
+	public void toUpperCase()
 	{
 		for (int i = 0; i < VALUES_UPPER_CASE.length; i++)
 		{
@@ -567,7 +567,7 @@ public class NotationsTest
 	 * Проверка метода {@link Notations#toKebabCase(String)}.
 	 */
 	@Test
-	public void testToKebabCase()
+	public void toKebabCase()
 	{
 		for (int i = 0; i < VALUES_KEBAB_CASE.length; i++)
 		{
@@ -586,7 +586,7 @@ public class NotationsTest
 	 * Проверка метода {@link Notations#toTrainCase(String)}.
 	 */
 	@Test
-	public void testToTrainCase()
+	public void toTrainCase()
 	{
 		for (int i = 0; i < VALUES_TRAIN_CASE.length; i++)
 		{
@@ -605,7 +605,7 @@ public class NotationsTest
 	 * Проверка метода {@link Notations#toSnakeCase(String)}.
 	 */
 	@Test
-	public void testToSnakeCase()
+	public void toSnakeCase()
 	{
 		for (int i = 0; i < VALUES_SNAKE_CASE.length; i++)
 		{
@@ -624,7 +624,7 @@ public class NotationsTest
 	 * Проверка метода {@link Notations#toCamelCase(String)}.
 	 */
 	@Test
-	public void testToCamelCase()
+	public void toCamelCase()
 	{
 		for (int i = 0; i < VALUES_CAMEL_CASE.length; i++)
 		{
@@ -643,7 +643,7 @@ public class NotationsTest
 	 * Проверка метода {@link Notations#toPascalCase(String)}.
 	 */
 	@Test
-	public void testToPascalCase()
+	public void toPascalCase()
 	{
 		for (int i = 0; i < VALUES_PASCAL_CASE.length; i++)
 		{
@@ -662,7 +662,7 @@ public class NotationsTest
 	 * Проверка метода {@link Notations#toDotCase(String)}.
 	 */
 	@Test
-	public void testToDotCase()
+	public void toDotCase()
 	{
 		for (int i = 0; i < VALUES_DOT_CASE.length; i++)
 		{
