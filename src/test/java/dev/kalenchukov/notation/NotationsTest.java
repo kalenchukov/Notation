@@ -25,8 +25,8 @@
 package dev.kalenchukov.notation;
 
 import dev.kalenchukov.notation.resources.NotationType;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -39,62 +39,6 @@ import static org.junit.jupiter.api.Assertions.*;
 public class NotationsTest
 {
 	/**
-	 * Значения без нотации.
-	 */
-	private static final String[] VALUES_NOT_CASE = {
-		"hello", "HELLO WORLD", "hello World MATRIX", "Hello World1"
-	};
-
-	/**
-	 * Значения в нотации Upper Case.
-	 */
-	private static final String[] VALUES_UPPER_CASE = {
-		"HELLO", "HELLO_WORLD", "HELLO_WORLD_MATRIX", "HELLO_WORLD1"
-	};
-
-	/**
-	 * Значения в нотации Camel Case.
-	 */
-	private static final String[] VALUES_CAMEL_CASE = {
-		"hello", "helloWorld", "helloWorldMatrix", "helloWorld1"
-	};
-
-	/**
-	 * Значения в нотации Kebab Case.
-	 */
-	private static final String[] VALUES_KEBAB_CASE = {
-		"hello", "hello-world", "hello-world-matrix", "hello-world1"
-	};
-
-	/**
-	 * Значения в нотации Snake Case.
-	 */
-	private static final String[] VALUES_SNAKE_CASE = {
-		"hello", "hello_world", "hello_world_matrix", "hello_world1"
-	};
-
-	/**
-	 * Значения в нотации Pascal Case.
-	 */
-	private static final String[] VALUES_PASCAL_CASE = {
-		"Hello", "HelloWorld", "HelloWorldMatrix", "HelloWorld1"
-	};
-
-	/**
-	 * Значения в нотации Dot Case.
-	 */
-	private static final String[] VALUES_DOT_CASE = {
-		"hello", "hello.world", "hello.world.matrix", "hello.world1"
-	};
-
-	/**
-	 * Значения в нотации Train Case.
-	 */
-	private static final String[] VALUES_TRAIN_CASE = {
-		"HELLO", "HELLO-WORLD", "HELLO-WORLD-MATRIX", "HELLO-WORLD1"
-	};
-
-	/**
 	 * Проверка метода {@link Notations#is(String, NotationType)} для нотации Upper Case.
 	 *
 	 * @param value проверяемое значение.
@@ -106,7 +50,9 @@ public class NotationsTest
 	})
 	public void isNotationTypeUpperCase(String value)
 	{
-		assertTrue(Notations.is(value, NotationType.UPPER_CASE));
+		boolean actual = Notations.is(value, NotationType.UPPER_CASE);
+
+		assertTrue(actual);
 	}
 
 	/**
@@ -121,7 +67,9 @@ public class NotationsTest
 	})
 	public void isNotationTypeKebabCase(String value)
 	{
-		assertTrue(Notations.is(value, NotationType.KEBAB_CASE));
+		boolean actual = Notations.is(value, NotationType.KEBAB_CASE);
+
+		assertTrue(actual);
 	}
 
 	/**
@@ -136,7 +84,9 @@ public class NotationsTest
 	})
 	public void isNotationTypeTrainCase(String value)
 	{
-		assertTrue(Notations.is(value, NotationType.TRAIN_CASE));
+		boolean actual = Notations.is(value, NotationType.TRAIN_CASE);
+
+		assertTrue(actual);
 	}
 
 	/**
@@ -151,7 +101,9 @@ public class NotationsTest
 	})
 	public void isNotationTypeSnakeCase(String value)
 	{
-		assertTrue(Notations.is(value, NotationType.SNAKE_CASE));
+		boolean actual = Notations.is(value, NotationType.SNAKE_CASE);
+
+		assertTrue(actual);
 	}
 
 	/**
@@ -166,7 +118,9 @@ public class NotationsTest
 	})
 	public void isNotationTypeCamelCase(String value)
 	{
-		assertTrue(Notations.is(value, NotationType.CAMEL_CASE));
+		boolean actual = Notations.is(value, NotationType.CAMEL_CASE);
+
+		assertTrue(actual);
 	}
 
 	/**
@@ -181,7 +135,9 @@ public class NotationsTest
 	})
 	public void isNotationTypePascalCase(String value)
 	{
-		assertTrue(Notations.is(value, NotationType.PASCAL_CASE));
+		boolean actual = Notations.is(value, NotationType.PASCAL_CASE);
+
+		assertTrue(actual);
 	}
 
 	/**
@@ -196,7 +152,9 @@ public class NotationsTest
 	})
 	public void isUpperCase(String value)
 	{
-		assertTrue(Notations.isUpperCase(value));
+		boolean actual = Notations.isUpperCase(value);
+
+		assertTrue(actual);
 	}
 
 	/**
@@ -214,7 +172,9 @@ public class NotationsTest
 	})
 	public void isUpperCaseNotCorrect(String value)
 	{
-		assertFalse(Notations.isUpperCase(value));
+		boolean actual = Notations.isUpperCase(value);
+
+		assertFalse(actual);
 	}
 
 	/**
@@ -229,7 +189,9 @@ public class NotationsTest
 	})
 	public void isKebabCase(String value)
 	{
-		assertTrue(Notations.isKebabCase(value));
+		boolean actual = Notations.isKebabCase(value);
+
+		assertTrue(actual);
 	}
 
 	/**
@@ -247,7 +209,9 @@ public class NotationsTest
 	})
 	public void isKebabCaseNotCorrect(String value)
 	{
-		assertFalse(Notations.isKebabCase(value));
+		boolean actual = Notations.isKebabCase(value);
+
+		assertFalse(actual);
 	}
 
 	/**
@@ -262,7 +226,9 @@ public class NotationsTest
 	})
 	public void isTrainCase(String value)
 	{
-		assertTrue(Notations.isTrainCase(value));
+		boolean actual = Notations.isTrainCase(value);
+
+		assertTrue(actual);
 	}
 
 	/**
@@ -280,7 +246,9 @@ public class NotationsTest
 	})
 	public void isTrainCaseNotCorrect(String value)
 	{
-		assertFalse(Notations.isTrainCase(value));
+		boolean actual = Notations.isTrainCase(value);
+
+		assertFalse(actual);
 	}
 
 	/**
@@ -295,7 +263,9 @@ public class NotationsTest
 	})
 	public void isSnakeCase(String value)
 	{
-		assertTrue(Notations.isSnakeCase(value));
+		boolean actual = Notations.isSnakeCase(value);
+
+		assertTrue(actual);
 	}
 
 	/**
@@ -313,7 +283,9 @@ public class NotationsTest
 	})
 	public void isSnakeCaseNotCorrect(String value)
 	{
-		assertFalse(Notations.isSnakeCase(value));
+		boolean actual = Notations.isSnakeCase(value);
+
+		assertFalse(actual);
 	}
 
 	/**
@@ -328,7 +300,9 @@ public class NotationsTest
 	})
 	public void isCamelCase(String value)
 	{
-		assertTrue(Notations.isCamelCase(value));
+		boolean actual = Notations.isCamelCase(value);
+
+		assertTrue(actual);
 	}
 
 	/**
@@ -344,7 +318,9 @@ public class NotationsTest
 	})
 	public void isCamelCaseNotCorrect(String value)
 	{
-		assertFalse(Notations.isCamelCase(value));
+		boolean actual = Notations.isCamelCase(value);
+
+		assertFalse(actual);
 	}
 
 	/**
@@ -359,7 +335,9 @@ public class NotationsTest
 	})
 	public void isPascalCase(String value)
 	{
-		assertTrue(Notations.isPascalCase(value));
+		boolean actual = Notations.isPascalCase(value);
+
+		assertTrue(actual);
 	}
 
 	/**
@@ -375,7 +353,9 @@ public class NotationsTest
 	})
 	public void isPascalCaseNotCorrect(String value)
 	{
-		assertFalse(Notations.isPascalCase(value));
+		boolean actual = Notations.isPascalCase(value);
+
+		assertFalse(actual);
 	}
 
 	/**
@@ -390,7 +370,9 @@ public class NotationsTest
 	})
 	public void isDotCase(String value)
 	{
-		assertTrue(Notations.isDotCase(value));
+		boolean actual = Notations.isDotCase(value);
+
+		assertTrue(actual);
 	}
 
 	/**
@@ -408,272 +390,638 @@ public class NotationsTest
 	})
 	public void isDotCaseNotCorrect(String value)
 	{
-		assertFalse(Notations.isDotCase(value));
+		boolean actual = Notations.isDotCase(value);
+
+		assertFalse(actual);
 	}
 
 	/**
 	 * Проверка метода {@link Notations#to(String, NotationType)} для нотации Upper Case.
 	 */
-	@Test
-	public void toNotationTypeUpperCase()
+	@ParameterizedTest
+	@CsvSource({
+			"hello, HELLO",
+			"HELLO, HELLO",
+			"hello, HELLO",
+			"hello, HELLO",
+			"hello, HELLO",
+			"Hello, HELLO",
+			"hello, HELLO",
+			"HELLO, HELLO",
+			"HELLO WORLD, HELLO_WORLD",
+			"HELLO_WORLD, HELLO_WORLD",
+			"helloWorld, HELLO_WORLD",
+			"hello-world, HELLO_WORLD",
+			"hello_world, HELLO_WORLD",
+			"HelloWorld, HELLO_WORLD",
+			"hello.world, HELLO_WORLD",
+			"HELLO-WORLD, HELLO_WORLD",
+			"hello World MATRIX, HELLO_WORLD_MATRIX",
+			"HELLO_WORLD_MATRIX, HELLO_WORLD_MATRIX",
+			"helloWorldMatrix, HELLO_WORLD_MATRIX",
+			"hello-world-matrix, HELLO_WORLD_MATRIX",
+			"hello_world_matrix, HELLO_WORLD_MATRIX",
+			"HelloWorldMatrix, HELLO_WORLD_MATRIX",
+			"hello.world.matrix, HELLO_WORLD_MATRIX",
+			"HELLO-WORLD-MATRIX, HELLO_WORLD_MATRIX",
+			"Hello World1, HELLO_WORLD1",
+			"HELLO_WORLD1, HELLO_WORLD1",
+			"helloWorld1, HELLO_WORLD1",
+			"hello-world1, HELLO_WORLD1",
+			"hello_world1, HELLO_WORLD1",
+			"HelloWorld1, HELLO_WORLD1",
+			"hello.world1, HELLO_WORLD1",
+			"HELLO-WORLD1, HELLO_WORLD1"
+	})
+	public void toNotationTypeUpperCase(String value, String expected)
 	{
-		for (int i = 0; i < VALUES_UPPER_CASE.length; i++)
-		{
-			assertEquals(VALUES_UPPER_CASE[i], Notations.to(VALUES_NOT_CASE[i], NotationType.UPPER_CASE));
-			assertEquals(VALUES_UPPER_CASE[i], Notations.to(VALUES_UPPER_CASE[i], NotationType.UPPER_CASE));
-			assertEquals(VALUES_UPPER_CASE[i], Notations.to(VALUES_CAMEL_CASE[i], NotationType.UPPER_CASE));
-			assertEquals(VALUES_UPPER_CASE[i], Notations.to(VALUES_KEBAB_CASE[i], NotationType.UPPER_CASE));
-			assertEquals(VALUES_UPPER_CASE[i], Notations.to(VALUES_SNAKE_CASE[i], NotationType.UPPER_CASE));
-			assertEquals(VALUES_UPPER_CASE[i], Notations.to(VALUES_PASCAL_CASE[i], NotationType.UPPER_CASE));
-			assertEquals(VALUES_UPPER_CASE[i], Notations.to(VALUES_DOT_CASE[i], NotationType.UPPER_CASE));
-			assertEquals(VALUES_UPPER_CASE[i], Notations.to(VALUES_TRAIN_CASE[i], NotationType.UPPER_CASE));
-		}
+		String actual = Notations.to(value, NotationType.UPPER_CASE);
+
+		assertEquals(expected, actual);
 	}
 
 	/**
 	 * Проверка метода {@link Notations#to(String, NotationType)} для нотации Kebab Case.
 	 */
-	@Test
-	public void toNotationTypeKebabCase()
+	@ParameterizedTest
+	@CsvSource({
+			"hello, hello",
+			"HELLO, hello",
+			"hello, hello",
+			"hello, hello",
+			"hello, hello",
+			"Hello, hello",
+			"hello, hello",
+			"HELLO, hello",
+			"HELLO WORLD, hello-world",
+			"HELLO_WORLD, hello-world",
+			"helloWorld, hello-world",
+			"hello-world, hello-world",
+			"hello_world, hello-world",
+			"HelloWorld, hello-world",
+			"hello.world, hello-world",
+			"HELLO-WORLD, hello-world",
+			"hello World MATRIX, hello-world-matrix",
+			"HELLO_WORLD_MATRIX, hello-world-matrix",
+			"helloWorldMatrix, hello-world-matrix",
+			"hello-world-matrix, hello-world-matrix",
+			"hello_world_matrix, hello-world-matrix",
+			"HelloWorldMatrix, hello-world-matrix",
+			"hello.world.matrix, hello-world-matrix",
+			"HELLO-WORLD-MATRIX, hello-world-matrix",
+			"Hello World1, hello-world1",
+			"HELLO_WORLD1, hello-world1",
+			"helloWorld1, hello-world1",
+			"hello-world1, hello-world1",
+			"hello_world1, hello-world1",
+			"HelloWorld1, hello-world1",
+			"hello.world1, hello-world1",
+			"HELLO-WORLD1, hello-world1"
+	})
+	public void toNotationTypeKebabCase(String value, String expected)
 	{
-		for (int i = 0; i < VALUES_KEBAB_CASE.length; i++)
-		{
-			assertEquals(VALUES_KEBAB_CASE[i], Notations.to(VALUES_NOT_CASE[i], NotationType.KEBAB_CASE));
-			assertEquals(VALUES_KEBAB_CASE[i], Notations.to(VALUES_UPPER_CASE[i], NotationType.KEBAB_CASE));
-			assertEquals(VALUES_KEBAB_CASE[i], Notations.to(VALUES_CAMEL_CASE[i], NotationType.KEBAB_CASE));
-			assertEquals(VALUES_KEBAB_CASE[i], Notations.to(VALUES_KEBAB_CASE[i], NotationType.KEBAB_CASE));
-			assertEquals(VALUES_KEBAB_CASE[i], Notations.to(VALUES_SNAKE_CASE[i], NotationType.KEBAB_CASE));
-			assertEquals(VALUES_KEBAB_CASE[i], Notations.to(VALUES_PASCAL_CASE[i], NotationType.KEBAB_CASE));
-			assertEquals(VALUES_KEBAB_CASE[i], Notations.to(VALUES_DOT_CASE[i], NotationType.KEBAB_CASE));
-			assertEquals(VALUES_KEBAB_CASE[i], Notations.to(VALUES_TRAIN_CASE[i], NotationType.KEBAB_CASE));
-		}
+		String actual = Notations.to(value, NotationType.KEBAB_CASE);
+
+		assertEquals(expected, actual);
 	}
 
 	/**
 	 * Проверка метода {@link Notations#to(String, NotationType)} для нотации Train Case.
 	 */
-	@Test
-	public void toNotationTypeTrainCase()
+	@ParameterizedTest
+	@CsvSource({
+			"hello, HELLO",
+			"HELLO, HELLO",
+			"hello, HELLO",
+			"hello, HELLO",
+			"hello, HELLO",
+			"Hello, HELLO",
+			"hello, HELLO",
+			"HELLO, HELLO",
+			"HELLO WORLD, HELLO-WORLD",
+			"HELLO_WORLD, HELLO-WORLD",
+			"helloWorld, HELLO-WORLD",
+			"hello-world, HELLO-WORLD",
+			"hello_world, HELLO-WORLD",
+			"HelloWorld, HELLO-WORLD",
+			"hello.world, HELLO-WORLD",
+			"HELLO-WORLD, HELLO-WORLD",
+			"hello World MATRIX, HELLO-WORLD-MATRIX",
+			"HELLO_WORLD_MATRIX, HELLO-WORLD-MATRIX",
+			"helloWorldMatrix, HELLO-WORLD-MATRIX",
+			"hello-world-matrix, HELLO-WORLD-MATRIX",
+			"hello_world_matrix, HELLO-WORLD-MATRIX",
+			"HelloWorldMatrix, HELLO-WORLD-MATRIX",
+			"hello.world.matrix, HELLO-WORLD-MATRIX",
+			"HELLO-WORLD-MATRIX, HELLO-WORLD-MATRIX",
+			"Hello World1, HELLO-WORLD1",
+			"HELLO_WORLD1, HELLO-WORLD1",
+			"helloWorld1, HELLO-WORLD1",
+			"hello-world1, HELLO-WORLD1",
+			"hello_world1, HELLO-WORLD1",
+			"HelloWorld1, HELLO-WORLD1",
+			"hello.world1, HELLO-WORLD1",
+			"HELLO-WORLD1, HELLO-WORLD1"
+	})
+	public void toNotationTypeTrainCase(String value, String expected)
 	{
-		for (int i = 0; i < VALUES_TRAIN_CASE.length; i++)
-		{
-			assertEquals(VALUES_TRAIN_CASE[i], Notations.to(VALUES_NOT_CASE[i], NotationType.TRAIN_CASE));
-			assertEquals(VALUES_TRAIN_CASE[i], Notations.to(VALUES_UPPER_CASE[i], NotationType.TRAIN_CASE));
-			assertEquals(VALUES_TRAIN_CASE[i], Notations.to(VALUES_CAMEL_CASE[i], NotationType.TRAIN_CASE));
-			assertEquals(VALUES_TRAIN_CASE[i], Notations.to(VALUES_KEBAB_CASE[i], NotationType.TRAIN_CASE));
-			assertEquals(VALUES_TRAIN_CASE[i], Notations.to(VALUES_SNAKE_CASE[i], NotationType.TRAIN_CASE));
-			assertEquals(VALUES_TRAIN_CASE[i], Notations.to(VALUES_PASCAL_CASE[i], NotationType.TRAIN_CASE));
-			assertEquals(VALUES_TRAIN_CASE[i], Notations.to(VALUES_DOT_CASE[i], NotationType.TRAIN_CASE));
-			assertEquals(VALUES_TRAIN_CASE[i], Notations.to(VALUES_TRAIN_CASE[i], NotationType.TRAIN_CASE));
-		}
+		String actual = Notations.to(value, NotationType.TRAIN_CASE);
+
+		assertEquals(expected, actual);
 	}
 
 	/**
 	 * Проверка метода {@link Notations#to(String, NotationType)} для нотации Snake Case.
 	 */
-	@Test
-	public void toNotationTypeSnakeCase()
+	@ParameterizedTest
+	@CsvSource({
+			"hello, hello",
+			"HELLO, hello",
+			"hello, hello",
+			"hello, hello",
+			"hello, hello",
+			"Hello, hello",
+			"hello, hello",
+			"HELLO, hello",
+			"HELLO WORLD, hello_world",
+			"HELLO_WORLD, hello_world",
+			"helloWorld, hello_world",
+			"hello-world, hello_world",
+			"hello_world, hello_world",
+			"HelloWorld, hello_world",
+			"hello.world, hello_world",
+			"HELLO-WORLD, hello_world",
+			"hello World MATRIX, hello_world_matrix",
+			"HELLO_WORLD_MATRIX, hello_world_matrix",
+			"helloWorldMatrix, hello_world_matrix",
+			"hello-world-matrix, hello_world_matrix",
+			"hello_world_matrix, hello_world_matrix",
+			"HelloWorldMatrix, hello_world_matrix",
+			"hello.world.matrix, hello_world_matrix",
+			"HELLO-WORLD-MATRIX, hello_world_matrix",
+			"Hello World1, hello_world1",
+			"HELLO_WORLD1, hello_world1",
+			"helloWorld1, hello_world1",
+			"hello-world1, hello_world1",
+			"hello_world1, hello_world1",
+			"HelloWorld1, hello_world1",
+			"hello.world1, hello_world1",
+			"HELLO-WORLD1, hello_world1"
+	})
+	public void toNotationTypeSnakeCase(String value, String expected)
 	{
-		for (int i = 0; i < VALUES_SNAKE_CASE.length; i++)
-		{
-			assertEquals(VALUES_SNAKE_CASE[i], Notations.to(VALUES_NOT_CASE[i], NotationType.SNAKE_CASE));
-			assertEquals(VALUES_SNAKE_CASE[i], Notations.to(VALUES_UPPER_CASE[i], NotationType.SNAKE_CASE));
-			assertEquals(VALUES_SNAKE_CASE[i], Notations.to(VALUES_CAMEL_CASE[i], NotationType.SNAKE_CASE));
-			assertEquals(VALUES_SNAKE_CASE[i], Notations.to(VALUES_KEBAB_CASE[i], NotationType.SNAKE_CASE));
-			assertEquals(VALUES_SNAKE_CASE[i], Notations.to(VALUES_SNAKE_CASE[i], NotationType.SNAKE_CASE));
-			assertEquals(VALUES_SNAKE_CASE[i], Notations.to(VALUES_PASCAL_CASE[i], NotationType.SNAKE_CASE));
-			assertEquals(VALUES_SNAKE_CASE[i], Notations.to(VALUES_DOT_CASE[i], NotationType.SNAKE_CASE));
-			assertEquals(VALUES_SNAKE_CASE[i], Notations.to(VALUES_TRAIN_CASE[i], NotationType.SNAKE_CASE));
-		}
+		String actual = Notations.to(value, NotationType.SNAKE_CASE);
+
+		assertEquals(expected, actual);
 	}
 
 	/**
 	 * Проверка метода {@link Notations#to(String, NotationType)} для нотации Camel Case.
 	 */
-	@Test
-	public void toNotationTypeCamelCase()
+	@ParameterizedTest
+	@CsvSource({
+			"hello, hello",
+			"HELLO, hello",
+			"hello, hello",
+			"hello, hello",
+			"hello, hello",
+			"Hello, hello",
+			"hello, hello",
+			"HELLO, hello",
+			"HELLO WORLD, helloWorld",
+			"HELLO_WORLD, helloWorld",
+			"helloWorld, helloWorld",
+			"hello-world, helloWorld",
+			"hello_world, helloWorld",
+			"HelloWorld, helloWorld",
+			"hello.world, helloWorld",
+			"HELLO-WORLD, helloWorld",
+			"hello World MATRIX, helloWorldMatrix",
+			"HELLO_WORLD_MATRIX, helloWorldMatrix",
+			"helloWorldMatrix, helloWorldMatrix",
+			"hello-world-matrix, helloWorldMatrix",
+			"hello_world_matrix, helloWorldMatrix",
+			"HelloWorldMatrix, helloWorldMatrix",
+			"hello.world.matrix, helloWorldMatrix",
+			"HELLO-WORLD-MATRIX, helloWorldMatrix",
+			"Hello World1, helloWorld1",
+			"HELLO_WORLD1, helloWorld1",
+			"helloWorld1, helloWorld1",
+			"hello-world1, helloWorld1",
+			"hello_world1, helloWorld1",
+			"HelloWorld1, helloWorld1",
+			"hello.world1, helloWorld1",
+			"HELLO-WORLD1, helloWorld1"
+	})
+	public void toNotationTypeCamelCase(String value, String expected)
 	{
-		for (int i = 0; i < VALUES_CAMEL_CASE.length; i++)
-		{
-			assertEquals(VALUES_CAMEL_CASE[i], Notations.to(VALUES_NOT_CASE[i], NotationType.CAMEL_CASE));
-			assertEquals(VALUES_CAMEL_CASE[i], Notations.to(VALUES_UPPER_CASE[i], NotationType.CAMEL_CASE));
-			assertEquals(VALUES_CAMEL_CASE[i], Notations.to(VALUES_CAMEL_CASE[i], NotationType.CAMEL_CASE));
-			assertEquals(VALUES_CAMEL_CASE[i], Notations.to(VALUES_KEBAB_CASE[i], NotationType.CAMEL_CASE));
-			assertEquals(VALUES_CAMEL_CASE[i], Notations.to(VALUES_SNAKE_CASE[i], NotationType.CAMEL_CASE));
-			assertEquals(VALUES_CAMEL_CASE[i], Notations.to(VALUES_PASCAL_CASE[i], NotationType.CAMEL_CASE));
-			assertEquals(VALUES_CAMEL_CASE[i], Notations.to(VALUES_DOT_CASE[i], NotationType.CAMEL_CASE));
-			assertEquals(VALUES_CAMEL_CASE[i], Notations.to(VALUES_TRAIN_CASE[i], NotationType.CAMEL_CASE));
-		}
+		String actual = Notations.to(value, NotationType.CAMEL_CASE);
+
+		assertEquals(expected, actual);
 	}
 
 	/**
 	 * Проверка метода {@link Notations#to(String, NotationType)} для нотации Pascal Case.
 	 */
-	@Test
-	public void toNotationTypePascalCase()
+	@ParameterizedTest
+	@CsvSource({
+			"hello, Hello",
+			"HELLO, Hello",
+			"hello, Hello",
+			"hello, Hello",
+			"hello, Hello",
+			"Hello, Hello",
+			"hello, Hello",
+			"HELLO, Hello",
+			"HELLO WORLD, HelloWorld",
+			"HELLO_WORLD, HelloWorld",
+			"helloWorld, HelloWorld",
+			"hello-world, HelloWorld",
+			"hello_world, HelloWorld",
+			"HelloWorld, HelloWorld",
+			"hello.world, HelloWorld",
+			"HELLO-WORLD, HelloWorld",
+			"hello World MATRIX, HelloWorldMatrix",
+			"HELLO_WORLD_MATRIX, HelloWorldMatrix",
+			"helloWorldMatrix, HelloWorldMatrix",
+			"hello-world-matrix, HelloWorldMatrix",
+			"hello_world_matrix, HelloWorldMatrix",
+			"HelloWorldMatrix, HelloWorldMatrix",
+			"hello.world.matrix, HelloWorldMatrix",
+			"HELLO-WORLD-MATRIX, HelloWorldMatrix",
+			"Hello World1, HelloWorld1",
+			"HELLO_WORLD1, HelloWorld1",
+			"helloWorld1, HelloWorld1",
+			"hello-world1, HelloWorld1",
+			"hello_world1, HelloWorld1",
+			"HelloWorld1, HelloWorld1",
+			"hello.world1, HelloWorld1",
+			"HELLO-WORLD1, HelloWorld1"
+	})
+	public void toNotationTypePascalCase(String value, String expected)
 	{
-		for (int i = 0; i < VALUES_PASCAL_CASE.length; i++)
-		{
-			assertEquals(VALUES_PASCAL_CASE[i], Notations.to(VALUES_NOT_CASE[i], NotationType.PASCAL_CASE));
-			assertEquals(VALUES_PASCAL_CASE[i], Notations.to(VALUES_UPPER_CASE[i], NotationType.PASCAL_CASE));
-			assertEquals(VALUES_PASCAL_CASE[i], Notations.to(VALUES_CAMEL_CASE[i], NotationType.PASCAL_CASE));
-			assertEquals(VALUES_PASCAL_CASE[i], Notations.to(VALUES_KEBAB_CASE[i], NotationType.PASCAL_CASE));
-			assertEquals(VALUES_PASCAL_CASE[i], Notations.to(VALUES_SNAKE_CASE[i], NotationType.PASCAL_CASE));
-			assertEquals(VALUES_PASCAL_CASE[i], Notations.to(VALUES_PASCAL_CASE[i], NotationType.PASCAL_CASE));
-			assertEquals(VALUES_PASCAL_CASE[i], Notations.to(VALUES_DOT_CASE[i], NotationType.PASCAL_CASE));
-			assertEquals(VALUES_PASCAL_CASE[i], Notations.to(VALUES_TRAIN_CASE[i], NotationType.PASCAL_CASE));
-		}
+		String actual = Notations.to(value, NotationType.PASCAL_CASE);
+
+		assertEquals(expected, actual);
 	}
 
 	/**
 	 * Проверка метода {@link Notations#to(String, NotationType)} для нотации Dot Case.
 	 */
-	@Test
-	public void toNotationTypeDotCase()
+	@ParameterizedTest
+	@CsvSource({
+			"hello, hello",
+			"HELLO, hello",
+			"hello, hello",
+			"hello, hello",
+			"hello, hello",
+			"Hello, hello",
+			"hello, hello",
+			"HELLO, hello",
+			"HELLO WORLD, hello.world",
+			"HELLO_WORLD, hello.world",
+			"helloWorld, hello.world",
+			"hello-world, hello.world",
+			"hello_world, hello.world",
+			"HelloWorld, hello.world",
+			"hello.world, hello.world",
+			"HELLO-WORLD, hello.world",
+			"hello World MATRIX, hello.world.matrix",
+			"HELLO_WORLD_MATRIX, hello.world.matrix",
+			"helloWorldMatrix, hello.world.matrix",
+			"hello-world-matrix, hello.world.matrix",
+			"hello_world_matrix, hello.world.matrix",
+			"HelloWorldMatrix, hello.world.matrix",
+			"hello.world.matrix, hello.world.matrix",
+			"HELLO-WORLD-MATRIX, hello.world.matrix",
+			"Hello World1, hello.world1",
+			"HELLO_WORLD1, hello.world1",
+			"helloWorld1, hello.world1",
+			"hello-world1, hello.world1",
+			"hello_world1, hello.world1",
+			"HelloWorld1, hello.world1",
+			"hello.world1, hello.world1",
+			"HELLO-WORLD1, hello.world1"
+	})
+	public void toNotationTypeDotCase(String value, String expected)
 	{
-		for (int i = 0; i < VALUES_DOT_CASE.length; i++)
-		{
-			assertEquals(VALUES_DOT_CASE[i], Notations.to(VALUES_NOT_CASE[i], NotationType.DOT_CASE));
-			assertEquals(VALUES_DOT_CASE[i], Notations.to(VALUES_UPPER_CASE[i], NotationType.DOT_CASE));
-			assertEquals(VALUES_DOT_CASE[i], Notations.to(VALUES_CAMEL_CASE[i], NotationType.DOT_CASE));
-			assertEquals(VALUES_DOT_CASE[i], Notations.to(VALUES_KEBAB_CASE[i], NotationType.DOT_CASE));
-			assertEquals(VALUES_DOT_CASE[i], Notations.to(VALUES_SNAKE_CASE[i], NotationType.DOT_CASE));
-			assertEquals(VALUES_DOT_CASE[i], Notations.to(VALUES_PASCAL_CASE[i], NotationType.DOT_CASE));
-			assertEquals(VALUES_DOT_CASE[i], Notations.to(VALUES_DOT_CASE[i], NotationType.DOT_CASE));
-			assertEquals(VALUES_DOT_CASE[i], Notations.to(VALUES_TRAIN_CASE[i], NotationType.DOT_CASE));
-		}
+		String actual = Notations.to(value, NotationType.DOT_CASE);
+
+		assertEquals(expected, actual);
 	}
 
 	/**
 	 * Проверка метода {@link Notations#toUpperCase(String)}.
 	 */
-	@Test
-	public void toUpperCase()
+	@ParameterizedTest
+	@CsvSource({
+		"hello, HELLO",
+		"HELLO, HELLO",
+		"hello, HELLO",
+		"hello, HELLO",
+		"hello, HELLO",
+		"Hello, HELLO",
+		"hello, HELLO",
+		"HELLO, HELLO",
+		"HELLO WORLD, HELLO_WORLD",
+		"HELLO_WORLD, HELLO_WORLD",
+		"helloWorld, HELLO_WORLD",
+		"hello-world, HELLO_WORLD",
+		"hello_world, HELLO_WORLD",
+		"HelloWorld, HELLO_WORLD",
+		"hello.world, HELLO_WORLD",
+		"HELLO-WORLD, HELLO_WORLD",
+		"hello World MATRIX, HELLO_WORLD_MATRIX",
+		"HELLO_WORLD_MATRIX, HELLO_WORLD_MATRIX",
+		"helloWorldMatrix, HELLO_WORLD_MATRIX",
+		"hello-world-matrix, HELLO_WORLD_MATRIX",
+		"hello_world_matrix, HELLO_WORLD_MATRIX",
+		"HelloWorldMatrix, HELLO_WORLD_MATRIX",
+		"hello.world.matrix, HELLO_WORLD_MATRIX",
+		"HELLO-WORLD-MATRIX, HELLO_WORLD_MATRIX",
+		"Hello World1, HELLO_WORLD1",
+		"HELLO_WORLD1, HELLO_WORLD1",
+		"helloWorld1, HELLO_WORLD1",
+		"hello-world1, HELLO_WORLD1",
+		"hello_world1, HELLO_WORLD1",
+		"HelloWorld1, HELLO_WORLD1",
+		"hello.world1, HELLO_WORLD1",
+		"HELLO-WORLD1, HELLO_WORLD1"
+	})
+	public void toUpperCase(String value, String expected)
 	{
-		for (int i = 0; i < VALUES_UPPER_CASE.length; i++)
-		{
-			assertEquals(VALUES_UPPER_CASE[i], Notations.toUpperCase(VALUES_NOT_CASE[i]));
-			assertEquals(VALUES_UPPER_CASE[i], Notations.toUpperCase(VALUES_UPPER_CASE[i]));
-			assertEquals(VALUES_UPPER_CASE[i], Notations.toUpperCase(VALUES_CAMEL_CASE[i]));
-			assertEquals(VALUES_UPPER_CASE[i], Notations.toUpperCase(VALUES_KEBAB_CASE[i]));
-			assertEquals(VALUES_UPPER_CASE[i], Notations.toUpperCase(VALUES_SNAKE_CASE[i]));
-			assertEquals(VALUES_UPPER_CASE[i], Notations.toUpperCase(VALUES_PASCAL_CASE[i]));
-			assertEquals(VALUES_UPPER_CASE[i], Notations.toUpperCase(VALUES_DOT_CASE[i]));
-			assertEquals(VALUES_UPPER_CASE[i], Notations.toUpperCase(VALUES_TRAIN_CASE[i]));
-		}
+		String actual = Notations.toUpperCase(value);
+
+		assertEquals(expected, actual);
 	}
 
 	/**
 	 * Проверка метода {@link Notations#toKebabCase(String)}.
 	 */
-	@Test
-	public void toKebabCase()
+	@ParameterizedTest
+	@CsvSource({
+		"hello, hello",
+		"HELLO, hello",
+		"hello, hello",
+		"hello, hello",
+		"hello, hello",
+		"Hello, hello",
+		"hello, hello",
+		"HELLO, hello",
+		"HELLO WORLD, hello-world",
+		"HELLO_WORLD, hello-world",
+		"helloWorld, hello-world",
+		"hello-world, hello-world",
+		"hello_world, hello-world",
+		"HelloWorld, hello-world",
+		"hello.world, hello-world",
+		"HELLO-WORLD, hello-world",
+		"hello World MATRIX, hello-world-matrix",
+		"HELLO_WORLD_MATRIX, hello-world-matrix",
+		"helloWorldMatrix, hello-world-matrix",
+		"hello-world-matrix, hello-world-matrix",
+		"hello_world_matrix, hello-world-matrix",
+		"HelloWorldMatrix, hello-world-matrix",
+		"hello.world.matrix, hello-world-matrix",
+		"HELLO-WORLD-MATRIX, hello-world-matrix",
+		"Hello World1, hello-world1",
+		"HELLO_WORLD1, hello-world1",
+		"helloWorld1, hello-world1",
+		"hello-world1, hello-world1",
+		"hello_world1, hello-world1",
+		"HelloWorld1, hello-world1",
+		"hello.world1, hello-world1",
+		"HELLO-WORLD1, hello-world1"
+	})
+	public void toKebabCase(String value, String expected)
 	{
-		for (int i = 0; i < VALUES_KEBAB_CASE.length; i++)
-		{
-			assertEquals(VALUES_KEBAB_CASE[i], Notations.toKebabCase(VALUES_NOT_CASE[i]));
-			assertEquals(VALUES_KEBAB_CASE[i], Notations.toKebabCase(VALUES_UPPER_CASE[i]));
-			assertEquals(VALUES_KEBAB_CASE[i], Notations.toKebabCase(VALUES_CAMEL_CASE[i]));
-			assertEquals(VALUES_KEBAB_CASE[i], Notations.toKebabCase(VALUES_KEBAB_CASE[i]));
-			assertEquals(VALUES_KEBAB_CASE[i], Notations.toKebabCase(VALUES_SNAKE_CASE[i]));
-			assertEquals(VALUES_KEBAB_CASE[i], Notations.toKebabCase(VALUES_PASCAL_CASE[i]));
-			assertEquals(VALUES_KEBAB_CASE[i], Notations.toKebabCase(VALUES_DOT_CASE[i]));
-			assertEquals(VALUES_KEBAB_CASE[i], Notations.toKebabCase(VALUES_TRAIN_CASE[i]));
-		}
+		String actual = Notations.toKebabCase(value);
+
+		assertEquals(expected, actual);
 	}
 
 	/**
 	 * Проверка метода {@link Notations#toTrainCase(String)}.
 	 */
-	@Test
-	public void toTrainCase()
+	@ParameterizedTest
+	@CsvSource({
+		"hello, HELLO",
+		"HELLO, HELLO",
+		"hello, HELLO",
+		"hello, HELLO",
+		"hello, HELLO",
+		"Hello, HELLO",
+		"hello, HELLO",
+		"HELLO, HELLO",
+		"HELLO WORLD, HELLO-WORLD",
+		"HELLO_WORLD, HELLO-WORLD",
+		"helloWorld, HELLO-WORLD",
+		"hello-world, HELLO-WORLD",
+		"hello_world, HELLO-WORLD",
+		"HelloWorld, HELLO-WORLD",
+		"hello.world, HELLO-WORLD",
+		"HELLO-WORLD, HELLO-WORLD",
+		"hello World MATRIX, HELLO-WORLD-MATRIX",
+		"HELLO_WORLD_MATRIX, HELLO-WORLD-MATRIX",
+		"helloWorldMatrix, HELLO-WORLD-MATRIX",
+		"hello-world-matrix, HELLO-WORLD-MATRIX",
+		"hello_world_matrix, HELLO-WORLD-MATRIX",
+		"HelloWorldMatrix, HELLO-WORLD-MATRIX",
+		"hello.world.matrix, HELLO-WORLD-MATRIX",
+		"HELLO-WORLD-MATRIX, HELLO-WORLD-MATRIX",
+		"Hello World1, HELLO-WORLD1",
+		"HELLO_WORLD1, HELLO-WORLD1",
+		"helloWorld1, HELLO-WORLD1",
+		"hello-world1, HELLO-WORLD1",
+		"hello_world1, HELLO-WORLD1",
+		"HelloWorld1, HELLO-WORLD1",
+		"hello.world1, HELLO-WORLD1",
+		"HELLO-WORLD1, HELLO-WORLD1"
+	})
+	public void toTrainCase(String value, String expected)
 	{
-		for (int i = 0; i < VALUES_TRAIN_CASE.length; i++)
-		{
-			assertEquals(VALUES_TRAIN_CASE[i], Notations.toTrainCase(VALUES_NOT_CASE[i]));
-			assertEquals(VALUES_TRAIN_CASE[i], Notations.toTrainCase(VALUES_UPPER_CASE[i]));
-			assertEquals(VALUES_TRAIN_CASE[i], Notations.toTrainCase(VALUES_CAMEL_CASE[i]));
-			assertEquals(VALUES_TRAIN_CASE[i], Notations.toTrainCase(VALUES_KEBAB_CASE[i]));
-			assertEquals(VALUES_TRAIN_CASE[i], Notations.toTrainCase(VALUES_SNAKE_CASE[i]));
-			assertEquals(VALUES_TRAIN_CASE[i], Notations.toTrainCase(VALUES_PASCAL_CASE[i]));
-			assertEquals(VALUES_TRAIN_CASE[i], Notations.toTrainCase(VALUES_DOT_CASE[i]));
-			assertEquals(VALUES_TRAIN_CASE[i], Notations.toTrainCase(VALUES_TRAIN_CASE[i]));
-		}
+		String actual = Notations.toTrainCase(value);
+
+		assertEquals(expected, actual);
 	}
 
 	/**
 	 * Проверка метода {@link Notations#toSnakeCase(String)}.
 	 */
-	@Test
-	public void toSnakeCase()
+	@ParameterizedTest
+	@CsvSource({
+		"hello, hello",
+		"HELLO, hello",
+		"hello, hello",
+		"hello, hello",
+		"hello, hello",
+		"Hello, hello",
+		"hello, hello",
+		"HELLO, hello",
+		"HELLO WORLD, hello_world",
+		"HELLO_WORLD, hello_world",
+		"helloWorld, hello_world",
+		"hello-world, hello_world",
+		"hello_world, hello_world",
+		"HelloWorld, hello_world",
+		"hello.world, hello_world",
+		"HELLO-WORLD, hello_world",
+		"hello World MATRIX, hello_world_matrix",
+		"HELLO_WORLD_MATRIX, hello_world_matrix",
+		"helloWorldMatrix, hello_world_matrix",
+		"hello-world-matrix, hello_world_matrix",
+		"hello_world_matrix, hello_world_matrix",
+		"HelloWorldMatrix, hello_world_matrix",
+		"hello.world.matrix, hello_world_matrix",
+		"HELLO-WORLD-MATRIX, hello_world_matrix",
+		"Hello World1, hello_world1",
+		"HELLO_WORLD1, hello_world1",
+		"helloWorld1, hello_world1",
+		"hello-world1, hello_world1",
+		"hello_world1, hello_world1",
+		"HelloWorld1, hello_world1",
+		"hello.world1, hello_world1",
+		"HELLO-WORLD1, hello_world1"
+	})
+	public void toSnakeCase(String value, String expected)
 	{
-		for (int i = 0; i < VALUES_SNAKE_CASE.length; i++)
-		{
-			assertEquals(VALUES_SNAKE_CASE[i], Notations.toSnakeCase(VALUES_NOT_CASE[i]));
-			assertEquals(VALUES_SNAKE_CASE[i], Notations.toSnakeCase(VALUES_UPPER_CASE[i]));
-			assertEquals(VALUES_SNAKE_CASE[i], Notations.toSnakeCase(VALUES_CAMEL_CASE[i]));
-			assertEquals(VALUES_SNAKE_CASE[i], Notations.toSnakeCase(VALUES_KEBAB_CASE[i]));
-			assertEquals(VALUES_SNAKE_CASE[i], Notations.toSnakeCase(VALUES_SNAKE_CASE[i]));
-			assertEquals(VALUES_SNAKE_CASE[i], Notations.toSnakeCase(VALUES_PASCAL_CASE[i]));
-			assertEquals(VALUES_SNAKE_CASE[i], Notations.toSnakeCase(VALUES_DOT_CASE[i]));
-			assertEquals(VALUES_SNAKE_CASE[i], Notations.toSnakeCase(VALUES_TRAIN_CASE[i]));
-		}
+		String actual = Notations.toSnakeCase(value);
+
+		assertEquals(expected, actual);
 	}
 
 	/**
 	 * Проверка метода {@link Notations#toCamelCase(String)}.
 	 */
-	@Test
-	public void toCamelCase()
+	@ParameterizedTest
+	@CsvSource({
+		"hello, hello",
+		"HELLO, hello",
+		"hello, hello",
+		"hello, hello",
+		"hello, hello",
+		"Hello, hello",
+		"hello, hello",
+		"HELLO, hello",
+		"HELLO WORLD, helloWorld",
+		"HELLO_WORLD, helloWorld",
+		"helloWorld, helloWorld",
+		"hello-world, helloWorld",
+		"hello_world, helloWorld",
+		"HelloWorld, helloWorld",
+		"hello.world, helloWorld",
+		"HELLO-WORLD, helloWorld",
+		"hello World MATRIX, helloWorldMatrix",
+		"HELLO_WORLD_MATRIX, helloWorldMatrix",
+		"helloWorldMatrix, helloWorldMatrix",
+		"hello-world-matrix, helloWorldMatrix",
+		"hello_world_matrix, helloWorldMatrix",
+		"HelloWorldMatrix, helloWorldMatrix",
+		"hello.world.matrix, helloWorldMatrix",
+		"HELLO-WORLD-MATRIX, helloWorldMatrix",
+		"Hello World1, helloWorld1",
+		"HELLO_WORLD1, helloWorld1",
+		"helloWorld1, helloWorld1",
+		"hello-world1, helloWorld1",
+		"hello_world1, helloWorld1",
+		"HelloWorld1, helloWorld1",
+		"hello.world1, helloWorld1",
+		"HELLO-WORLD1, helloWorld1"
+	})
+	public void toCamelCase(String value, String expected)
 	{
-		for (int i = 0; i < VALUES_CAMEL_CASE.length; i++)
-		{
-			assertEquals(VALUES_CAMEL_CASE[i], Notations.toCamelCase(VALUES_NOT_CASE[i]));
-			assertEquals(VALUES_CAMEL_CASE[i], Notations.toCamelCase(VALUES_UPPER_CASE[i]));
-			assertEquals(VALUES_CAMEL_CASE[i], Notations.toCamelCase(VALUES_CAMEL_CASE[i]));
-			assertEquals(VALUES_CAMEL_CASE[i], Notations.toCamelCase(VALUES_KEBAB_CASE[i]));
-			assertEquals(VALUES_CAMEL_CASE[i], Notations.toCamelCase(VALUES_SNAKE_CASE[i]));
-			assertEquals(VALUES_CAMEL_CASE[i], Notations.toCamelCase(VALUES_PASCAL_CASE[i]));
-			assertEquals(VALUES_CAMEL_CASE[i], Notations.toCamelCase(VALUES_DOT_CASE[i]));
-			assertEquals(VALUES_CAMEL_CASE[i], Notations.toCamelCase(VALUES_TRAIN_CASE[i]));
-		}
+		String actual = Notations.toCamelCase(value);
+
+		assertEquals(expected, actual);
 	}
 
 	/**
 	 * Проверка метода {@link Notations#toPascalCase(String)}.
 	 */
-	@Test
-	public void toPascalCase()
+	@ParameterizedTest
+	@CsvSource({
+		"hello, Hello",
+		"HELLO, Hello",
+		"hello, Hello",
+		"hello, Hello",
+		"hello, Hello",
+		"Hello, Hello",
+		"hello, Hello",
+		"HELLO, Hello",
+		"HELLO WORLD, HelloWorld",
+		"HELLO_WORLD, HelloWorld",
+		"helloWorld, HelloWorld",
+		"hello-world, HelloWorld",
+		"hello_world, HelloWorld",
+		"HelloWorld, HelloWorld",
+		"hello.world, HelloWorld",
+		"HELLO-WORLD, HelloWorld",
+		"hello World MATRIX, HelloWorldMatrix",
+		"HELLO_WORLD_MATRIX, HelloWorldMatrix",
+		"helloWorldMatrix, HelloWorldMatrix",
+		"hello-world-matrix, HelloWorldMatrix",
+		"hello_world_matrix, HelloWorldMatrix",
+		"HelloWorldMatrix, HelloWorldMatrix",
+		"hello.world.matrix, HelloWorldMatrix",
+		"HELLO-WORLD-MATRIX, HelloWorldMatrix",
+		"Hello World1, HelloWorld1",
+		"HELLO_WORLD1, HelloWorld1",
+		"helloWorld1, HelloWorld1",
+		"hello-world1, HelloWorld1",
+		"hello_world1, HelloWorld1",
+		"HelloWorld1, HelloWorld1",
+		"hello.world1, HelloWorld1",
+		"HELLO-WORLD1, HelloWorld1"
+	})
+	public void toPascalCase(String value, String expected)
 	{
-		for (int i = 0; i < VALUES_PASCAL_CASE.length; i++)
-		{
-			assertEquals(VALUES_PASCAL_CASE[i], Notations.toPascalCase(VALUES_NOT_CASE[i]));
-			assertEquals(VALUES_PASCAL_CASE[i], Notations.toPascalCase(VALUES_UPPER_CASE[i]));
-			assertEquals(VALUES_PASCAL_CASE[i], Notations.toPascalCase(VALUES_CAMEL_CASE[i]));
-			assertEquals(VALUES_PASCAL_CASE[i], Notations.toPascalCase(VALUES_KEBAB_CASE[i]));
-			assertEquals(VALUES_PASCAL_CASE[i], Notations.toPascalCase(VALUES_SNAKE_CASE[i]));
-			assertEquals(VALUES_PASCAL_CASE[i], Notations.toPascalCase(VALUES_PASCAL_CASE[i]));
-			assertEquals(VALUES_PASCAL_CASE[i], Notations.toPascalCase(VALUES_DOT_CASE[i]));
-			assertEquals(VALUES_PASCAL_CASE[i], Notations.toPascalCase(VALUES_TRAIN_CASE[i]));
-		}
+		String actual = Notations.toPascalCase(value);
+
+		assertEquals(expected, actual);
 	}
 
 	/**
 	 * Проверка метода {@link Notations#toDotCase(String)}.
 	 */
-	@Test
-	public void toDotCase()
+	@ParameterizedTest
+	@CsvSource({
+		"hello, hello",
+		"HELLO, hello",
+		"hello, hello",
+		"hello, hello",
+		"hello, hello",
+		"Hello, hello",
+		"hello, hello",
+		"HELLO, hello",
+		"HELLO WORLD, hello.world",
+		"HELLO_WORLD, hello.world",
+		"helloWorld, hello.world",
+		"hello-world, hello.world",
+		"hello_world, hello.world",
+		"HelloWorld, hello.world",
+		"hello.world, hello.world",
+		"HELLO-WORLD, hello.world",
+		"hello World MATRIX, hello.world.matrix",
+		"HELLO_WORLD_MATRIX, hello.world.matrix",
+		"helloWorldMatrix, hello.world.matrix",
+		"hello-world-matrix, hello.world.matrix",
+		"hello_world_matrix, hello.world.matrix",
+		"HelloWorldMatrix, hello.world.matrix",
+		"hello.world.matrix, hello.world.matrix",
+		"HELLO-WORLD-MATRIX, hello.world.matrix",
+		"Hello World1, hello.world1",
+		"HELLO_WORLD1, hello.world1",
+		"helloWorld1, hello.world1",
+		"hello-world1, hello.world1",
+		"hello_world1, hello.world1",
+		"HelloWorld1, hello.world1",
+		"hello.world1, hello.world1",
+		"HELLO-WORLD1, hello.world1"
+	})
+	public void toDotCase(String value, String expected)
 	{
-		for (int i = 0; i < VALUES_DOT_CASE.length; i++)
-		{
-			assertEquals(VALUES_DOT_CASE[i], Notations.toDotCase(VALUES_NOT_CASE[i]));
-			assertEquals(VALUES_DOT_CASE[i], Notations.toDotCase(VALUES_UPPER_CASE[i]));
-			assertEquals(VALUES_DOT_CASE[i], Notations.toDotCase(VALUES_CAMEL_CASE[i]));
-			assertEquals(VALUES_DOT_CASE[i], Notations.toDotCase(VALUES_KEBAB_CASE[i]));
-			assertEquals(VALUES_DOT_CASE[i], Notations.toDotCase(VALUES_SNAKE_CASE[i]));
-			assertEquals(VALUES_DOT_CASE[i], Notations.toDotCase(VALUES_PASCAL_CASE[i]));
-			assertEquals(VALUES_DOT_CASE[i], Notations.toDotCase(VALUES_DOT_CASE[i]));
-			assertEquals(VALUES_DOT_CASE[i], Notations.toDotCase(VALUES_TRAIN_CASE[i]));
-		}
+		String actual = Notations.toDotCase(value);
+
+		assertEquals(expected, actual);
 	}
 }
