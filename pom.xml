@@ -74,6 +74,12 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
+			<groupId>org.assertj</groupId>
+			<artifactId>assertj-core</artifactId>
+			<version>3.24.2</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
 			<groupId>dev.kalenchukov</groupId>
 			<artifactId>stringi</artifactId>
 			<version>1.5.0</version>

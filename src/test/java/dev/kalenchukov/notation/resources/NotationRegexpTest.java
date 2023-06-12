@@ -30,7 +30,7 @@ import org.junit.jupiter.api.Test;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
 /**
  * Класс проверки констант и методов перечисления {@link NotationRegexp}.
@@ -49,7 +49,7 @@ public class NotationRegexpTest
 
 		String actualGroup = regexp.getGroup();
 
-		assertEquals("camelCase", actualGroup);
+		assertThat(actualGroup).isEqualTo("camelCase");
 	}
 
 	/**
@@ -62,7 +62,7 @@ public class NotationRegexpTest
 
 		String actualPattern = regexp.getPattern();
 
-		assertFalse(actualPattern.isEmpty());
+		assertThat(actualPattern).isNotEmpty();
 	}
 
 	/**
@@ -82,11 +82,11 @@ public class NotationRegexpTest
 			String value = "CAMEL_CASE";
 			Pattern pattern = Pattern.compile(NotationRegexp.UPPER_CASE.getPattern(), Pattern.UNICODE_CASE);
 			Matcher matcher = pattern.matcher(value);
-			assertTrue(matcher.matches());
+			assertThat(matcher.matches()).isTrue();
 
 			String actualGroup = matcher.group("upperCase");
 
-			assertEquals("CAMEL_CASE", actualGroup);
+			assertThat(actualGroup).isEqualTo("CAMEL_CASE");
 		}
 
 		/**
@@ -101,7 +101,7 @@ public class NotationRegexpTest
 
 			boolean actual = matcher.matches();
 
-			assertFalse(actual);
+			assertThat(actual).isFalse();
 		}
 
 		/**
@@ -113,11 +113,11 @@ public class NotationRegexpTest
 			String value = "kebab-case";
 			Pattern pattern = Pattern.compile(NotationRegexp.KEBAB_CASE.getPattern(), Pattern.UNICODE_CASE);
 			Matcher matcher = pattern.matcher(value);
-			assertTrue(matcher.matches());
+			assertThat(matcher.matches()).isTrue();
 
 			String actualGroup = matcher.group("kebabCase");
 
-			assertEquals("kebab-case", actualGroup);
+			assertThat(actualGroup).isEqualTo("kebab-case");
 		}
 
 		/**
@@ -132,7 +132,7 @@ public class NotationRegexpTest
 
 			boolean actual = matcher.matches();
 
-			assertFalse(actual);
+			assertThat(actual).isFalse();
 		}
 
 		/**
@@ -144,11 +144,11 @@ public class NotationRegexpTest
 			String value = "snake_case";
 			Pattern pattern = Pattern.compile(NotationRegexp.SNAKE_CASE.getPattern(), Pattern.UNICODE_CASE);
 			Matcher matcher = pattern.matcher(value);
-			assertTrue(matcher.matches());
+			assertThat(matcher.matches()).isTrue();
 
 			String actualGroup = matcher.group("snakeCase");
 
-			assertEquals("snake_case", actualGroup);
+			assertThat(actualGroup).isEqualTo("snake_case");
 		}
 
 		/**
@@ -163,7 +163,7 @@ public class NotationRegexpTest
 
 			boolean actual = matcher.matches();
 
-			assertFalse(actual);
+			assertThat(actual).isFalse();
 		}
 
 		/**
@@ -175,11 +175,11 @@ public class NotationRegexpTest
 			String value = "camelCase";
 			Pattern pattern = Pattern.compile(NotationRegexp.CAMEL_CASE.getPattern(), Pattern.UNICODE_CASE);
 			Matcher matcher = pattern.matcher(value);
-			assertTrue(matcher.matches());
+			assertThat(matcher.matches()).isTrue();
 
 			String actualGroup = matcher.group("camelCase");
 
-			assertEquals("camelCase", actualGroup);
+			assertThat(actualGroup).isEqualTo("camelCase");
 		}
 
 		/**
@@ -194,7 +194,7 @@ public class NotationRegexpTest
 
 			boolean actual = matcher.matches();
 
-			assertFalse(actual);
+			assertThat(actual).isFalse();
 		}
 
 		/**
@@ -206,11 +206,11 @@ public class NotationRegexpTest
 			String value = "PascalCase";
 			Pattern pattern = Pattern.compile(NotationRegexp.PASCAL_CASE.getPattern(), Pattern.UNICODE_CASE);
 			Matcher matcher = pattern.matcher(value);
-			assertTrue(matcher.matches());
+			assertThat(matcher.matches()).isTrue();
 
 			String actualGroup = matcher.group("pascalCase");
 
-			assertEquals("PascalCase", actualGroup);
+			assertThat(actualGroup).isEqualTo("PascalCase");
 		}
 
 		/**
@@ -225,7 +225,7 @@ public class NotationRegexpTest
 
 			boolean actual = matcher.matches();
 
-			assertFalse(actual);
+			assertThat(actual).isFalse();
 		}
 
 		/**
@@ -237,11 +237,11 @@ public class NotationRegexpTest
 			String value = "dot.case";
 			Pattern pattern = Pattern.compile(NotationRegexp.DOT_CASE.getPattern(), Pattern.UNICODE_CASE);
 			Matcher matcher = pattern.matcher(value);
-			assertTrue(matcher.matches());
+			assertThat(matcher.matches()).isTrue();
 
 			String actualGroup = matcher.group("dotCase");
 
-			assertEquals("dot.case", actualGroup);
+			assertThat(actualGroup).isEqualTo("dot.case");
 		}
 
 		/**
@@ -256,7 +256,7 @@ public class NotationRegexpTest
 
 			boolean actual = matcher.matches();
 
-			assertFalse(actual);
+			assertThat(actual).isFalse();
 		}
 
 		/**
@@ -268,11 +268,11 @@ public class NotationRegexpTest
 			String value = "TRAIN-CASE";
 			Pattern pattern = Pattern.compile(NotationRegexp.TRAIN_CASE.getPattern(), Pattern.UNICODE_CASE);
 			Matcher matcher = pattern.matcher(value);
-			assertTrue(matcher.matches());
+			assertThat(matcher.matches()).isTrue();
 
 			String actualGroup = matcher.group("trainCase");
 
-			assertEquals("TRAIN-CASE", actualGroup);
+			assertThat(actualGroup).isEqualTo("TRAIN-CASE");
 		}
 
 		/**
@@ -286,7 +286,7 @@ public class NotationRegexpTest
 
 			boolean actual = matcher.matches();
 
-			assertFalse(actual);
+			assertThat(actual).isFalse();
 		}
 	}
 }

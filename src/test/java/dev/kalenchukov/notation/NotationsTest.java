@@ -29,7 +29,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.ValueSource;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
 /**
  * Класс проверки методов класса {@link Notations}.
@@ -52,7 +52,7 @@ public class NotationsTest
 	{
 		boolean actual = Notations.is(value, NotationType.UPPER_CASE);
 
-		assertTrue(actual);
+		assertThat(actual).isTrue();
 	}
 
 	/**
@@ -69,7 +69,7 @@ public class NotationsTest
 	{
 		boolean actual = Notations.is(value, NotationType.KEBAB_CASE);
 
-		assertTrue(actual);
+		assertThat(actual).isTrue();
 	}
 
 	/**
@@ -86,7 +86,7 @@ public class NotationsTest
 	{
 		boolean actual = Notations.is(value, NotationType.TRAIN_CASE);
 
-		assertTrue(actual);
+		assertThat(actual).isTrue();
 	}
 
 	/**
@@ -103,7 +103,7 @@ public class NotationsTest
 	{
 		boolean actual = Notations.is(value, NotationType.SNAKE_CASE);
 
-		assertTrue(actual);
+		assertThat(actual).isTrue();
 	}
 
 	/**
@@ -120,7 +120,7 @@ public class NotationsTest
 	{
 		boolean actual = Notations.is(value, NotationType.CAMEL_CASE);
 
-		assertTrue(actual);
+		assertThat(actual).isTrue();
 	}
 
 	/**
@@ -137,7 +137,7 @@ public class NotationsTest
 	{
 		boolean actual = Notations.is(value, NotationType.PASCAL_CASE);
 
-		assertTrue(actual);
+		assertThat(actual).isTrue();
 	}
 
 	/**
@@ -154,7 +154,7 @@ public class NotationsTest
 	{
 		boolean actual = Notations.isUpperCase(value);
 
-		assertTrue(actual);
+		assertThat(actual).isTrue();
 	}
 
 	/**
@@ -174,7 +174,7 @@ public class NotationsTest
 	{
 		boolean actual = Notations.isUpperCase(value);
 
-		assertFalse(actual);
+		assertThat(actual).isFalse();
 	}
 
 	/**
@@ -191,7 +191,7 @@ public class NotationsTest
 	{
 		boolean actual = Notations.isKebabCase(value);
 
-		assertTrue(actual);
+		assertThat(actual).isTrue();
 	}
 
 	/**
@@ -211,7 +211,7 @@ public class NotationsTest
 	{
 		boolean actual = Notations.isKebabCase(value);
 
-		assertFalse(actual);
+		assertThat(actual).isFalse();
 	}
 
 	/**
@@ -228,7 +228,7 @@ public class NotationsTest
 	{
 		boolean actual = Notations.isTrainCase(value);
 
-		assertTrue(actual);
+		assertThat(actual).isTrue();
 	}
 
 	/**
@@ -248,7 +248,7 @@ public class NotationsTest
 	{
 		boolean actual = Notations.isTrainCase(value);
 
-		assertFalse(actual);
+		assertThat(actual).isFalse();
 	}
 
 	/**
@@ -265,7 +265,7 @@ public class NotationsTest
 	{
 		boolean actual = Notations.isSnakeCase(value);
 
-		assertTrue(actual);
+		assertThat(actual).isTrue();
 	}
 
 	/**
@@ -285,7 +285,7 @@ public class NotationsTest
 	{
 		boolean actual = Notations.isSnakeCase(value);
 
-		assertFalse(actual);
+		assertThat(actual).isFalse();
 	}
 
 	/**
@@ -302,7 +302,7 @@ public class NotationsTest
 	{
 		boolean actual = Notations.isCamelCase(value);
 
-		assertTrue(actual);
+		assertThat(actual).isTrue();
 	}
 
 	/**
@@ -320,7 +320,7 @@ public class NotationsTest
 	{
 		boolean actual = Notations.isCamelCase(value);
 
-		assertFalse(actual);
+		assertThat(actual).isFalse();
 	}
 
 	/**
@@ -337,7 +337,7 @@ public class NotationsTest
 	{
 		boolean actual = Notations.isPascalCase(value);
 
-		assertTrue(actual);
+		assertThat(actual).isTrue();
 	}
 
 	/**
@@ -355,7 +355,7 @@ public class NotationsTest
 	{
 		boolean actual = Notations.isPascalCase(value);
 
-		assertFalse(actual);
+		assertThat(actual).isFalse();
 	}
 
 	/**
@@ -372,7 +372,7 @@ public class NotationsTest
 	{
 		boolean actual = Notations.isDotCase(value);
 
-		assertTrue(actual);
+		assertThat(actual).isTrue();
 	}
 
 	/**
@@ -392,7 +392,7 @@ public class NotationsTest
 	{
 		boolean actual = Notations.isDotCase(value);
 
-		assertFalse(actual);
+		assertThat(actual).isFalse();
 	}
 
 	/**
@@ -437,7 +437,7 @@ public class NotationsTest
 	{
 		String actualString = Notations.to(value, NotationType.UPPER_CASE);
 
-		assertEquals(expectedString, actualString);
+		assertThat(actualString).isEqualTo(expectedString);
 	}
 
 	/**
@@ -482,7 +482,7 @@ public class NotationsTest
 	{
 		String actualString = Notations.to(value, NotationType.KEBAB_CASE);
 
-		assertEquals(expectedString, actualString);
+		assertThat(actualString).isEqualTo(expectedString);
 	}
 
 	/**
@@ -527,7 +527,7 @@ public class NotationsTest
 	{
 		String actualString = Notations.to(value, NotationType.TRAIN_CASE);
 
-		assertEquals(expectedString, actualString);
+		assertThat(actualString).isEqualTo(expectedString);
 	}
 
 	/**
@@ -572,7 +572,7 @@ public class NotationsTest
 	{
 		String actualString = Notations.to(value, NotationType.SNAKE_CASE);
 
-		assertEquals(expectedString, actualString);
+		assertThat(actualString).isEqualTo(expectedString);
 	}
 
 	/**
@@ -617,7 +617,7 @@ public class NotationsTest
 	{
 		String actualString = Notations.to(value, NotationType.CAMEL_CASE);
 
-		assertEquals(expectedString, actualString);
+		assertThat(actualString).isEqualTo(expectedString);
 	}
 
 	/**
@@ -662,7 +662,7 @@ public class NotationsTest
 	{
 		String actualString = Notations.to(value, NotationType.PASCAL_CASE);
 
-		assertEquals(expectedString, actualString);
+		assertThat(actualString).isEqualTo(expectedString);
 	}
 
 	/**
@@ -707,7 +707,7 @@ public class NotationsTest
 	{
 		String actualString = Notations.to(value, NotationType.DOT_CASE);
 
-		assertEquals(expectedString, actualString);
+		assertThat(actualString).isEqualTo(expectedString);
 	}
 
 	/**
@@ -752,7 +752,7 @@ public class NotationsTest
 	{
 		String actualString = Notations.toUpperCase(value);
 
-		assertEquals(expectedString, actualString);
+		assertThat(actualString).isEqualTo(expectedString);
 	}
 
 	/**
@@ -797,7 +797,7 @@ public class NotationsTest
 	{
 		String actualString = Notations.toKebabCase(value);
 
-		assertEquals(expectedString, actualString);
+		assertThat(actualString).isEqualTo(expectedString);
 	}
 
 	/**
@@ -842,7 +842,7 @@ public class NotationsTest
 	{
 		String actualString = Notations.toTrainCase(value);
 
-		assertEquals(expectedString, actualString);
+		assertThat(actualString).isEqualTo(expectedString);
 	}
 
 	/**
@@ -887,7 +887,7 @@ public class NotationsTest
 	{
 		String actualString = Notations.toSnakeCase(value);
 
-		assertEquals(expectedString, actualString);
+		assertThat(actualString).isEqualTo(expectedString);
 	}
 
 	/**
@@ -932,7 +932,7 @@ public class NotationsTest
 	{
 		String actualString = Notations.toCamelCase(value);
 
-		assertEquals(expectedString, actualString);
+		assertThat(actualString).isEqualTo(expectedString);
 	}
 
 	/**
@@ -977,7 +977,7 @@ public class NotationsTest
 	{
 		String actualString = Notations.toPascalCase(value);
 
-		assertEquals(expectedString, actualString);
+		assertThat(actualString).isEqualTo(expectedString);
 	}
 
 	/**
@@ -1022,6 +1022,6 @@ public class NotationsTest
 	{
 		String actualString = Notations.toDotCase(value);
 
-		assertEquals(expectedString, actualString);
+		assertThat(actualString).isEqualTo(expectedString);
 	}
 }
