@@ -24,6 +24,7 @@
 
 package dev.kalenchukov.notation.resources;
 
+import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
 import java.util.regex.Matcher;
@@ -39,205 +40,253 @@ import static org.junit.jupiter.api.Assertions.*;
 public class NotationRegexpTest
 {
 	/**
-	 * Проверка константы {@link NotationRegexp#UPPER_CASE}.
+	 * Проверка метода {@link NotationRegexp#getGroup()}.
 	 */
 	@Test
-	public void upperCase()
+	public void getGroup()
 	{
-		String value = "CAMEL_CASE";
+		NotationRegexp regexp = NotationRegexp.CAMEL_CASE;
 
-		Pattern pattern = Pattern.compile(NotationRegexp.UPPER_CASE.getPattern());
-		Matcher matcher = pattern.matcher(value);
+		String actualGroup = regexp.getGroup();
 
-		assertTrue(matcher.matches());
-		assertEquals("CAMEL_CASE", matcher.group(NotationRegexp.UPPER_CASE.getGroup()));
+		assertEquals("camelCase", actualGroup);
 	}
 
 	/**
-	 * Проверка константы {@link NotationRegexp#UPPER_CASE} с некорректным значением.
+	 * Проверка метода {@link NotationRegexp#getPattern()}.
 	 */
 	@Test
-	public void upperCaseNotCorrect()
+	public void getPattern()
 	{
-		String value = "CAMEL#CASE";
+		NotationRegexp regexp = NotationRegexp.CAMEL_CASE;
 
-		Pattern pattern = Pattern.compile(NotationRegexp.UPPER_CASE.getPattern());
-		Matcher matcher = pattern.matcher(value);
+		String actualPattern = regexp.getPattern();
 
-		assertFalse(matcher.matches());
+		assertFalse(actualPattern.isEmpty());
 	}
 
 	/**
-	 * Проверка константы {@link NotationRegexp#KEBAB_CASE}.
+	 * Класс проверки регулярного выражения констант перечисления {@link NotationRegexp}.
+	 *
+	 * @author Алексей Каленчуков
 	 */
-	@Test
-	public void kebabCase()
+	@Nested
+	public class PatternTest
 	{
-		String value = "kebab-case";
+		/**
+		 * Проверка константы {@link NotationRegexp#UPPER_CASE}.
+		 */
+		@Test
+		public void upperCase()
+		{
+			String value = "CAMEL_CASE";
+			Pattern pattern = Pattern.compile(NotationRegexp.UPPER_CASE.getPattern(), Pattern.UNICODE_CASE);
+			Matcher matcher = pattern.matcher(value);
+			assertTrue(matcher.matches());
 
-		Pattern pattern = Pattern.compile(NotationRegexp.KEBAB_CASE.getPattern());
-		Matcher matcher = pattern.matcher(value);
+			String actualGroup = matcher.group("upperCase");
 
-		assertTrue(matcher.matches());
-		assertEquals("kebab-case", matcher.group(NotationRegexp.KEBAB_CASE.getGroup()));
-	}
+			assertEquals("CAMEL_CASE", actualGroup);
+		}
 
-	/**
-	 * Проверка константы {@link NotationRegexp#KEBAB_CASE} с некорректным значением.
-	 */
-	@Test
-	public void kebabCaseNotCorrect()
-	{
-		String value = "kebab#case";
+		/**
+		 * Проверка константы {@link NotationRegexp#UPPER_CASE} с некорректным значением.
+		 */
+		@Test
+		public void upperCaseNotCorrect()
+		{
+			String value = "CAMEL#CASE";
+			Pattern pattern = Pattern.compile(NotationRegexp.UPPER_CASE.getPattern(), Pattern.UNICODE_CASE);
+			Matcher matcher = pattern.matcher(value);
 
-		Pattern pattern = Pattern.compile(NotationRegexp.KEBAB_CASE.getPattern());
-		Matcher matcher = pattern.matcher(value);
+			boolean actual = matcher.matches();
 
-		assertFalse(matcher.matches());
-	}
+			assertFalse(actual);
+		}
 
-	/**
-	 * Проверка константы {@link NotationRegexp#SNAKE_CASE}.
-	 */
-	@Test
-	public void snakeCase()
-	{
-		String value = "snake_case";
+		/**
+		 * Проверка константы {@link NotationRegexp#KEBAB_CASE}.
+		 */
+		@Test
+		public void kebabCase()
+		{
+			String value = "kebab-case";
+			Pattern pattern = Pattern.compile(NotationRegexp.KEBAB_CASE.getPattern(), Pattern.UNICODE_CASE);
+			Matcher matcher = pattern.matcher(value);
+			assertTrue(matcher.matches());
 
-		Pattern pattern = Pattern.compile(NotationRegexp.SNAKE_CASE.getPattern());
-		Matcher matcher = pattern.matcher(value);
+			String actualGroup = matcher.group("kebabCase");
 
-		assertTrue(matcher.matches());
-		assertEquals("snake_case", matcher.group(NotationRegexp.SNAKE_CASE.getGroup()));
-	}
+			assertEquals("kebab-case", actualGroup);
+		}
 
-	/**
-	 * Проверка константы {@link NotationRegexp#SNAKE_CASE} с некорректным значением.
-	 */
-	@Test
-	public void snakeCaseNotCorrect()
-	{
-		String value = "snake#case";
+		/**
+		 * Проверка константы {@link NotationRegexp#KEBAB_CASE} с некорректным значением.
+		 */
+		@Test
+		public void kebabCaseNotCorrect()
+		{
+			String value = "kebab#case";
+			Pattern pattern = Pattern.compile(NotationRegexp.KEBAB_CASE.getPattern(), Pattern.UNICODE_CASE);
+			Matcher matcher = pattern.matcher(value);
 
-		Pattern pattern = Pattern.compile(NotationRegexp.SNAKE_CASE.getPattern());
-		Matcher matcher = pattern.matcher(value);
+			boolean actual = matcher.matches();
 
-		assertFalse(matcher.matches());
-	}
+			assertFalse(actual);
+		}
 
-	/**
-	 * Проверка константы {@link NotationRegexp#CAMEL_CASE}.
-	 */
-	@Test
-	public void camelCase()
-	{
-		String value = "camelCase";
+		/**
+		 * Проверка константы {@link NotationRegexp#SNAKE_CASE}.
+		 */
+		@Test
+		public void snakeCase()
+		{
+			String value = "snake_case";
+			Pattern pattern = Pattern.compile(NotationRegexp.SNAKE_CASE.getPattern(), Pattern.UNICODE_CASE);
+			Matcher matcher = pattern.matcher(value);
+			assertTrue(matcher.matches());
 
-		Pattern pattern = Pattern.compile(NotationRegexp.CAMEL_CASE.getPattern());
-		Matcher matcher = pattern.matcher(value);
+			String actualGroup = matcher.group("snakeCase");
 
-		assertTrue(matcher.matches());
-		assertEquals("camelCase", matcher.group(NotationRegexp.CAMEL_CASE.getGroup()));
-	}
+			assertEquals("snake_case", actualGroup);
+		}
 
-	/**
-	 * Проверка константы {@link NotationRegexp#CAMEL_CASE} с некорректным значением.
-	 */
-	@Test
-	public void camelCaseNotCorrect()
-	{
-		String value = "camel#case";
+		/**
+		 * Проверка константы {@link NotationRegexp#SNAKE_CASE} с некорректным значением.
+		 */
+		@Test
+		public void snakeCaseNotCorrect()
+		{
+			String value = "snake#case";
+			Pattern pattern = Pattern.compile(NotationRegexp.SNAKE_CASE.getPattern(), Pattern.UNICODE_CASE);
+			Matcher matcher = pattern.matcher(value);
 
-		Pattern pattern = Pattern.compile(NotationRegexp.CAMEL_CASE.getPattern());
-		Matcher matcher = pattern.matcher(value);
+			boolean actual = matcher.matches();
 
-		assertFalse(matcher.matches());
-	}
+			assertFalse(actual);
+		}
 
-	/**
-	 * Проверка константы {@link NotationRegexp#PASCAL_CASE}.
-	 */
-	@Test
-	public void pascalCase()
-	{
-		String value = "PascalCase";
+		/**
+		 * Проверка константы {@link NotationRegexp#CAMEL_CASE}.
+		 */
+		@Test
+		public void camelCase()
+		{
+			String value = "camelCase";
+			Pattern pattern = Pattern.compile(NotationRegexp.CAMEL_CASE.getPattern(), Pattern.UNICODE_CASE);
+			Matcher matcher = pattern.matcher(value);
+			assertTrue(matcher.matches());
 
-		Pattern pattern = Pattern.compile(NotationRegexp.PASCAL_CASE.getPattern());
-		Matcher matcher = pattern.matcher(value);
+			String actualGroup = matcher.group("camelCase");
 
-		assertTrue(matcher.matches());
-		assertEquals("PascalCase", matcher.group(NotationRegexp.PASCAL_CASE.getGroup()));
-	}
+			assertEquals("camelCase", actualGroup);
+		}
 
-	/**
-	 * Проверка константы {@link NotationRegexp#PASCAL_CASE} с некорректным значением.
-	 */
-	@Test
-	public void pascalCaseNotCorrect()
-	{
-		String value = "Pascal#case";
+		/**
+		 * Проверка константы {@link NotationRegexp#CAMEL_CASE} с некорректным значением.
+		 */
+		@Test
+		public void camelCaseNotCorrect()
+		{
+			String value = "camel#case";
+			Pattern pattern = Pattern.compile(NotationRegexp.CAMEL_CASE.getPattern(), Pattern.UNICODE_CASE);
+			Matcher matcher = pattern.matcher(value);
 
-		Pattern pattern = Pattern.compile(NotationRegexp.PASCAL_CASE.getPattern());
-		Matcher matcher = pattern.matcher(value);
+			boolean actual = matcher.matches();
 
-		assertFalse(matcher.matches());
-	}
+			assertFalse(actual);
+		}
 
-	/**
-	 * Проверка константы {@link NotationRegexp#DOT_CASE}.
-	 */
-	@Test
-	public void dotCase()
-	{
-		String value = "dot.case";
+		/**
+		 * Проверка константы {@link NotationRegexp#PASCAL_CASE}.
+		 */
+		@Test
+		public void pascalCase()
+		{
+			String value = "PascalCase";
+			Pattern pattern = Pattern.compile(NotationRegexp.PASCAL_CASE.getPattern(), Pattern.UNICODE_CASE);
+			Matcher matcher = pattern.matcher(value);
+			assertTrue(matcher.matches());
 
-		Pattern pattern = Pattern.compile(NotationRegexp.DOT_CASE.getPattern());
-		Matcher matcher = pattern.matcher(value);
+			String actualGroup = matcher.group("pascalCase");
 
-		assertTrue(matcher.matches());
-		assertEquals("dot.case", matcher.group(NotationRegexp.DOT_CASE.getGroup()));
-	}
+			assertEquals("PascalCase", actualGroup);
+		}
 
-	/**
-	 * Проверка константы {@link NotationRegexp#DOT_CASE} с некорректным значением.
-	 */
-	@Test
-	public void dotCaseNotCorrect()
-	{
-		String value = "dot#case";
+		/**
+		 * Проверка константы {@link NotationRegexp#PASCAL_CASE} с некорректным значением.
+		 */
+		@Test
+		public void pascalCaseNotCorrect()
+		{
+			String value = "Pascal#case";
+			Pattern pattern = Pattern.compile(NotationRegexp.PASCAL_CASE.getPattern(), Pattern.UNICODE_CASE);
+			Matcher matcher = pattern.matcher(value);
 
-		Pattern pattern = Pattern.compile(NotationRegexp.DOT_CASE.getPattern());
-		Matcher matcher = pattern.matcher(value);
+			boolean actual = matcher.matches();
 
-		assertFalse(matcher.matches());
-	}
+			assertFalse(actual);
+		}
 
-	/**
-	 * Проверка константы {@link NotationRegexp#TRAIN_CASE}.
-	 */
-	@Test
-	public void trainCase()
-	{
-		String value = "TRAIN-CASE";
+		/**
+		 * Проверка константы {@link NotationRegexp#DOT_CASE}.
+		 */
+		@Test
+		public void dotCase()
+		{
+			String value = "dot.case";
+			Pattern pattern = Pattern.compile(NotationRegexp.DOT_CASE.getPattern(), Pattern.UNICODE_CASE);
+			Matcher matcher = pattern.matcher(value);
+			assertTrue(matcher.matches());
 
-		Pattern pattern = Pattern.compile(NotationRegexp.TRAIN_CASE.getPattern());
-		Matcher matcher = pattern.matcher(value);
+			String actualGroup = matcher.group("dotCase");
 
-		assertTrue(matcher.matches());
-		assertEquals("TRAIN-CASE", matcher.group(NotationRegexp.TRAIN_CASE.getGroup()));
-	}
+			assertEquals("dot.case", actualGroup);
+		}
 
-	/**
-	 * Проверка константы {@link NotationRegexp#TRAIN_CASE} с некорректным значением.
-	 */
-	@Test
-	public void trainCaseNotCorrect()
-	{
-		String value = "TRAIN#CASE";
+		/**
+		 * Проверка константы {@link NotationRegexp#DOT_CASE} с некорректным значением.
+		 */
+		@Test
+		public void dotCaseNotCorrect()
+		{
+			String value = "dot#case";
+			Pattern pattern = Pattern.compile(NotationRegexp.DOT_CASE.getPattern(), Pattern.UNICODE_CASE);
+			Matcher matcher = pattern.matcher(value);
 
-		Pattern pattern = Pattern.compile(NotationRegexp.TRAIN_CASE.getPattern());
-		Matcher matcher = pattern.matcher(value);
+			boolean actual = matcher.matches();
 
-		assertFalse(matcher.matches());
+			assertFalse(actual);
+		}
+
+		/**
+		 * Проверка константы {@link NotationRegexp#TRAIN_CASE}.
+		 */
+		@Test
+		public void trainCase()
+		{
+			String value = "TRAIN-CASE";
+			Pattern pattern = Pattern.compile(NotationRegexp.TRAIN_CASE.getPattern(), Pattern.UNICODE_CASE);
+			Matcher matcher = pattern.matcher(value);
+			assertTrue(matcher.matches());
+
+			String actualGroup = matcher.group("trainCase");
+
+			assertEquals("TRAIN-CASE", actualGroup);
+		}
+
+		/**
+		 * Проверка константы {@link NotationRegexp#TRAIN_CASE} с некорректным значением.
+		 */
+		@Test		public void trainCaseNotCorrect()
+		{
+			String value = "TRAIN#CASE";
+			Pattern pattern = Pattern.compile(NotationRegexp.TRAIN_CASE.getPattern(), Pattern.UNICODE_CASE);
+			Matcher matcher = pattern.matcher(value);
+
+			boolean actual = matcher.matches();
+
+			assertFalse(actual);
+		}
 	}
 }

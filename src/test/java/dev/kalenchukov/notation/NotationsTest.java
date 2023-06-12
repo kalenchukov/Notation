@@ -433,11 +433,11 @@ public class NotationsTest
 			"hello.world1, HELLO_WORLD1",
 			"HELLO-WORLD1, HELLO_WORLD1"
 	})
-	public void toNotationTypeUpperCase(String value, String expected)
+	public void toNotationTypeUpperCase(String value, String expectedString)
 	{
-		String actual = Notations.to(value, NotationType.UPPER_CASE);
+		String actualString = Notations.to(value, NotationType.UPPER_CASE);
 
-		assertEquals(expected, actual);
+		assertEquals(expectedString, actualString);
 	}
 
 	/**
@@ -478,11 +478,11 @@ public class NotationsTest
 			"hello.world1, hello-world1",
 			"HELLO-WORLD1, hello-world1"
 	})
-	public void toNotationTypeKebabCase(String value, String expected)
+	public void toNotationTypeKebabCase(String value, String expectedString)
 	{
-		String actual = Notations.to(value, NotationType.KEBAB_CASE);
+		String actualString = Notations.to(value, NotationType.KEBAB_CASE);
 
-		assertEquals(expected, actual);
+		assertEquals(expectedString, actualString);
 	}
 
 	/**
@@ -523,11 +523,11 @@ public class NotationsTest
 			"hello.world1, HELLO-WORLD1",
 			"HELLO-WORLD1, HELLO-WORLD1"
 	})
-	public void toNotationTypeTrainCase(String value, String expected)
+	public void toNotationTypeTrainCase(String value, String expectedString)
 	{
-		String actual = Notations.to(value, NotationType.TRAIN_CASE);
+		String actualString = Notations.to(value, NotationType.TRAIN_CASE);
 
-		assertEquals(expected, actual);
+		assertEquals(expectedString, actualString);
 	}
 
 	/**
@@ -568,11 +568,11 @@ public class NotationsTest
 			"hello.world1, hello_world1",
 			"HELLO-WORLD1, hello_world1"
 	})
-	public void toNotationTypeSnakeCase(String value, String expected)
+	public void toNotationTypeSnakeCase(String value, String expectedString)
 	{
-		String actual = Notations.to(value, NotationType.SNAKE_CASE);
+		String actualString = Notations.to(value, NotationType.SNAKE_CASE);
 
-		assertEquals(expected, actual);
+		assertEquals(expectedString, actualString);
 	}
 
 	/**
@@ -613,11 +613,11 @@ public class NotationsTest
 			"hello.world1, helloWorld1",
 			"HELLO-WORLD1, helloWorld1"
 	})
-	public void toNotationTypeCamelCase(String value, String expected)
+	public void toNotationTypeCamelCase(String value, String expectedString)
 	{
-		String actual = Notations.to(value, NotationType.CAMEL_CASE);
+		String actualString = Notations.to(value, NotationType.CAMEL_CASE);
 
-		assertEquals(expected, actual);
+		assertEquals(expectedString, actualString);
 	}
 
 	/**
@@ -658,11 +658,11 @@ public class NotationsTest
 			"hello.world1, HelloWorld1",
 			"HELLO-WORLD1, HelloWorld1"
 	})
-	public void toNotationTypePascalCase(String value, String expected)
+	public void toNotationTypePascalCase(String value, String expectedString)
 	{
-		String actual = Notations.to(value, NotationType.PASCAL_CASE);
+		String actualString = Notations.to(value, NotationType.PASCAL_CASE);
 
-		assertEquals(expected, actual);
+		assertEquals(expectedString, actualString);
 	}
 
 	/**
@@ -703,11 +703,11 @@ public class NotationsTest
 			"hello.world1, hello.world1",
 			"HELLO-WORLD1, hello.world1"
 	})
-	public void toNotationTypeDotCase(String value, String expected)
+	public void toNotationTypeDotCase(String value, String expectedString)
 	{
-		String actual = Notations.to(value, NotationType.DOT_CASE);
+		String actualString = Notations.to(value, NotationType.DOT_CASE);
 
-		assertEquals(expected, actual);
+		assertEquals(expectedString, actualString);
 	}
 
 	/**
@@ -748,11 +748,11 @@ public class NotationsTest
 		"hello.world1, HELLO_WORLD1",
 		"HELLO-WORLD1, HELLO_WORLD1"
 	})
-	public void toUpperCase(String value, String expected)
+	public void toUpperCase(String value, String expectedString)
 	{
-		String actual = Notations.toUpperCase(value);
+		String actualString = Notations.toUpperCase(value);
 
-		assertEquals(expected, actual);
+		assertEquals(expectedString, actualString);
 	}
 
 	/**
@@ -793,11 +793,11 @@ public class NotationsTest
 		"hello.world1, hello-world1",
 		"HELLO-WORLD1, hello-world1"
 	})
-	public void toKebabCase(String value, String expected)
+	public void toKebabCase(String value, String expectedString)
 	{
-		String actual = Notations.toKebabCase(value);
+		String actualString = Notations.toKebabCase(value);
 
-		assertEquals(expected, actual);
+		assertEquals(expectedString, actualString);
 	}
 
 	/**
@@ -838,11 +838,11 @@ public class NotationsTest
 		"hello.world1, HELLO-WORLD1",
 		"HELLO-WORLD1, HELLO-WORLD1"
 	})
-	public void toTrainCase(String value, String expected)
+	public void toTrainCase(String value, String expectedString)
 	{
-		String actual = Notations.toTrainCase(value);
+		String actualString = Notations.toTrainCase(value);
 
-		assertEquals(expected, actual);
+		assertEquals(expectedString, actualString);
 	}
 
 	/**
@@ -883,11 +883,11 @@ public class NotationsTest
 		"hello.world1, hello_world1",
 		"HELLO-WORLD1, hello_world1"
 	})
-	public void toSnakeCase(String value, String expected)
+	public void toSnakeCase(String value, String expectedString)
 	{
-		String actual = Notations.toSnakeCase(value);
+		String actualString = Notations.toSnakeCase(value);
 
-		assertEquals(expected, actual);
+		assertEquals(expectedString, actualString);
 	}
 
 	/**
@@ -928,11 +928,11 @@ public class NotationsTest
 		"hello.world1, helloWorld1",
 		"HELLO-WORLD1, helloWorld1"
 	})
-	public void toCamelCase(String value, String expected)
+	public void toCamelCase(String value, String expectedString)
 	{
-		String actual = Notations.toCamelCase(value);
+		String actualString = Notations.toCamelCase(value);
 
-		assertEquals(expected, actual);
+		assertEquals(expectedString, actualString);
 	}
 
 	/**
@@ -973,11 +973,11 @@ public class NotationsTest
 		"hello.world1, HelloWorld1",
 		"HELLO-WORLD1, HelloWorld1"
 	})
-	public void toPascalCase(String value, String expected)
+	public void toPascalCase(String value, String expectedString)
 	{
-		String actual = Notations.toPascalCase(value);
+		String actualString = Notations.toPascalCase(value);
 
-		assertEquals(expected, actual);
+		assertEquals(expectedString, actualString);
 	}
 
 	/**
@@ -1018,10 +1018,10 @@ public class NotationsTest
 		"hello.world1, hello.world1",
 		"HELLO-WORLD1, hello.world1"
 	})
-	public void toDotCase(String value, String expected)
+	public void toDotCase(String value, String expectedString)
 	{
-		String actual = Notations.toDotCase(value);
+		String actualString = Notations.toDotCase(value);
 
-		assertEquals(expected, actual);
+		assertEquals(expectedString, actualString);
 	}
 }
