@@ -28,7 +28,7 @@
 ### Перечисления
 #### Получение регулярного выражения
 ```java
-NotationRegexp.KEBAB_CASE.getPattern();
+Regexp.KEBAB_CASE.getPattern();
 ```
 
 ### Проверка нотации

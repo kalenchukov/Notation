@@ -25,7 +25,7 @@
 package dev.kalenchukov.notation;
 
 import dev.kalenchukov.notation.resources.SeparatorType;
-import dev.kalenchukov.notation.resources.NotationRegexp;
+import dev.kalenchukov.notation.resources.Regexp;
 import dev.kalenchukov.notation.resources.NotationType;
 import dev.kalenchukov.stringi.Stringi;
 import org.jetbrains.annotations.NotNull;
@@ -86,7 +86,7 @@ public final class Notations
 	{
 		Objects.requireNonNull(value);
 
-		return Notations.is(value, NotationRegexp.UPPER_CASE);
+		return Notations.is(value, Regexp.UPPER_CASE);
 	}
 
 	/**
@@ -99,7 +99,7 @@ public final class Notations
 	{
 		Objects.requireNonNull(value);
 
-		return Notations.is(value, NotationRegexp.KEBAB_CASE);
+		return Notations.is(value, Regexp.KEBAB_CASE);
 	}
 
 	/**
@@ -112,7 +112,7 @@ public final class Notations
 	{
 		Objects.requireNonNull(value);
 
-		return Notations.is(value, NotationRegexp.SNAKE_CASE);
+		return Notations.is(value, Regexp.SNAKE_CASE);
 	}
 
 	/**
@@ -125,7 +125,7 @@ public final class Notations
 	{
 		Objects.requireNonNull(value);
 
-		return Notations.is(value, NotationRegexp.CAMEL_CASE);
+		return Notations.is(value, Regexp.CAMEL_CASE);
 	}
 
 	/**
@@ -138,7 +138,7 @@ public final class Notations
 	{
 		Objects.requireNonNull(value);
 
-		return Notations.is(value, NotationRegexp.PASCAL_CASE);
+		return Notations.is(value, Regexp.PASCAL_CASE);
 	}
 
 	/**
@@ -151,7 +151,7 @@ public final class Notations
 	{
 		Objects.requireNonNull(value);
 
-		return Notations.is(value, NotationRegexp.DOT_CASE);
+		return Notations.is(value, Regexp.DOT_CASE);
 	}
 
 	/**
@@ -164,7 +164,7 @@ public final class Notations
 	{
 		Objects.requireNonNull(value);
 
-		return Notations.is(value, NotationRegexp.TRAIN_CASE);
+		return Notations.is(value, Regexp.TRAIN_CASE);
 	}
 
 	/**
@@ -297,15 +297,15 @@ public final class Notations
 	 * Проверяет соответствие строки указанной нотации.
 	 *
 	 * @param value строка.
-	 * @param notationRegexp регулярное выражение нотации.
+	 * @param regexp регулярное выражение нотации.
 	 * @return {@code true}, если строка соответствует указанной нотации, иначе {@code false}.
 	 */
-	private static boolean is(@NotNull final String value, @NotNull final NotationRegexp notationRegexp)
+	private static boolean is(@NotNull final String value, @NotNull final Regexp regexp)
 	{
 		Objects.requireNonNull(value);
-		Objects.requireNonNull(notationRegexp);
+		Objects.requireNonNull(regexp);
 
-		final Pattern pattern = Pattern.compile(notationRegexp.getPattern(), Pattern.UNICODE_CASE);
+		final Pattern pattern = Pattern.compile(regexp.getPattern(), Pattern.UNICODE_CASE);
 		final Matcher matcher = pattern.matcher(value);
 
 		return matcher.matches();

@@ -31,7 +31,7 @@ import org.jetbrains.annotations.NotNull;
  *
  * @author Алексей Каленчуков
  */
-public enum NotationRegexp
+public enum Regexp
 {
 	/**
 	 * Нотация Upper Case.
@@ -215,7 +215,7 @@ public enum NotationRegexp
 	 *
 	 * @param pattern шаблон регулярного выражения.
 	 */
-	NotationRegexp(@NotNull final String group, @NotNull final String pattern)
+	Regexp(@NotNull final String group, @NotNull final String pattern)
 	{
 		this.group = group;
 		this.pattern = pattern;
