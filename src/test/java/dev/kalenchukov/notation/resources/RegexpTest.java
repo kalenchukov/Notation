@@ -278,7 +278,8 @@ public class RegexpTest
 		/**
 		 * Проверка константы {@link Regexp#TRAIN_CASE} с некорректным значением.
 		 */
-		@Test		public void trainCaseNotCorrect()
+		@Test
+		public void trainCaseNotCorrect()
 		{
 			String value = "TRAIN#CASE";
 			Pattern pattern = Pattern.compile(Regexp.TRAIN_CASE.getPattern(), Pattern.UNICODE_CASE);
