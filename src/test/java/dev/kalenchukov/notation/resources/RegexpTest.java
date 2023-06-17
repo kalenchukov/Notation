@@ -71,7 +71,7 @@ public class RegexpTest
 	 * @author Алексей Каленчуков
 	 */
 	@Nested
-	public class PatternTest
+	public class PatternRegexp
 	{
 		/**
 		 * Проверка константы {@link Regexp#UPPER_CASE}.
