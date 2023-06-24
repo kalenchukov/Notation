@@ -56,7 +56,7 @@ public final class Notations
 	 *
 	 * @param value строка, нотацию которой необходимо проверить.
 	 * @param notationType тип нотации.
-	 * @return {@code true}, если строка соответствует указанной нотации, иначе {@code false}.
+	 * @return {@code true}, если {@code value} соответствует {@code notationType}, иначе {@code false}.
 	 *
 	 */
 	public static boolean is(@NotNull final String value, @NotNull final NotationType notationType)
@@ -80,7 +80,7 @@ public final class Notations
 	 * Проверяет соответствие строки нотации Upper Case.
 	 *
 	 * @param value строка.
-	 * @return {@code true}, если строка соответствует нотации Upper Case, иначе {@code false}.
+	 * @return {@code true}, если {@code value} соответствует нотации Upper Case, иначе {@code false}.
 	 */
 	public static boolean isUpperCase(@NotNull final String value)
 	{
@@ -93,7 +93,7 @@ public final class Notations
 	 * Проверяет соответствие строки нотации Kebab Case.
 	 *
 	 * @param value строка.
-	 * @return {@code true}, если строка соответствует нотации Kebab Case, иначе {@code false}.
+	 * @return {@code true}, если {@code value} соответствует нотации Kebab Case, иначе {@code false}.
 	 */
 	public static boolean isKebabCase(@NotNull final String value)
 	{
@@ -106,7 +106,7 @@ public final class Notations
 	 * Проверяет соответствие строки нотации Snake Case.
 	 *
 	 * @param value строка.
-	 * @return {@code true}, если строка соответствует нотации Snake Case, иначе {@code false}.
+	 * @return {@code true}, если {@code value} соответствует нотации Snake Case, иначе {@code false}.
 	 */
 	public static boolean isSnakeCase(@NotNull final String value)
 	{
@@ -119,7 +119,7 @@ public final class Notations
 	 * Проверяет соответствие строки нотации Camel Case.
 	 *
 	 * @param value строка.
-	 * @return {@code true}, если строка соответствует нотации Camel Case, иначе {@code false}.
+	 * @return {@code true}, если {@code value} соответствует нотации Camel Case, иначе {@code false}.
 	 */
 	public static boolean isCamelCase(@NotNull final String value)
 	{
@@ -132,7 +132,7 @@ public final class Notations
 	 * Проверяет соответствие строки нотации Pascal Case.
 	 *
 	 * @param value строка.
-	 * @return {@code true}, если строка соответствует нотации Pascal Case, иначе {@code false}.
+	 * @return {@code true}, если {@code value} соответствует нотации Pascal Case, иначе {@code false}.
 	 */
 	public static boolean isPascalCase(@NotNull final String value)
 	{
@@ -145,7 +145,7 @@ public final class Notations
 	 * Проверяет соответствие строки нотации Dot Case.
 	 *
 	 * @param value строка.
-	 * @return {@code true}, если строка соответствует нотации Dot Case, иначе {@code false}.
+	 * @return {@code true}, если {@code value} соответствует нотации Dot Case, иначе {@code false}.
 	 */
 	public static boolean isDotCase(@NotNull final String value)
 	{
@@ -158,7 +158,7 @@ public final class Notations
 	 * Проверяет соответствие строки нотации Train Case.
 	 *
 	 * @param value строка.
-	 * @return {@code true}, если строка соответствует нотации Train Case, иначе {@code false}.
+	 * @return {@code true}, если {@code value} соответствует нотации Train Case, иначе {@code false}.
 	 */
 	public static boolean isTrainCase(@NotNull final String value)
 	{
@@ -298,7 +298,7 @@ public final class Notations
 	 *
 	 * @param value строка.
 	 * @param regexp регулярное выражение нотации.
-	 * @return {@code true}, если строка соответствует указанной нотации, иначе {@code false}.
+	 * @return {@code true}, если {@code value} соответствует {@code regexp}, иначе {@code false}.
 	 */
 	private static boolean is(@NotNull final String value, @NotNull final Regexp regexp)
 	{
