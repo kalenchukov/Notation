@@ -57,6 +57,8 @@ public final class Notations
 	 * @param value строка, нотацию которой необходимо проверить.
 	 * @param notationType тип нотации.
 	 * @return {@code true}, если {@code value} соответствует {@code notationType}, иначе {@code false}.
+	 * @throws NullPointerException если в качестве {@code value} передан {@code null}.
+	 * @throws NullPointerException если в качестве {@code notationType} передан {@code null}.
 	 *
 	 */
 	public static boolean is(@NotNull final String value, @NotNull final NotationType notationType)
@@ -81,6 +83,7 @@ public final class Notations
 	 *
 	 * @param value строка.
 	 * @return {@code true}, если {@code value} соответствует нотации Upper Case, иначе {@code false}.
+	 * @throws NullPointerException если в качестве {@code value} передан {@code null}.
 	 */
 	public static boolean isUpperCase(@NotNull final String value)
 	{
@@ -94,6 +97,7 @@ public final class Notations
 	 *
 	 * @param value строка.
 	 * @return {@code true}, если {@code value} соответствует нотации Kebab Case, иначе {@code false}.
+	 * @throws NullPointerException если в качестве {@code value} передан {@code null}.
 	 */
 	public static boolean isKebabCase(@NotNull final String value)
 	{
@@ -107,6 +111,7 @@ public final class Notations
 	 *
 	 * @param value строка.
 	 * @return {@code true}, если {@code value} соответствует нотации Snake Case, иначе {@code false}.
+	 * @throws NullPointerException если в качестве {@code value} передан {@code null}.
 	 */
 	public static boolean isSnakeCase(@NotNull final String value)
 	{
@@ -120,6 +125,7 @@ public final class Notations
 	 *
 	 * @param value строка.
 	 * @return {@code true}, если {@code value} соответствует нотации Camel Case, иначе {@code false}.
+	 * @throws NullPointerException если в качестве {@code value} передан {@code null}.
 	 */
 	public static boolean isCamelCase(@NotNull final String value)
 	{
@@ -133,6 +139,7 @@ public final class Notations
 	 *
 	 * @param value строка.
 	 * @return {@code true}, если {@code value} соответствует нотации Pascal Case, иначе {@code false}.
+	 * @throws NullPointerException если в качестве {@code value} передан {@code null}.
 	 */
 	public static boolean isPascalCase(@NotNull final String value)
 	{
@@ -146,6 +153,7 @@ public final class Notations
 	 *
 	 * @param value строка.
 	 * @return {@code true}, если {@code value} соответствует нотации Dot Case, иначе {@code false}.
+	 * @throws NullPointerException если в качестве {@code value} передан {@code null}.
 	 */
 	public static boolean isDotCase(@NotNull final String value)
 	{
@@ -159,6 +167,7 @@ public final class Notations
 	 *
 	 * @param value строка.
 	 * @return {@code true}, если {@code value} соответствует нотации Train Case, иначе {@code false}.
+	 * @throws NullPointerException если в качестве {@code value} передан {@code null}.
 	 */
 	public static boolean isTrainCase(@NotNull final String value)
 	{
@@ -173,6 +182,8 @@ public final class Notations
 	 * @param value строка, нотацию которой необходимо изменить.
 	 * @param notationType тип нотации.
 	 * @return строку в указанной нотации.
+	 * @throws NullPointerException если в качестве {@code value} передан {@code null}.
+	 * @throws NullPointerException если в качестве {@code notationType} передан {@code null}.
 	 *
 	 */
 	@NotNull
@@ -198,6 +209,7 @@ public final class Notations
 	 *
 	 * @param value строка, нотацию которой необходимо изменить.
 	 * @return строку в нотации Upper Case.
+	 * @throws NullPointerException если в качестве {@code value} передан {@code null}.
 	 */
 	@NotNull
 	public static String toUpperCase(@NotNull final String value)
@@ -212,6 +224,7 @@ public final class Notations
 	 *
 	 * @param value строка, нотацию которой необходимо изменить.
 	 * @return строку в нотации Kebab Case.
+	 * @throws NullPointerException если в качестве {@code value} передан {@code null}.
 	 */
 	@NotNull
 	public static String toKebabCase(@NotNull final String value)
@@ -226,6 +239,7 @@ public final class Notations
 	 *
 	 * @param value строка, нотацию которой необходимо изменить.
 	 * @return строку в нотации Snake Case.
+	 * @throws NullPointerException если в качестве {@code value} передан {@code null}.
 	 */
 	@NotNull
 	public static String toSnakeCase(@NotNull final String value)
@@ -240,6 +254,7 @@ public final class Notations
 	 *
 	 * @param value строка, нотацию которой необходимо изменить.
 	 * @return строку в нотации Camel Case.
+	 * @throws NullPointerException если в качестве {@code value} передан {@code null}.
 	 */
 	@NotNull
 	public static String toCamelCase(@NotNull final String value)
@@ -254,6 +269,7 @@ public final class Notations
 	 *
 	 * @param value строка, нотацию которой необходимо изменить.
 	 * @return строку в нотации Pascal Case.
+	 * @throws NullPointerException если в качестве {@code value} передан {@code null}.
 	 */
 	@NotNull
 	public static String toPascalCase(@NotNull final String value)
@@ -270,6 +286,7 @@ public final class Notations
 	 *
 	 * @param value строка, нотацию которой необходимо изменить.
 	 * @return строку в нотации Dot Case.
+	 * @throws NullPointerException если в качестве {@code value} передан {@code null}.
 	 */
 	@NotNull
 	public static String toDotCase(@NotNull final String value)
@@ -284,6 +301,7 @@ public final class Notations
 	 *
 	 * @param value строка, нотацию которой необходимо изменить.
 	 * @return строку в нотации Train Case.
+	 * @throws NullPointerException если в качестве {@code value} передан {@code null}.
 	 */
 	@NotNull
 	public static String toTrainCase(@NotNull final String value)
@@ -299,6 +317,8 @@ public final class Notations
 	 * @param value строка.
 	 * @param regexp регулярное выражение нотации.
 	 * @return {@code true}, если {@code value} соответствует {@code regexp}, иначе {@code false}.
+	 * @throws NullPointerException если в качестве {@code value} передан {@code null}.
+	 * @throws NullPointerException если в качестве {@code regexp} передан {@code null}.
 	 */
 	private static boolean is(@NotNull final String value, @NotNull final Regexp regexp)
 	{
@@ -317,6 +337,8 @@ public final class Notations
 	 * @param value строка в абстрактной нотации.
 	 * @param separatorType необходимый разделитель для выбранной нотации.
 	 * @return строку, в которой абстрактная нотация преобразована в соответствии с разделителем.
+	 * @throws NullPointerException если в качестве {@code value} передан {@code null}.
+	 * @throws NullPointerException если в качестве {@code separatorType} передан {@code null}.
 	 */
 	@NotNull
 	private static String fromAbstract(@NotNull final String value, @NotNull final SeparatorType separatorType)
@@ -355,6 +377,7 @@ public final class Notations
 	 *
 	 * @param value строка, которую необходимо конвертировать в абстрактную нотацию.
 	 * @return строку в абстрактной нотации.
+	 * @throws NullPointerException если в качестве {@code value} передан {@code null}.
 	 */
 	@NotNull
 	private static String toAbstract(@NotNull final String value)
