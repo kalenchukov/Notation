@@ -62,16 +62,16 @@ public enum SeparatorType
 	 * Символ разделителя.
 	 */
 	@NotNull
-	private final String separatorSymbol;
+	private final String symbol;
 
 	/**
 	 * Конструктор для {@code SeparatorType}.
 	 *
-	 * @param separatorSymbol символ разделителя.
+	 * @param symbol символ разделителя.
 	 */
-	SeparatorType(@NotNull final String separatorSymbol)
+	SeparatorType(@NotNull final String symbol)
 	{
-		this.separatorSymbol = separatorSymbol;
+		this.symbol = symbol;
 	}
 
 	/**
@@ -80,9 +80,9 @@ public enum SeparatorType
 	 * @return символ разделителя.
 	 */
 	@NotNull
-	public String getSeparatorSymbol()
+	public String getSymbol()
 	{
-		return this.separatorSymbol;
+		return this.symbol;
 	}
 
 	/**
@@ -96,7 +96,7 @@ public enum SeparatorType
 		StringBuilder values = new StringBuilder();
 
 		for (SeparatorType separatorType : SeparatorType.values()) {
-			values.append(separatorType.getSeparatorSymbol());
+			values.append(separatorType.getSymbol());
 		}
 
 		return values.toString();

@@ -355,7 +355,7 @@ public final class Notations
 		while (matcher.find())
 		{
 			String target = matcher.group("target");
-			String replacement = separatorType.getSeparatorSymbol() + target;
+			String replacement = separatorType.getSymbol() + target;
 
 			if (separatorType == SeparatorType.UPPERCASE) {
 				replacement = replacement.toUpperCase();
