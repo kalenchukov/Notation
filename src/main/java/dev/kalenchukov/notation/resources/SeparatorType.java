@@ -91,7 +91,7 @@ public enum SeparatorType
 	 * @return строка из символов разделителей.
 	 */
 	@NotNull
-	public static String getAllSeparatorSymbols()
+	public static String getAllSymbols()
 	{
 		StringBuilder values = new StringBuilder();
 
