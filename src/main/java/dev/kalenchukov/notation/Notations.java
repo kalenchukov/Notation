@@ -30,6 +30,7 @@ import dev.kalenchukov.notation.resources.NotationType;
 import dev.kalenchukov.stringi.Stringi;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.List;
 import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -384,7 +385,7 @@ public final class Notations
 	{
 		Objects.requireNonNull(value);
 
-		String separators = SeparatorType.getAllSymbols();
+		String separators = String.join("", SeparatorType.getAllSymbols());
 		String regexp = "(?<=[a-zA-Z])[" + separators + "](?=[a-z0-9A-Z])";
 		String abstractValue = value.replaceAll(regexp, Notations.ABSTRACT_SEPARATOR);
 

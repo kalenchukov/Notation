@@ -10,6 +10,7 @@
 * Изменена версия Java на 17.
 * Переименован метод SeparatorType.getSeparatorSymbol() -> SeparatorType.getSymbol().
 * Переименован метод SeparatorType.getAllSeparatorSymbols() -> SeparatorType.getAllSymbols().
+* Изменён метод SeparatorType.getAllSymbols().
 
 ### Исправлено
 *

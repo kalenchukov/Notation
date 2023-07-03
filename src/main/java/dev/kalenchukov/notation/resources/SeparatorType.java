@@ -26,6 +26,9 @@ package dev.kalenchukov.notation.resources;
 
 import org.jetbrains.annotations.NotNull;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Перечисление возможных типов разделителей.
  *
@@ -91,14 +94,14 @@ public enum SeparatorType
 	 * @return строка из символов разделителей.
 	 */
 	@NotNull
-	public static String getAllSymbols()
+	public static List<@NotNull String> getAllSymbols()
 	{
-		StringBuilder values = new StringBuilder();
+		List<String> symbols = new ArrayList<>();
 
-		for (SeparatorType separatorType : SeparatorType.values()) {
-			values.append(separatorType.getSymbol());
+		for (SeparatorType symbol : SeparatorType.values()) {
+			symbols.add(symbol.getSymbol());
 		}
 
-		return values.toString();
+		return symbols;
 	}
 }
