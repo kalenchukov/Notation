@@ -1,5 +1,5 @@
 # Журнал изменений
-## vX.X.X - XX.XX.XXXX
+## v1.7.0 - 08.07.2023
 ### Добавлено
 * Добавлено перечисление SeparatorType.SPACE.
 
@@ -11,12 +11,6 @@
 * Переименован метод SeparatorType.getAllSeparatorSymbols() -> SeparatorType.getAllSymbols().
 * Изменён метод SeparatorType.getAllSymbols().
 
-### Исправлено
-*
-
-### Удалено
-*
-
 ## v1.6.0 - 14.05.2023
 ### Добавлено
 * Добавлен метод Notation.is(String, NotationType).
@@ -25,9 +19,6 @@
 * Добавлен метод Notation.isTrainCase(String).
 * Добавлен метод Notation.toTrainCase(String).
 * Добавлено преобразование слов разделённых пробелами в нотацию.
-
-### Изменено
-*
 
 ## v1.5.0 - 19.01.2023
 ### Добавлено
