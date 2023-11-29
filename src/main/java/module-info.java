@@ -6,6 +6,6 @@ module dev.kalenchukov.notation
 	requires org.jetbrains.annotations;
 	requires dev.kalenchukov.stringi;
 
-	exports dev.kalenchukov.notation.resources;
+	exports dev.kalenchukov.notation.types;
 	exports dev.kalenchukov.notation;
 }

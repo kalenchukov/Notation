@@ -25,4 +25,4 @@
 /**
  * Предоставляет перечисления, необходимые для определения типов.
  */
-package dev.kalenchukov.notation.resources;
+package dev.kalenchukov.notation.types;

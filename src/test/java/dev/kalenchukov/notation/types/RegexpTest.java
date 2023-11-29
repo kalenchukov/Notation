@@ -22,7 +22,7 @@
  * SOFTWARE.
  */
 
-package dev.kalenchukov.notation.resources;
+package dev.kalenchukov.notation.types;
 
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;

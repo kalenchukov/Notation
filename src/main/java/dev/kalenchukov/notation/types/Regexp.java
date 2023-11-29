@@ -22,7 +22,7 @@
  * SOFTWARE.
  */
 
-package dev.kalenchukov.notation.resources;
+package dev.kalenchukov.notation.types;
 
 import org.jetbrains.annotations.NotNull;
 

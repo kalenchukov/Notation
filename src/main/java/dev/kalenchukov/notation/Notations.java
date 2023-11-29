@@ -24,13 +24,12 @@
 
 package dev.kalenchukov.notation;
 
-import dev.kalenchukov.notation.resources.SeparatorType;
-import dev.kalenchukov.notation.resources.Regexp;
-import dev.kalenchukov.notation.resources.NotationType;
+import dev.kalenchukov.notation.types.SeparatorType;
+import dev.kalenchukov.notation.types.Regexp;
+import dev.kalenchukov.notation.types.NotationType;
 import dev.kalenchukov.stringi.Stringi;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.List;
 import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
