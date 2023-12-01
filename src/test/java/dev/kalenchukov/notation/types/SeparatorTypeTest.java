@@ -38,39 +38,39 @@ import static org.assertj.core.api.Assertions.assertThat;
  */
 public class SeparatorTypeTest
 {
-    /**
-     * Проверка метода {@link SeparatorType#getSymbol()}.
-     */
-    @Test
-    public void getSymbol()
-    {
-        SeparatorType separatorType = SeparatorType.HYPHEN;
+	/**
+	 * Проверка метода {@link SeparatorType#getSymbol()}.
+	 */
+	@Test
+	public void getSymbol()
+	{
+		SeparatorType separatorType = SeparatorType.HYPHEN;
 
-        String actualSymbol = separatorType.getSymbol();
+		String actualSymbol = separatorType.getSymbol();
 
-        assertThat(actualSymbol).isEqualTo("-");
-    }
+		assertThat(actualSymbol).isEqualTo("-");
+	}
 
-    /**
-     * Класс проверки статических методов.
-     *
-     * @author Алексей Каленчуков
-     */
-    @Nested
-    public class Static
-    {
-        /**
-         * Проверка метода {@link SeparatorType#getAllSymbols()}.
-         */
-        @Test
-        public void getAllSymbols()
-        {
-            List<String> symbols = SeparatorType.getAllSymbols();
-            int expectedSize = SeparatorType.values().length;
+	/**
+	 * Класс проверки статических методов.
+	 *
+	 * @author Алексей Каленчуков
+	 */
+	@Nested
+	public class Static
+	{
+		/**
+		 * Проверка метода {@link SeparatorType#getAllSymbols()}.
+		 */
+		@Test
+		public void getAllSymbols()
+		{
+			List<String> symbols = SeparatorType.getAllSymbols();
+			int expectedSize = SeparatorType.values().length;
 
-            int actualSize = symbols.size();
+			int actualSize = symbols.size();
 
-            assertThat(actualSize).isEqualTo(expectedSize);
-        }
-    }
+			assertThat(actualSize).isEqualTo(expectedSize);
+		}
+	}
 }

@@ -546,7 +546,7 @@ public class NotationsTest
 				"HELLO_WORLD1____",
 				"HELLO_123____"
 			})
-			public void isUpperCaseNotCorrect(String value)
+			public void isUpperCaseValueInvalid(String value)
 			{
 				boolean actual = Notations.isUpperCase(value);
 
@@ -610,7 +610,7 @@ public class NotationsTest
 				"hello-world1----",
 				"hello-123----"
 			})
-			public void isKebabCaseNotCorrect(String value)
+			public void isKebabCaseValueInvalid(String value)
 			{
 				boolean actual = Notations.isKebabCase(value);
 
@@ -674,7 +674,7 @@ public class NotationsTest
 				"HELLO-WORLD1----",
 				"HELLO-123----"
 			})
-			public void isTrainCaseNotCorrect(String value)
+			public void isTrainCaseValueInvalid(String value)
 			{
 				boolean actual = Notations.isTrainCase(value);
 
@@ -738,7 +738,7 @@ public class NotationsTest
 				"hello_world1____",
 				"hello_123____"
 			})
-			public void isSnakeCaseNotCorrect(String value)
+			public void isSnakeCaseValueInvalid(String value)
 			{
 				boolean actual = Notations.isSnakeCase(value);
 
@@ -800,7 +800,7 @@ public class NotationsTest
 				"HelloWorld1",
 				"Hello123"
 			})
-			public void isCamelCaseNotCorrect(String value)
+			public void isCamelCaseValueInvalid(String value)
 			{
 				boolean actual = Notations.isCamelCase(value);
 
@@ -863,7 +863,7 @@ public class NotationsTest
 				"helloWorld1",
 				"hello123"
 			})
-			public void isPascalCaseNotCorrect(String value)
+			public void isPascalCaseValueInvalid(String value)
 			{
 				boolean actual = Notations.isPascalCase(value);
 
@@ -927,7 +927,7 @@ public class NotationsTest
 				"hello.world1....",
 				"hello.123...."
 			})
-			public void isDotCaseNotCorrect(String value)
+			public void isDotCaseValueInvalid(String value)
 			{
 				boolean actual = Notations.isDotCase(value);
 

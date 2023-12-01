@@ -93,7 +93,7 @@ public class RegexpTest
 		 * Проверка константы {@link Regexp#UPPER_CASE} с некорректным значением.
 		 */
 		@Test
-		public void upperCaseNotCorrect()
+		public void upperCaseWithValueInvalid()
 		{
 			String value = "CAMEL#CASE";
 			Pattern pattern = Pattern.compile(Regexp.UPPER_CASE.getPattern(), Pattern.UNICODE_CASE);
@@ -124,7 +124,7 @@ public class RegexpTest
 		 * Проверка константы {@link Regexp#KEBAB_CASE} с некорректным значением.
 		 */
 		@Test
-		public void kebabCaseNotCorrect()
+		public void kebabCaseWithValueInvalid()
 		{
 			String value = "kebab#case";
 			Pattern pattern = Pattern.compile(Regexp.KEBAB_CASE.getPattern(), Pattern.UNICODE_CASE);
@@ -155,7 +155,7 @@ public class RegexpTest
 		 * Проверка константы {@link Regexp#SNAKE_CASE} с некорректным значением.
 		 */
 		@Test
-		public void snakeCaseNotCorrect()
+		public void snakeCaseWithValueInvalid()
 		{
 			String value = "snake#case";
 			Pattern pattern = Pattern.compile(Regexp.SNAKE_CASE.getPattern(), Pattern.UNICODE_CASE);
@@ -186,7 +186,7 @@ public class RegexpTest
 		 * Проверка константы {@link Regexp#CAMEL_CASE} с некорректным значением.
 		 */
 		@Test
-		public void camelCaseNotCorrect()
+		public void camelCaseWithValueInvalid()
 		{
 			String value = "camel#case";
 			Pattern pattern = Pattern.compile(Regexp.CAMEL_CASE.getPattern(), Pattern.UNICODE_CASE);
@@ -217,7 +217,7 @@ public class RegexpTest
 		 * Проверка константы {@link Regexp#PASCAL_CASE} с некорректным значением.
 		 */
 		@Test
-		public void pascalCaseNotCorrect()
+		public void pascalCaseWithValueInvalid()
 		{
 			String value = "Pascal#case";
 			Pattern pattern = Pattern.compile(Regexp.PASCAL_CASE.getPattern(), Pattern.UNICODE_CASE);
@@ -248,7 +248,7 @@ public class RegexpTest
 		 * Проверка константы {@link Regexp#DOT_CASE} с некорректным значением.
 		 */
 		@Test
-		public void dotCaseNotCorrect()
+		public void dotCaseWithValueInvalid()
 		{
 			String value = "dot#case";
 			Pattern pattern = Pattern.compile(Regexp.DOT_CASE.getPattern(), Pattern.UNICODE_CASE);
@@ -279,7 +279,7 @@ public class RegexpTest
 		 * Проверка константы {@link Regexp#TRAIN_CASE} с некорректным значением.
 		 */
 		@Test
-		public void trainCaseNotCorrect()
+		public void trainCaseWithValueInvalid()
 		{
 			String value = "TRAIN#CASE";
 			Pattern pattern = Pattern.compile(Regexp.TRAIN_CASE.getPattern(), Pattern.UNICODE_CASE);
